@@ -76,11 +76,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
     </dependency>
     <dependency>
       <groupId>org.mule.tests</groupId>
-      <artifactId>mule-tests-core</artifactId>
-      <version>${muleVersion}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.mule.tests</groupId>
       <artifactId>mule-tests-functional</artifactId>
       <version>${muleVersion}</version>
     </dependency>
