@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.mule.providers.cics.tools</groupId>
+  <artifactId>mule-cics-tools</artifactId>
+  <packaging>jar</packaging>
+  <version>alpha-SNAPSHOT</version>
+  <name>Maven Quick Start Archetype</name>
+  <url>http://maven.apache.org</url>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Class-Path>cb2xml.jar</Class-Path>
+            </manifestEntries>
+            <manifest>
+              <mainClass>jp.co.ogis_ri.cb2xsd.Cb2Xsd</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.4</source>
+          <target>1.4</target>
+         <encoding>SJIS</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>cb2xml</groupId>
+      <artifactId>cb2xml</artifactId>
+      <version>0.93</version>
+    </dependency>
+    <dependency>
+      <groupId>poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>2.5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>xmlbeans</groupId>
+      <artifactId>xbean</artifactId>
+      <version>2.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>xmlbeans</groupId>
+      <artifactId>jsr173</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <encoding>SJIS</encoding>
+          <charset>SJIS</charset>
+        </configuration>
+      </plugin>
+
+      <!-- plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <configuration>
+        <linkXref>true</linkXref>
+        <sourceEncoding>SJIS</sourceEncoding>
+        <minimumTokens>100</minimumTokens>
+        <targetJdk>1.4</targetJdk>
+        </configuration>
+      </plugin -->
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <configuration>
+          <inputEncoding>SJIS</inputEncoding>
+          <outputEncoding>UTF-8</outputEncoding>
+        </configuration>
+      </plugin>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>jdepend-maven-plugin</artifactId>
+          </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <configuration>
+          <inputEncoding>SJIS</inputEncoding>
+          <encoding>SJIS</encoding>
+          <outputEncoding>UTF-8</outputEncoding>
+          <charset>UTF-8</charset>
+        </configuration>
+  </plugin>
+
+  <plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>findbugs-maven-plugin</artifactId>
+    <version>1.0-beta-1</version>
+    <!-- configuration>
+      <threshold>High|Normal|Low|Exp|Ignore</threshold>
+      <effort>Min|Default|Max</threshold>
+      <excludeFilterFile>findbugs-exclude.xml</excludeFilterFile>
+      <includeFilterFile>findbugs-include.xml</includeFilterFile>
+      <visitors>FindDeadLocalStores,UnreadFields</visitors>
+      <omitVisitors>FindDeadLocalStores,UnreadFields</omitVisitors>
+      <pluginList>/libs/fb-contrib/fb-contrib-2.8.0.jar</pluginList>
+    </configuration -->
+  </plugin>
+
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-checkstyle-plugin</artifactId>
+  </plugin>
+
+    </plugins>
+  </reporting>
+
+</project>
