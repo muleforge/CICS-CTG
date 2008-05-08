@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.mule.org/transport/cics/esbInterface" 
+xmlns="http://www.mule.org/transport/cics/esbInterface"
+elementFormDefault="unqualified" >
+
+<xs:element name="esb-interface">
+    <xs:complexType>
+      <xs:sequence>
+		<xs:element ref="operation" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="operation">
+	 <xs:complexType>
+		  <xs:sequence>
+			   <xs:element ref="inbound" minOccurs="0" maxOccurs="1"/>
+			   <xs:element ref="outbound" minOccurs="0" maxOccurs="1"/>
+			   <xs:element ref="fault" minOccurs="0" maxOccurs="1"/>
+			   <xs:element ref="property" minOccurs="1" maxOccurs="1"/>
+		  </xs:sequence>
+		  <xs:attribute name="name" use="required" type="xs:string"/>
+	 </xs:complexType>
+</xs:element>
+
+
+<xs:element name="inbound">
+	 <xs:complexType>
+		  <xs:attribute name="xsd" use="required" type="xs:string"/>
+	 </xs:complexType>
+</xs:element>
+
+<xs:element name="outbound">
+	 <xs:complexType>
+		  <xs:attribute name="xsd" use="required" type="xs:string"/>
+	 </xs:complexType>
+</xs:element>
+
+<xs:element name="fault">
+	 <xs:complexType>
+		  <xs:attribute name="xsd" use="required" type="xs:string"/>
+	 </xs:complexType>
+</xs:element>
+
+<xs:element name="property">
+	 <xs:complexType>
+		  <xs:attribute name="transactionID" use="required" type="xs:string"/>
+		  <xs:attribute name="applProgramName" use="required" type="xs:string"/>
+	 </xs:complexType>
+</xs:element>
+
+</xs:schema>
+

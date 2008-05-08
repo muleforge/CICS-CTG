@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="jp.co.ogis_ri.component.dummyString" targetNamespace="jp.co.ogis_ri.component.dummyString" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="dummyDataCondition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ns1:global" minOccurs="0"/>
+				<xs:element ref="ns1:entryDataSet"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="global">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ns1:namespaceDataSet" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="entryDataSet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ns1:entry" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="entry">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ns1:replyData" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="replyData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ns1:conditionGroup"/>
+			</xs:sequence>
+			<xs:attribute name="file" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="conditionGroup">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="ns1:conditionGroup" maxOccurs="unbounded"/>
+				<xs:element ref="ns1:condition" maxOccurs="unbounded"/>
+				<xs:element ref="ns1:notOperator" maxOccurs="unbounded"/>
+			</xs:choice>
+			<xs:attribute name="operator" type="ns1:operatorType" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="condition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="offset">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="start-offset" type="xs:string"/>
+							<xs:element name="end-offset" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="ns1:value"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="notOperator">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="ns1:conditionGroup"/>
+				<xs:element ref="ns1:condition"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="value">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="ns1:booleanValue"/>
+				<xs:element ref="ns1:intValue"/>
+				<xs:element ref="ns1:floatValue"/>
+				<xs:element ref="ns1:longValue"/>
+				<xs:element ref="ns1:stringValue"/>
+				<xs:element ref="ns1:doubleValue"/>
+				<xs:element ref="ns1:dateTimeValue"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="booleanValue">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:boolean">
+					<xs:attribute name="operator" type="ns1:equalOperatorType" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="intValue">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:int">
+					<xs:attribute name="operator" type="ns1:comparisonOperatorType" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="longValue">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:long">
+					<xs:attribute name="operator" type="ns1:comparisonOperatorType" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="floatValue">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:float">
+					<xs:attribute name="operator" type="ns1:comparisonOperatorType" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="doubleValue">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:double">
+					<xs:attribute name="operator" type="ns1:comparisonOperatorType" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="stringValue">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="operator" type="ns1:comparisonOperatorType" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="dateTimeValue">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:dateTime">
+					<xs:attribute name="operator" type="ns1:comparisonOperatorType" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="namespaceDataSet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ns1:namespace" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="namespace">
+		<xs:complexType>
+			<xs:attribute name="prefix" type="xs:string" use="required"/>
+			<xs:attribute name="namespaceURI" type="xs:anyURI" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="operatorType" final="restriction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="and"/>
+			<xs:enumeration value="or"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="comparisonOperatorType" final="restriction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="equal"/>
+			<xs:enumeration value="notEqual"/>
+			<xs:enumeration value="lessThan"/>
+			<xs:enumeration value="greaterThan"/>
+			<xs:enumeration value="lessThanOrEqual"/>
+			<xs:enumeration value="greaterThanOrEqual"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="equalOperatorType" final="restriction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="equal"/>
+			<xs:enumeration value="notEqual"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

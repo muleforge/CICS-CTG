@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<project name="mule-cics" default="help" basedir=".">
+
+  <property file="build.properties" />
+  <property name="lib" value="../lib" />
+
+  <target name="clean">
+    <delete dir="target" quiet="true"/>
+  </target>
+
+  <target name="compile" description="Compile all Java">
+    <mkdir dir="target"/>
+    <javac srcdir="src/main/java" destdir="target" encoding="UTF-8" debug="true" >
+      <classpath>
+      <fileset dir="${mule.home}/lib/mule"><include name="**/*.jar"/></fileset>
+      <fileset dir="${mule.home}/lib/opt"><include name="**/*.jar"/></fileset>
+      <fileset dir="${lib}"><include name="**/*.jar"/></fileset>
+      </classpath> 
+    </javac>
+  </target>
+
+  <target name="build">
+    <copy todir="target/META-INF">
+      <fileset dir="src/main/resources/META-INF"><include name="**/*.*"/></fileset>
+    </copy> 
+    <mkdir dir="dist" />
+    <zip destfile="dist/mule-transport-stubtest.jar">
+      <zipfileset dir="target" includes="**/stubtest/**,**/cics/**,META-INF/**" />
+      <zipfileset src="${lib}/dummyClient.jar" includes="**/*" />
+      <zipfileset src="${lib}/dummyStringClient.jar" includes="**/*" />
+    </zip>
+    <zip destfile="dist/mule-transport-cics.jar">
+      <zipfileset dir="target" includes="**/cics/**,META-INF/**" />
+    </zip>
+  </target>
+
+  <target name="deploy" depends="compile, build">
+    <copy todir="${mule.home}/lib/mule" file="dist/mule-transport-stubtest.jar" />
+    <copy todir="${mule.home}/lib/mule" file="dist/mule-transport-cics.jar" />
+    <copy todir="${mule.home}/lib/opt" file="${lib}/xbean.jar" />
+    <copy todir="${mule.home}/lib/opt" file="${lib}/cicseci.jar" />
+    <copy todir="${mule.home}/lib/opt" file="${lib}/cicsframe.jar" />
+    <copy todir="${mule.home}/lib/opt" file="${lib}/ctgclient.jar" />
+    <copy todir="${mule.home}/lib/opt" file="${lib}/ccf2.jar" />
+    <copy todir="${mule.home}/lib/opt" file="${lib}/commons-digester.jar" />
+  </target>
+
+  <target name="wsdl" description="Compile all Java">
+    <java classname="org.mule.providers.cics.Interface2WSDL">
+      <arg value="interface/CustomerInterface.xml" />
+      <classpath>
+      <pathelement location="config" />
+      <fileset dir="${mule.home}/lib/mule"><include name="**/*.jar"/></fileset>
+      <fileset dir="${mule.home}/lib/opt"><include name="**/*.jar"/></fileset>
+      <fileset dir="${lib}"><include name="**/*.jar"/></fileset>
+      </classpath> 
+    </java>
+  </target>
+
+</project>

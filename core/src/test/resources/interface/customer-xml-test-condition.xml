@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE esb-interface SYSTEM "xml-condition.dtd">
+<dummyDataCondition xmlns="jp.co.ogis_ri.component.dummy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- dummyDataCondition xmlns="jp.co.ogis_ri.component.dummy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="jp.co.ogis_ri.component.dummy condition.xsd" -->
+
+  <!-- Global Setting -->
+  <global>
+    <!-- This namespace setting is applied to all XPath -->
+    <namespaceDataSet>
+        <namespace prefix="ns" namespaceURI="http://ogisi-ri.co.jp/SAMPLE-COMMAND"/>
+      <namespace prefix="ns1" namespaceURI="http://test1/namespace"/>
+    </namespaceDataSet>
+  </global>
+
+  <entryDataSet>
+    <entry name="sample-command">
+    <replyData file="interface/xml/sample_response_6.xml">
+      <conditionGroup operator="and">
+      </conditionGroup>
+    </replyData>
+    </entry>
+  </entryDataSet>
+
+</dummyDataCondition>

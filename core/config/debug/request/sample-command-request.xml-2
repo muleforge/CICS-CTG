@@ -1,0 +1,1 @@
+<?xml version='1.0' encoding='UTF-8'?><sample-command xmlns="http://ogis-ri.co.jp/SAMPLE-COMMAND"><customer-info><customer-no type="X" length="10">111</customer-no><customer-name type="G" length="20">いいいいいいい</customer-name><customer-address type="G" length="20">ああああああああ</customer-address><search-date type="X" length="8">20060701</search-date></customer-info></sample-command>

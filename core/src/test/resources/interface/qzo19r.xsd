@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="xmlns" ns0:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="xmlns" ns1:dl="http://ogis-ri.co.jp/QZO19R" targetNamespace="http://ogis-ri.co.jp/QZO19R" elementFormDefault="qualified">
+<!--*****************************************************************-->
+<!--*　システム名　　：新料金システム-->
+<!--*　サブシステム名：新料金システム共通-->
+<!--*　コピー句名　　：QZO19R-->
+<!--*　概要　　　　　：支払契約情報一覧表示用に取得したデータ-->
+<!--*****************************************************************-->
+<!--*　設計書作成者　：村上　博敏-->
+<!--*　設計書作成日　：2000/11/20-->
+<!--*　設計書改訂者　：花田　高朗-->
+<!--*　設計書改訂日　：01/09/10-->
+<!--*　設計書更新日　：01/09/10 午後 3:50:12-->
+<!--*　コード生成日　：01/09/10 午後 3:50:58-->
+<!--*****************************************************************-->
+<!--*     レスポンス伝文-->
+<xsd:element name="qzo19r">
+<xsd:complexType>
+<xsd:sequence>
+<!--*       全レコード件数-->
+<xsd:element name="v-reckens">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:long">
+<xsd:attribute name="type" type="xsd:string" default="9"/>
+<xsd:attribute name="length" type="xsd:string" default="5"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*       一覧情報件数-->
+<xsd:element name="v-meisaikens">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:long">
+<xsd:attribute name="type" type="xsd:string" default="9"/>
+<xsd:attribute name="length" type="xsd:string" default="5"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*       検索キー変更有りフラグ-->
+<xsd:element name="knskkeychng-flg">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="1"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*       請求区分コード種別-->
+<xsd:element name="c-seiqkbn-sbt">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="5"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*       まとめ種別コード種別-->
+<xsd:element name="c-matmeshubt-sbt">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="5"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*       他サービス種別コード種別-->
+<xsd:element name="c-srvshubt-sbt">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="5"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*       特定情報-->
+<xsd:element name="tokutei-inf">
+<xsd:complexType>
+<xsd:sequence>
+<!--*         特定対象年月日-->
+<xsd:element name="tokutei-ymd">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="8"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         支払契約番号-->
+<xsd:element name="s-shrky">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="14"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         世代管理番号-->
+<xsd:element name="s-sedaikanri">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="4"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         都道府県コード-->
+<xsd:element name="c-todofkn">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="2"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         市区郡町村コード-->
+<xsd:element name="c-skgnchsn">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="3"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         大字・通称コード-->
+<xsd:element name="c-oazatusho">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="3"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         字・丁目コード-->
+<xsd:element name="c-azachome">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="3"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         編集後住所漢字-->
+<xsd:element name="editjushokj">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="48"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         編集後住所カナ-->
+<xsd:element name="editjushokn">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="92"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         番地号数漢字-->
+<xsd:element name="n-bantigosukj">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="10"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         番地号数カナ-->
+<xsd:element name="n-bantigosukn">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="10"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         棟号数カナ-->
+<xsd:element name="n-togosukn">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="12"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         棟号数漢字-->
+<xsd:element name="n-togosukj">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="15"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         集合住宅名カナ-->
+<xsd:element name="n-shugojutakkn">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="15"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         集合住宅名漢字-->
+<xsd:element name="n-shugojutakkj">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="15"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         編集後郵便番号-->
+<xsd:element name="editzip">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="8"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         住所別呼称有りサイン-->
+<xsd:element name="g-addrbetuari">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="1"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         住所別呼称1漢字-->
+<xsd:element name="l-addrbetu1kj">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="24"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         住所別呼称2漢字-->
+<xsd:element name="l-addrbetu2kj">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="24"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="l-addrhosokukj">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="12"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         姓カナ-->
+<xsd:element name="n-seikn">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="14"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         名カナ-->
+<xsd:element name="n-meikn">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="14"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         おなまえ姓漢字-->
+<xsd:element name="n-seikj">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="10"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         おなまえ名漢字-->
+<xsd:element name="n-meikj">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="10"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         姓名連結表示サイン-->
+<xsd:element name="g-seimeikjrenkt">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="1"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         氏名カナ表示要サイン-->
+<xsd:element name="g-simeiknhyojiyo">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="1"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         点字帳票要サイン-->
+<xsd:element name="g-tenjichohyoyo">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="1"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         編集後電話番号-->
+<xsd:element name="edittel-no">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="17"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         電話区分コード-->
+<xsd:element name="c-telkbn">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="1"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         電話問い合わせ不可サイン-->
+<xsd:element name="g-telinquirfuka">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="1"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<!--*       一覧情報-->
+<xsd:element name="list-inf" minOccurs="30" maxOccurs="30">
+<xsd:complexType>
+<xsd:sequence>
+<!--*         支払契約番号-->
+<xsd:element name="s-shrky-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="14"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         世代管理番号-->
+<xsd:element name="s-sedaikanri-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="4"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         編集後住所漢字-->
+<xsd:element name="editjushokj-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="48"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         編集後おなまえ漢字-->
+<xsd:element name="edtnameknj-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="29"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         番地号数漢字-->
+<xsd:element name="n-bantigosukj-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="10"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         集合住宅名漢字-->
+<xsd:element name="n-shugojutakkj-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="15"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         棟号数漢字-->
+<xsd:element name="n-togosukj-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="15"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         住所補足漢字-->
+<xsd:element name="l-addrhosokukj-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="12"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         住所別呼称有りサイン-->
+<xsd:element name="g-addrbetuari-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="1"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         住所別呼称1漢字-->
+<xsd:element name="l-addrbetu1kj-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="24"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         住所別呼称2漢字-->
+<xsd:element name="l-addrbetu2kj-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="24"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         請求区分コード-->
+<xsd:element name="c-seiqkbn-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="1"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         まとめ種別コード-->
+<xsd:element name="c-matmeshubt-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="1"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         閉栓解約済みサイン-->
+<xsd:element name="zumisgn-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="1"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         他サービス種別コード-->
+<xsd:element name="c-srvshubt-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="2"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         支払者お客さま登録番号-->
+<xsd:element name="s-cstreg-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="14"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         一覧都道府県コード-->
+<xsd:element name="c-todofkn-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="2"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         一覧市区郡町村コード-->
+<xsd:element name="c-skgnchsn-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="3"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         一覧大字・通称コード-->
+<xsd:element name="c-oazatusho-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="3"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         一覧字・丁目コード-->
+<xsd:element name="c-azachome-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="3"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         一覧番地号数カナ-->
+<xsd:element name="n-bantigosukn-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="10"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         一覧集合住宅名カナ-->
+<xsd:element name="n-shugojutakkn-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="15"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         一覧棟号数カナ-->
+<xsd:element name="n-togosukn-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="12"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         一覧特定対象年月日-->
+<xsd:element name="tokutei-ymd-list">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="8"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esb-interface xmlns="http://www.mule.org/transport/cics/esbInterface">
+  <operation name="sample-command">
+    <inbound xsd="interface/sample_command.xsd" />
+    <outbound xsd="interface/sample_response.xsd" />
+    <property transactionID="SAMPLE" applProgramName="SAMPLE"  />
+  </operation>
+
+  <operation name="sample-null-command">
+    <property transactionID="SAMPLE" applProgramName="SAMPLE" />
+  </operation>
+
+  <operation name="sample-request-only-command">
+    <inbound xsd="interface/sample_command.xsd" />
+    <property transactionID="SAMPLE" applProgramName="SAMPLE" />
+  </operation>
+
+  <operation name="sample-reply-only-command">
+    <outbound xsd="interface/sample_response.xsd" />
+    <property transactionID="SAMPLE" applProgramName="SAMPLE" />
+  </operation>
+
+  <operation name="sample-list-command">
+    <inbound xsd="interface/sample_list_command.xsd" />
+    <outbound xsd="interface/sample_response.xsd" />
+    <property transactionID="SAMPLE" applProgramName="SAMPLE"  />
+  </operation>
+
+  <operation name="q2o0e">
+    <inbound xsd="interface/Q2O0EC.xsd" />
+    <property transactionID="Q2O0EC" applProgramName="Q2O0EC" />
+  </operation>
+
+
+  <!-- operation name="sample-command">
+    <inbound xsd="interface/sample_command.xsd" />
+    <outbound xsd="interface/sample_response.xsd" />
+    <property transactionID="SAMPLE" applProgramName="SAMPLE" size="16000" 
+              ipAddress="152.201.48.1" />
+  </operation -->
+
+</esb-interface>
+

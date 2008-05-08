@@ -1,0 +1,882 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://seriola/interface/CustomerInterface" xmlns:impl="http://seriola/interface/CustomerInterface" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://ogis-ri.co.jp/SAMPLE-COMMAND" xmlns:s1="http://ogis-ri.co.jp/SAMPLE-RESPONSE" xmlns:s2="http://ogis-ri.co.jp/Q2O0EC"><wsdl:types><xsd:schema elementFormDefault="qualified" targetNamespace="http://ogis-ri.co.jp/SAMPLE-COMMAND">
+
+<xsd:element name="sample-command">
+<xsd:complexType>
+<xsd:sequence>
+
+
+<xsd:element name="customer-info">
+<xsd:complexType>
+<xsd:sequence>
+
+<xsd:element name="customer-no">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="10" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-name">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="20" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-address">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="20" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="search-date">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="8" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema><xsd:schema elementFormDefault="qualified" targetNamespace="http://ogis-ri.co.jp/SAMPLE-RESPONSE">
+
+<xsd:element name="sample-response">
+<xsd:complexType>
+<xsd:sequence>
+
+<xsd:element name="no-of-records">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:long">
+<xsd:attribute name="type" type="xsd:string" default="9" />
+<xsd:attribute name="length" type="xsd:string" default="5" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="search-date">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="8" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-list" minOccurs="5" maxOccurs="5">
+<xsd:complexType>
+<xsd:sequence>
+
+<xsd:element name="customer-no">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="10" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-name">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="20" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-address">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="20" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-amount">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:long">
+<xsd:attribute name="type" type="xsd:string" default="9" />
+<xsd:attribute name="length" type="xsd:string" default="10" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-charge">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:long">
+<xsd:attribute name="type" type="xsd:string" default="9" />
+<xsd:attribute name="length" type="xsd:string" default="10" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema><xsd:schema elementFormDefault="qualified" targetNamespace="http://ogis-ri.co.jp/Q2O0EC">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <xsd:element name="q2o0ec">
+    <xsd:complexType>
+      <xsd:sequence>
+        
+        <xsd:element name="ss-sisanreg">
+          <xsd:complexType>
+            <xsd:simpleContent>
+              <xsd:extension base="xsd:string">
+                <xsd:attribute name="type" type="xsd:string" default="X" />
+                <xsd:attribute name="length" type="xsd:string" default="14" />
+              </xsd:extension>
+            </xsd:simpleContent>
+          </xsd:complexType>
+        </xsd:element>
+        
+        <xsd:element name="cc-torihikikbn">
+          <xsd:complexType>
+            <xsd:simpleContent>
+              <xsd:extension base="xsd:string">
+                <xsd:attribute name="type" type="xsd:string" default="X" />
+                <xsd:attribute name="length" type="xsd:string" default="2" />
+              </xsd:extension>
+            </xsd:simpleContent>
+          </xsd:complexType>
+        </xsd:element>
+        
+        <xsd:element name="vv-sisanren">
+          <xsd:complexType>
+            <xsd:simpleContent>
+              <xsd:extension base="xsd:string">
+                <xsd:attribute name="type" type="xsd:string" default="X" />
+                <xsd:attribute name="length" type="xsd:string" default="1" />
+              </xsd:extension>
+            </xsd:simpleContent>
+          </xsd:complexType>
+        </xsd:element>
+        
+        <xsd:element name="q2675m-joho" minOccurs="7" maxOccurs="7">
+          <xsd:complexType>
+            <xsd:sequence>
+              
+              <xsd:element name="ss-sisanren">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="2" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="ss-ukereg">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="cc-enekeyakshubt">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="4" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="ss-hutaikeyakkmaw">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="3" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="nn-hutaikmawkj">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="G" />
+                      <xsd:attribute name="length" type="xsd:string" default="20" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-teigakkhnrknttl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-ryuryokhnrknttl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-maxjykkhnrknttl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-hirukhnrknttl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-yorukhnrknttl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-ogtiwaribikittl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="15" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-khnrknttl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-juryorknttl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-nentotal">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="11" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-heikintanka">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="rr-fuka">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="4" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="rr-maxryobai">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="6" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="vv-nenkeyakryo">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="11" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="vv-heikinkeyakryo">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="10" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="vv-keyakmaxjykryo">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="11" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="rr-cgssiyohiritu">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="3" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-kakihewaribik">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="9" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tokihewaribik">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="9" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-choswaribik">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="9" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="rr-choowaribik">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="3" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="rr-baiwaribik">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="5" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-baiwaribik">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="9" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="rr-cgskadoritwari">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="5" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="rr-cgsyoryowari">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="5" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-cgswaribik">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="9" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tgkkhnrkn1">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tkyuntrkn1">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tgkkhnrkn2">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tkyuntrkn2">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tgkkhnrkn3">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tkyuntrkn3">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tgkkhnrkn4">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tkyuntrkn4">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tgkkhnrkn5">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tkyuntrkn5">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tgkkhnrkn6">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tkyuntrkn6">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-kakiryryorknunt">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tokiryryorknunt">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tukiryryorknunt">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-maxjykkhnrknunt">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-hirukhnrknunt">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-yorukhnrknunt">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        
+        <xsd:element name="q2676m-joho" minOccurs="84" maxOccurs="84">
+        
+          <xsd:complexType>
+            <xsd:sequence>
+              
+              <xsd:element name="dd-sisancym">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="6" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-teigakukhnrkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-ryuryokhnrkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-maxjykkhnrkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-hirukhnrkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-yorukhnrkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-ogtiwaribiki">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="15" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-khnrkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-tanirkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="9" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-juryorkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="14" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="aa-gokei">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="11" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              
+              <xsd:element name="ss-hyojjunjo">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X" />
+                      <xsd:attribute name="length" type="xsd:string" default="2" />
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema></wsdl:types><wsdl:message name="sample-commandRequest"><wsdl:part name="in0" element="s0:sample-command" /></wsdl:message><wsdl:message name="sample-commandResponse"><wsdl:part name="sample-commandReturn" element="s1:sample-response" /></wsdl:message><wsdl:message name="sample-request-only-commandRequest"><wsdl:part name="in0" element="s0:sample-command" /></wsdl:message><wsdl:message name="sample-reply-only-commandResponse"><wsdl:part name="sample-reply-only-commandReturn" element="s1:sample-response" /></wsdl:message><wsdl:message name="sample-list-commandRequest"><wsdl:part name="in0" element="s0:sample-command" /></wsdl:message><wsdl:message name="sample-list-commandResponse"><wsdl:part name="sample-list-commandReturn" element="s1:sample-response" /></wsdl:message><wsdl:message name="q2o0eRequest"><wsdl:part name="in0" element="s2:q2o0ec" /></wsdl:message><wsdl:portType name="SeriolaProxy"><wsdl:operation name="sample-command" parameterOrder="in0"><wsdl:input message="impl:sample-commandRequest" name="sample-commandRequest" /><wsdl:output message="impl:sample-commandResponse" name="sample-commandResponse" /></wsdl:operation><wsdl:operation name="sample-request-only-command" parameterOrder="in0"><wsdl:input message="impl:sample-request-only-commandRequest" name="sample-request-only-commandRequest" /></wsdl:operation><wsdl:operation name="sample-list-command" parameterOrder="in0"><wsdl:input message="impl:sample-list-commandRequest" name="sample-list-commandRequest" /><wsdl:output message="impl:sample-list-commandResponse" name="sample-list-commandResponse" /></wsdl:operation><wsdl:operation name="q2o0e" parameterOrder="in0"><wsdl:input message="impl:q2o0eRequest" name="q2o0eRequest" /></wsdl:operation></wsdl:portType><wsdl:binding name="SeriolaUMOSoapBinding" type="impl:SeriolaProxy"><soap:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" style="document" transport="http://schemas.xmlsoap.org/soap/http" /><wsdl:operation name="sample-command"><soap:operation xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="" /><wsdl:input name="sample-commandRequest"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://seriola/interface/CustomerInterface" use="literal" /></wsdl:input><wsdl:output name="sample-commandResponse"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://seriola/interface/CustomerInterface" use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="sample-request-only-command"><soap:operation xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="" /><wsdl:input name="sample-request-only-commandRequest"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://seriola/interface/CustomerInterface" use="literal" /></wsdl:input></wsdl:operation><wsdl:operation name="sample-list-command"><soap:operation xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="" /><wsdl:input name="sample-list-commandRequest"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://seriola/interface/CustomerInterface" use="literal" /></wsdl:input><wsdl:output name="sample-list-commandResponse"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://seriola/interface/CustomerInterface" use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="q2o0e"><soap:operation xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="" /><wsdl:input name="q2o0eRequest"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://seriola/interface/CustomerInterface" use="literal" /></wsdl:input></wsdl:operation></wsdl:binding><wsdl:service name="SeriolaUMO"><wsdl:port binding="impl:SeriolaUMOSoapBinding" name="SeriolaUMO"><soap:address xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" location="http://localhost:8888/seriola/CustomerInterface" /></wsdl:port></wsdl:service></wsdl:definitions>

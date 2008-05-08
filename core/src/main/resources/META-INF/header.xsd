@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="xmlns" ns0:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="xmlns" ns1:dl="http://ogis-ri.co.jp/LZAPLHDR-AREA" targetNamespace="http://ogis-ri.co.jp/LZAPLHDR-AREA" elementFormDefault="qualified">
+<xsd:element name="lzaplhdr-area">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="lzaplhdr-dci-inf">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="lzaplhdr-menuid">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="8"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="lzaplhdr-pgmid">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="8"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="lzaplhdr-convsign">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="1"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="lzaplhdr-dci-reserve">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="23"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="lzaplhdr-appl-inf">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="lzaplhdr-rtncd">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="2"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="lzaplhdr-rsncd">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="4"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="lzaplhdr-othcd">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="8"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="lzaplhdr-msgid">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="7"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="lzaplhdr-msgkbn">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="1"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="lzaplhdr-msg">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="50"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="lzaplhdr-userdata-len">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:long">
+<xsd:attribute name="type" type="xsd:string" default="9"/>
+<xsd:attribute name="length" type="xsd:string" default="8"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="lzaplhdr-appl-reserve">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="30"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>

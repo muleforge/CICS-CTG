@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='Shift_JIS'?>
+<replyData>
+<lzaplhdr-area xmlns="http://ogis-ri.co.jp/LZAPLHDR-AREA">
+  <lzaplhdr-dci-inf>
+    <lzaplhdr-menuid>AAAAAAAA</lzaplhdr-menuid>
+    <lzaplhdr-pgmid>AAAAAAAA</lzaplhdr-pgmid>
+    <lzaplhdr-convsign>A</lzaplhdr-convsign>
+    <lzaplhdr-dci-reserve>AAAAAAAAAAAAAAAAAAAAAAA</lzaplhdr-dci-reserve>
+  </lzaplhdr-dci-inf>
+  <lzaplhdr-appl-inf>
+    <lzaplhdr-rtncd>AA</lzaplhdr-rtncd>
+    <lzaplhdr-rsncd>AAAA</lzaplhdr-rsncd>
+    <lzaplhdr-othcd>AAAAAAAA</lzaplhdr-othcd>
+    <lzaplhdr-msgid>AAAAAAA</lzaplhdr-msgid>
+    <lzaplhdr-msgkbn>A</lzaplhdr-msgkbn>
+    <lzaplhdr-msg>ああああああああああああああああああああああああああああああああああああああああああああああああああ</lzaplhdr-msg>
+    <lzaplhdr-userdata-len>11111111</lzaplhdr-userdata-len>
+    <lzaplhdr-appl-reserve>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</lzaplhdr-appl-reserve>
+  </lzaplhdr-appl-inf>
+</lzaplhdr-area>
+
+<sample-response xmlns="http://ogis-ri.co.jp/SAMPLE-RESPONSE">
+  <no-of-records>00005</no-of-records>
+  <search-date>AAAAAAAA</search-date>
+  <customer-list>
+    <customer-no>AAAAAAAAAA</customer-no>
+    <customer-name>ああああああああああああああああああああ</customer-name>
+    <customer-address>ああああああああああああああああああああ</customer-address>
+    <customer-amount>1111111</customer-amount>
+    <customer-charge>1111111</customer-charge>
+  </customer-list>
+  <customer-list>
+    <customer-no>AAAAAAAAAA</customer-no>
+    <customer-name>ああああああああああああああああああああ</customer-name>
+    <customer-address>ああああああああああああああああああああ</customer-address>
+    <customer-amount>111111</customer-amount>
+    <customer-charge>111111</customer-charge>
+  </customer-list>
+  <customer-list>
+    <customer-no>AAAAAAAAAA</customer-no>
+    <customer-name>ああああああああああああああああああああ</customer-name>
+    <customer-address>ああああああああああああああああああああ</customer-address>
+    <customer-amount>11111</customer-amount>
+    <customer-charge>111111</customer-charge>
+  </customer-list>
+  <customer-list>
+    <customer-no>AAAAAAAAAA</customer-no>
+    <customer-name>ああああああああああああああああああああ</customer-name>
+    <customer-address>ああああああああああああああああああああ</customer-address>
+    <customer-amount>11111</customer-amount>
+    <customer-charge>111111</customer-charge>
+  </customer-list>
+  <customer-list>
+    <customer-no>AAAAAAAAAA</customer-no>
+    <customer-name>ああああああああああああああああああああ</customer-name>
+    <customer-address>ああああああああああああああああああああ</customer-address>
+    <customer-amount>11111</customer-amount>
+    <customer-charge>111111</customer-charge>
+  </customer-list>
+</sample-response>
+</replyData>

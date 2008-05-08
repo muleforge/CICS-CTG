@@ -1,0 +1,3 @@
+<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns1:sample-command xmlns:ns1="http://ogis-ri.co.jp/SAMPLE-COMMAND"><ns1:customer-info><ns1:customer-no>111</ns1:customer-no><ns1:customer-name>aa&#xd;
+123</ns1:customer-name><ns1:customer-address>strange.....&#xd;
+data</ns1:customer-address><ns1:search-date>20060701</ns1:search-date></ns1:customer-info></ns1:sample-command></soapenv:Body></soapenv:Envelope>

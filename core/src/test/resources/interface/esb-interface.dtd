@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT esb-interface (operation*)>
+<!ELEMENT operation (inbound?,outbound?,property)>
+<!ATTLIST operation name CDATA #REQUIRED>
+<!ELEMENT property EMPTY>
+<!ATTLIST property transactionID CDATA #REQUIRED>
+<!ATTLIST property applProgramName CDATA #REQUIRED>
+<!ELEMENT inbound EMPTY>
+<!ATTLIST inbound xsd CDATA #REQUIRED>
+<!ELEMENT outbound EMPTY>
+<!ATTLIST outbound xsd CDATA #REQUIRED>

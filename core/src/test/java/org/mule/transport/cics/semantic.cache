@@ -1,0 +1,21 @@
+;; Object cics/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "cics/"
+  :tables (list 
+   (semanticdb-table "Interface2WSDLTest.java"
+    :major-mode 'jde-mode
+    :tags '(("org.mule.transport.cics" package nil nil [2 34]) ("junit.framework.Test" include nil nil [36 64]) ("junit.framework.TestCase" include nil nil [65 97]) ("junit.framework.TestSuite" include nil nil [98 131]) ("org.mule.util.IOUtils" include nil nil [133 162]) ("Interface2WSDLTest" type (:typemodifiers ("public") :superclasses "TestCase" :members (("Interface2WSDLTest" function (:constructor-flag t :typemodifiers ("public") :arguments (("testName" variable (:type "String") (reparse-symbol formal_parameters) [391 406]))) (reparse-symbol class_member_declaration) [365 431]) ("suite" function (:typemodifiers ("public" "static") :type "Test") (reparse-symbol class_member_declaration) [494 575]) ("test1" function (:throws ("Exception") :typemodifiers ("public") :type "void") (reparse-symbol class_member_declaration) [617 1001])) :type "class") nil [201 1003]))
+    :file "Interface2WSDLTest.java"
+    :pointmax 1004
+    )
+   (semanticdb-table "CICSRecordTest.java"
+    :major-mode 'jde-mode
+    :tags '(("org.mule.transport.cics" package nil nil [2 34]) ("java.io.ByteArrayInputStream" include nil nil [36 72]) ("java.io.ByteArrayOutputStream" include nil nil [73 110]) ("junit.framework.Test" include nil nil [112 140]) ("junit.framework.TestCase" include nil nil [141 173]) ("junit.framework.TestSuite" include nil nil [174 207]) ("CICSRecordTest" type (:typemodifiers ("public") :superclasses "TestCase" :members (("CICSRecordTest" function (:constructor-flag t :typemodifiers ("public") :arguments (("testName" variable (:type "String") (reparse-symbol formal_parameters) [427 442]))) (reparse-symbol class_member_declaration) [405 467]) ("suite" function (:typemodifiers ("public" "static") :type "Test") (reparse-symbol class_member_declaration) [530 607]) ("test1" function (:throws ("Exception") :typemodifiers ("public") :type "void") (reparse-symbol class_member_declaration) [649 1105]) ("test2" function (:throws ("Exception") :typemodifiers ("public") :type "void") (reparse-symbol class_member_declaration) [1147 1422])) :type "class") nil [245 1424]))
+    :file "CICSRecordTest.java"
+    :pointmax 1425
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre3"
+  :semanticdb-version "2.0pre3"
+  )

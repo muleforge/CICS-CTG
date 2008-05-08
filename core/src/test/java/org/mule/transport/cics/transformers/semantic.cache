@@ -1,0 +1,28 @@
+;; Object transformers/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "transformers/"
+  :tables (list 
+   (semanticdb-table "CopyBookToXmlUtilTest.java"
+    :major-mode 'jde-mode
+    :tags '(("org.mule.transport.cics.transformers" package nil nil [1 46]) ("java.io.InputStream" include nil nil [48 75]) ("java.io.InputStreamReader" include nil nil [76 109]) ("java.io.ByteArrayOutputStream" include nil nil [110 147]) ("javax.xml.stream.XMLOutputFactory" include nil nil [148 189]) ("javax.xml.stream.XMLStreamWriter" include nil nil [190 230]) ("junit.framework.Test" include nil nil [232 260]) ("junit.framework.TestCase" include nil nil [261 293]) ("junit.framework.TestSuite" include nil nil [294 327]) ("org.custommonkey.xmlunit.XMLAssert" include nil nil [329 371]) ("org.mule.util.IOUtils" include nil nil [373 402]) ("org.mule.transport.cics.util.Constants" include nil nil [403 449]) ("CopyBookToXmlUtilTest" type (:typemodifiers ("public") :superclasses "TestCase" :members (("outputFactory" variable (:typemodifiers ("private" "static") :type "XMLOutputFactory") (reparse-symbol class_member_declaration) [546 592]) ("CopyBookToXmlUtilTest" function (:constructor-flag t :typemodifiers ("public") :arguments (("testName" variable (:type "String") (reparse-symbol formal_parameters) [901 916]))) (reparse-symbol class_member_declaration) [872 941]) ("suite" function (:typemodifiers ("public" "static") :type "Test") (reparse-symbol class_member_declaration) [1004 1088]) ("test1" function (:throws ("Exception") :typemodifiers ("public") :type "void") (reparse-symbol class_member_declaration) [1130 1876]) ("test2" function (:throws ("Exception") :typemodifiers ("public") :type "void") (reparse-symbol class_member_declaration) [1918 2715])) :type "class") nil [488 2717]))
+    :file "CopyBookToXmlUtilTest.java"
+    :pointmax 2718
+    )
+   (semanticdb-table "ExceptionToFaultMessageTest.java"
+    :major-mode 'jde-mode
+    :tags '(("org.mule.transport.cics.transformers" package nil nil [2 47]) ("junit.framework.Test" include nil nil [49 77]) ("junit.framework.TestCase" include nil nil [78 110]) ("junit.framework.TestSuite" include nil nil [111 144]) ("ExceptionToFaultMessageTest" type (:typemodifiers ("public") :superclasses "TestCase" :members (("ExceptionToFaultMessageTest" function (:constructor-flag t :typemodifiers ("public") :arguments (("testName" variable (:type "String") (reparse-symbol formal_parameters) [416 431]))) (reparse-symbol class_member_declaration) [381 456]) ("suite" function (:typemodifiers ("public" "static") :type "Test") (reparse-symbol class_member_declaration) [519 609]) ("test1" function (:throws ("Exception") :typemodifiers ("public") :type "void") (reparse-symbol class_member_declaration) [651 955])) :type "class") nil [208 958]))
+    :file "ExceptionToFaultMessageTest.java"
+    :pointmax 959
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "XmlToCopyBookTest.java"
+    :major-mode 'jde-mode
+    :tags '(("org.mule.transport.cics.transformers" package nil nil [2 47]) ("org.mule.transport.cics.util.Constants" include nil nil [49 95]) ("junit.framework.Test" include nil nil [97 125]) ("junit.framework.TestCase" include nil nil [126 158]) ("junit.framework.TestSuite" include nil nil [159 192]) ("org.mule.util.IOUtils" include nil nil [194 223]) ("XmlToCopyBookTest" type (:typemodifiers ("public") :superclasses "TestCase" :members (("XmlToCopyBookTest" function (:constructor-flag t :typemodifiers ("public") :arguments (("testName" variable (:type "String") (reparse-symbol formal_parameters) [450 465]))) (reparse-symbol class_member_declaration) [425 490]) ("suite" function (:typemodifiers ("public" "static") :type "Test") (reparse-symbol class_member_declaration) [553 633]) ("test1" function (:throws ("Exception") :typemodifiers ("public") :type "void") (reparse-symbol class_member_declaration) [675 1124])) :type "class") nil [262 1127]))
+    :file "XmlToCopyBookTest.java"
+    :pointmax 1128
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre3"
+  :semanticdb-version "2.0pre3"
+  )

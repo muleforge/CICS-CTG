@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.mulesource.org/schema/mule/mule-cics-streaming/2.0"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:mule="http://www.mulesource.org/schema/mule/core/2.0"
+     targetNamespace="http://www.mulesource.org/schema/mule/mule-cics-streaming/2.0"
+     elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:import namespace="http://www.mulesource.org/schema/mule/core/2.0"
+              schemaLocation="http://www.mulesource.org/schema/mule/core/2.0/mule.xsd" />
+
+  <xsd:element name="service" substitutionGroup="mule:abstract-service">
+    <xsd:complexType> 
+      <xsd:complexContent>
+        <xsd:extension base="mule:sedaServiceType">
+       <xsd:attribute name="interfaceFile" type="xsd:string" use="required"/>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="cics-endpoint" substitutionGroup="mule:abstract-global-endpoint" >
+    <xsd:complexType>
+      <xsd:complexContent>
+        <xsd:extension base="mule:globalEndpointType">
+          <xsd:attribute name="ipAddress" type="xsd:string" use="required"/>
+          <xsd:attribute name="entry" type="xsd:string" use="required"/>
+          <xsd:attribute name="tpnName" type="xsd:string" use="required"/>
+          <xsd:attribute name="userName" type="xsd:string" use="required"/>
+          <xsd:attribute name="maxSize" type="xsd:int" use="required"/>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="dummy-response-endpoint" substitutionGroup="mule:abstract-global-endpoint">
+    <xsd:complexType> 
+      <xsd:complexContent>
+        <xsd:extension base="mule:globalEndpointType">
+          <xsd:attribute name="file" type="xsd:string" use="required"/>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="log-transformer" substitutionGroup="mule:abstract-transformer">
+    <xsd:complexType> 
+      <xsd:complexContent>
+        <xsd:extension base="mule:abstractTransformerType">
+       <xsd:attribute name="file" type="xsd:string" use="required"/>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="xml-inbound-transformer" type="mule:abstractTransformerType" substitutionGroup="mule:abstract-transformer" />
+  <xsd:element name="rest-to-xml" type="mule:abstractTransformerType" substitutionGroup="mule:abstract-transformer" />
+  <xsd:element name="xml-to-rest" type="mule:abstractTransformerType" substitutionGroup="mule:abstract-transformer" />
+  <xsd:element name="xml-to-soap" type="mule:abstractTransformerType" substitutionGroup="mule:abstract-transformer" />
+  <xsd:element name="soap-to-xml" type="mule:abstractTransformerType" substitutionGroup="mule:abstract-transformer" />
+  <xsd:element name="exception-to-fault-message" type="mule:abstractTransformerType" substitutionGroup="mule:abstract-transformer" />
+  <xsd:element name="bytearray-to-xml" type="mule:abstractTransformerType" substitutionGroup="mule:abstract-transformer" />
+
+  <xsd:element name="copybook-to-xml"  substitutionGroup="mule:abstract-transformer">
+    <xsd:complexType> 
+       <xsd:complexContent>
+         <xsd:extension base="mule:abstractTransformerType">
+           <xsd:attribute name="encoding" type="xsd:string" use="required"/>
+         </xsd:extension>
+       </xsd:complexContent>
+    </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name="xml-to-copybook"  substitutionGroup="mule:abstract-transformer">
+    <xsd:complexType> 
+       <xsd:complexContent>
+         <xsd:extension base="mule:abstractTransformerType">
+           <xsd:attribute name="encoding" type="xsd:string" use="required"/>
+         </xsd:extension>
+       </xsd:complexContent>
+    </xsd:complexType>
+ </xsd:element>
+ 
+ <xsd:element name="ogis-copybook-incoming-handler"  substitutionGroup="mule:abstract-transformer">
+    <xsd:complexType> 
+       <xsd:complexContent>
+         <xsd:extension base="mule:abstractTransformerType">
+           <xsd:attribute name="encoding" type="xsd:string" use="required"/>
+         </xsd:extension>
+       </xsd:complexContent>
+    </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name="ogis-copybook-outgoing-handler" substitutionGroup="mule:abstract-transformer">
+    <xsd:complexType> 
+       <xsd:complexContent>
+         <xsd:extension base="mule:abstractTransformerType">
+           <xsd:attribute name="encoding" type="xsd:string" use="required"/>
+         </xsd:extension>
+       </xsd:complexContent>
+    </xsd:complexType>
+ </xsd:element>
+
+ <xsd:element name="ogis-copybook-to-xml" substitutionGroup="mule:abstract-transformer">
+    <xsd:complexType> 
+       <xsd:complexContent>
+         <xsd:extension base="mule:abstractTransformerType">
+           <xsd:attribute name="encoding" type="xsd:string" use="required"/>
+         </xsd:extension>
+       </xsd:complexContent>
+    </xsd:complexType>
+ </xsd:element>
+
+</xsd:schema>

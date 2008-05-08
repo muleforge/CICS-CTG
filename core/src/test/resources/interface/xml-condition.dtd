@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT dummyDataCondition (global?,entryDataSet)>
+
+<!ATTLIST dummyDataCondition xmlns CDATA #REQUIRED>
+<!ATTLIST dummyDataCondition xmlns:xsi CDATA #REQUIRED>
+
+<!ELEMENT global (namespaceDataSet?)>
+
+<!ELEMENT namespaceDataSet (namespace*)>
+<!ELEMENT namespace EMPTY>
+<!ATTLIST namespace prefix CDATA #REQUIRED>
+<!ATTLIST namespace namespaceURI CDATA #REQUIRED>
+
+
+<!ELEMENT entryDataSet (entry+)>
+<!ELEMENT entry (replyData+)>
+<!ATTLIST entry name CDATA #REQUIRED>
+
+<!ELEMENT replyData (conditionGroup)>
+<!ATTLIST replyData file CDATA #REQUIRED>
+
+<!ELEMENT conditionGroup (conditionGroup*,condition*,notOperator*)>
+<!ATTLIST conditionGroup operator (and|or) "and" >
+
+<!ELEMENT condition (xpathData,value)>
+<!ELEMENT xpathData (namespaceDataSet?,xpath)>
+<!ELEMENT xpath (#PCDATA)>
+<!ELEMENT value
+(booleanValue|intValue|floatValue|longValue|stringValue|doubleValue|dateTimeValue)>
+
+<!ATTLIST booleanValue operator (equal|notEqual) "equal" >
+<!ELEMENT booleanValue (#PCDATA)>
+
+<!ATTLIST intValue operator (equal|notEqual|lessThan|greaterThan|lessThanOrEqual|greaterThanOrEqual) "equal" >
+<!ELEMENT intValue (#PCDATA)>
+
+
+<!ATTLIST floatValue operator (equal|notEqual|lessThan|greaterThan|lessThanOrEqual|greaterThanOrEqual) "equal" >
+<!ELEMENT floatValue (#PCDATA)>
+
+
+<!ATTLIST doubleValue operator (equal|notEqual|lessThan|greaterThan|lessThanOrEqual|greaterThanOrEqual) "equal" >
+<!ELEMENT doubleValue (#PCDATA)>
+
+
+<!ATTLIST longValue operator (equal|notEqual|lessThan|greaterThan|lessThanOrEqual|greaterThanOrEqual) "equal" >
+<!ELEMENT longValue (#PCDATA)>
+
+
+<!ATTLIST stringValue operator (equal|notEqual|lessThan|greaterThan|lessThanOrEqual|greaterThanOrEqual) "equal" >
+<!ELEMENT stringValue (#PCDATA)>
+
+<!ATTLIST dateTimeValue operator (equal|notEqual|lessThan|greaterThan|lessThanOrEqual|greaterThanOrEqual) "equal" >
+<!ELEMENT dateTimeValue (#PCDATA)>
+
+
+<!ELEMENT notOperator (conditionGroup|condition)>
