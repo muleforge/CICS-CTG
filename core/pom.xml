@@ -42,6 +42,8 @@
     <muleVersion>2.0.1</muleVersion>
     <activemq-version>4.1.1-incubator</activemq-version>
     <muleHome>/usr/local/oss/mule-2.0.1</muleHome>  
+    <!-- muleHome>D:/tools/mule-2.0.1</muleHome -->  
+
   </properties>
   <distributionManagement>
     <repository>
@@ -107,7 +109,7 @@
                        <groupId>${groupId}</groupId>
                        <artifactId>${artifactId}</artifactId>
                        <version>${version}</version>
-                       <destFileName>${artifactId}.jar</destFileName>
+                       <destFileName>${artifactId}-${version}.jar</destFileName>
                    </artifactItem>
                 </artifactItems>
              </configuration>
@@ -146,34 +148,6 @@
           <appendAssemblyId>false</appendAssemblyId>
         </configuration>
       </plugin>
-<!-- 
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-dependency-plugin</artifactId>
-      <executions>
-	<execution>
-	  <id>copy-artifact</id>
-	  <phase>install</phase>
-	  <goals>
-	    <goal>copy</goal>
-	  </goals>
-	  <configuration>
-	    <outputDirectory>${MULE_HOME}/lib/user</outputDirectory>
-	    <overWriteReleases>true</overWriteReleases>
-	    <overWriteSnapshots>true</overWriteSnapshots>
-	    <artifactItems>
-	      <artifactItem>
-		<groupId>${groupId}</groupId>
-		<artifactId>${artifactId}</artifactId>
-		<version>${version}</version>
-		<destFileName>${artifactId}.jar</destFileName>
-	      </artifactItem>
-	    </artifactItems>
-	  </configuration>
-	</execution>
-      </executions>
-    </plugin>
--->
     </plugins>
   </build>    
 
@@ -347,6 +321,13 @@
       <version>1.0</version>
       <scope>compile</scope>
       <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>xmlunit</groupId>
+      <artifactId>xmlunit</artifactId>
+      <version>1.1</version>
+      <scope>test</scope>
     </dependency>
 
   </dependencies>

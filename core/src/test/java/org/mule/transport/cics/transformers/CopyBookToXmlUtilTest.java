@@ -1,8 +1,8 @@
 package org.mule.transport.cics.transformers;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamWriter;
 
@@ -10,10 +10,10 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import org.mule.transport.cics.util.Constants;
+import org.mule.util.IOUtils;
 import org.custommonkey.xmlunit.XMLAssert;
 
-import org.mule.util.IOUtils;
-import org.mule.transport.cics.util.Constants;
 
 /**
  * Unit test for simple App.
