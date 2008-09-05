@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<sample-command>
+    <app-context>
+        <userName>makoto</userName>
+    </app-context>
+    <app-data>
+        <sample-command xmlns="http://ogis-ri.co.jp/SAMPLE-COMMAND">
+            <customer-info>
+                <customer-no/>
+                <customer-name>abc</customer-name>
+                <customer-address>xyz</customer-address>
+                <search-date>20060701</search-date>
+            </customer-info>
+        </sample-command>
+    </app-data>
+</sample-command>

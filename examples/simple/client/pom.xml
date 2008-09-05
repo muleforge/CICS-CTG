@@ -1,0 +1,223 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.mule.transport.cics.examples</groupId>
+  <artifactId>simple-mule-client</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0</version>
+  <name>Maven Quick Start Archetype</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <muleVersion>2.0.0</muleVersion>
+  </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>muleforge.webdav.releases</id>
+      <url>dav:https://dav.muleforge.org/repository/${artifactId}/</url>
+    </repository>
+    <snapshotRepository>
+      <id>muleforge.webdav.snapshots</id>
+      <url>dav:https://dav.muleforge.org/snapshots.repository/${artifactId}/</url>
+    </snapshotRepository>
+    <site>
+      <id>muleforge.webdav.sites</id>
+      <url>dav:https://dav.muleforge.org/${artifactId}/</url>
+    </site>
+  </distributionManagement>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>Central</id>
+      <name>Maven repository switchboard</name>
+      <url>http://repo1.maven.org/maven2</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <dependencies>
+    <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-beans</artifactId>
+	   <version>2.5.4</version>
+       <scope>test</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>2.5.4</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+	    <groupId>activemq</groupId>
+    	<artifactId>activemq-core</artifactId>
+	    <version>3.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mule</groupId>
+      <artifactId>mule-core</artifactId>
+      <version>${muleVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mule.modules</groupId>
+      <artifactId>mule-module-client</artifactId>
+      <version>${muleVersion}</version>
+    </dependency>
+
+     <dependency>
+        <groupId>org.apache.activemq</groupId>
+        <artifactId>apache-activemq</artifactId>
+        <version>4.1.0-incubator</version>
+        <!-- and probably some excludes... -->
+      </dependency>
+
+     <dependency>
+      <groupId>commons-httpclient</groupId>
+      <artifactId>commons-httpclient</artifactId>
+      <version>3.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mule.transports</groupId>
+      <artifactId>mule-transport-tcp</artifactId>
+      <version>${muleVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mule.transports</groupId>
+      <artifactId>mule-transport-jms</artifactId>
+      <version>${muleVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mule.transports</groupId>
+      <artifactId>mule-transport-http</artifactId>
+      <version>${muleVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mule.transports</groupId>
+      <artifactId>mule-transport-vm</artifactId>
+      <version>${muleVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-core</artifactId>
+      <version>4.1.1</version>
+    </dependency>
+
+    <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>1.1</version>
+    </dependency>
+
+    <dependency>
+        <groupId>jboss</groupId>
+        <artifactId>jbossall-client</artifactId>
+        <version>3.2.3</version>
+    </dependency>
+
+    <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.14</version>
+    </dependency>
+
+    <dependency>
+        <groupId>backport-util-concurrent</groupId>
+        <artifactId>backport-util-concurrent</artifactId>
+        <version>2.1</version>
+    </dependency>
+ 
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+     <groupId>maven-plugins</groupId>
+     <artifactId>maven-cobertura-plugin</artifactId>
+     <version>1.1.1</version>
+     <type>plugin</type>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+      </plugin>
+      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+          <encoding>Shift_JIS</encoding>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals><goal>clean</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <encoding>SJIS</encoding>
+          <charset>SJIS</charset>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jdepend-maven-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <configuration>
+          <inputEncoding>SJIS</inputEncoding>
+          <encoding>SJIS</encoding>
+          <outputEncoding>UTF-8</outputEncoding>
+          <charset>UTF-8</charset>
+        </configuration>
+     </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>1.0-beta-1</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+      </plugin>
+
+    </plugins>
+  </reporting>
+</project>

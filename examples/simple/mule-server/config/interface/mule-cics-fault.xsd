@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://ogis-ri.co.jp/mule-cics-fault"
+xmlns="http://ogis-ri.co.jp/mule-cics-fault"
+elementFormDefault="qualified">
+
+<xsd:element name="fault-data">
+    <xsd:complexType>
+      <xsd:sequence>
+	<xsd:element name="fault-class" type="xsd:string"/>
+	<xsd:element name="fault-code" type="xsd:string"/>
+	<xsd:element name="fault-message" type="xsd:string"/>
+	<xsd:element name="fault-detail" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
+
+</xsd:schema>

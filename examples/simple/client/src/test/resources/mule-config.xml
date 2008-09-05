@@ -1,0 +1,31 @@
+<mule xmlns="http://www.mulesource.org/schema/mule/core/2.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:jms="http://www.mulesource.org/schema/mule/jms/2.0"
+      xsi:schemaLocation="http://www.mulesource.org/schema/mule/core/2.0 http://www.mulesource.org/schema/mule/core/2.0/mule.xsd
+      http://www.mulesource.org/schema/mule/jms/2.0 http://www.mulesource.org/schema/mule/jms/2.0/mule-jms.xsd">
+
+ <configuration defaultSynchronousEndpoints="true" defaultRemoteSync="true" />
+
+ <jms:activemq-connector name="ActiveMQConnector" brokerURL="tcp://localhost:61616" specification="1.1" />
+ <jms:object-to-jmsmessage-transformer name="ObjectToJMSMessage" /> 
+
+ <model name="mule-cics">
+
+     <service name="httpService">
+         <inbound><inbound-endpoint address="vm://endpoint1" /></inbound>
+
+         <outbound><outbound-pass-through-router>
+             <outbound-endpoint address="http://localhost:7777/seriola" remoteSync="true" />
+         </outbound-pass-through-router></outbound>
+     </service>
+
+     <service name="jmsService">
+       <inbound><inbound-endpoint address="vm://endpoint2" /></inbound>
+
+         <outbound><outbound-pass-through-router>
+             <outbound-endpoint address="jms://TEST.FOO" synchronous="true" remoteSync="true" />
+         </outbound-pass-through-router></outbound>
+     </service>
+
+   </model>
+</mule>
