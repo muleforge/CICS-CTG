@@ -2,21 +2,21 @@ package org.mule.transport.cicsStreaming.transformers;
 
 import java.io.ByteArrayOutputStream;
 import java.net.URLDecoder;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.HashMap;
 import java.util.StringTokenizer;
+
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamWriter;
 
 import org.mule.api.MuleMessage;
-import org.mule.transformer.AbstractMessageAwareTransformer;
 import org.mule.api.transformer.TransformerException;
 import org.mule.message.DefaultExceptionPayload;
-
-import org.mule.transport.cics.esbInterface.Interface2WADL;
-import org.mule.transport.cics.esbInterface.EsbInterfaceDigester;
+import org.mule.transformer.AbstractMessageAwareTransformer;
 import org.mule.transport.cics.esbInterface.EsbInterface;
+import org.mule.transport.cics.esbInterface.EsbInterfaceDigester;
+import org.mule.transport.cics.esbInterface.Interface2WADL;
 import org.mule.transport.cics.esbInterface.Operation;
 import org.mule.transport.cics.util.Constants;
 import org.mule.transport.cics.util.XsdElement;
@@ -70,8 +70,7 @@ public class RestToXml extends AbstractMessageAwareTransformer {
             String interfaceFile = message.getStringProperty("interfaceFile", "");
 
             // Decode the URL as the WADL client sends encoded URL
-            URLDecoder urlDecoder = new URLDecoder();
-            url = urlDecoder.decode(url, encoding);
+            url = URLDecoder.decode(url, encoding);
 
             // When the HTTP URI contains the string "?wadl", return WADL file.
             if (url.endsWith("?WADL") ||

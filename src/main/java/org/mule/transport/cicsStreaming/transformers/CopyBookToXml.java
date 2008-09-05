@@ -1,20 +1,21 @@
 package org.mule.transport.cicsStreaming.transformers;
 
-import java.io.InputStream;
 import java.io.BufferedInputStream;
-import java.io.OutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamWriter;
 
-import org.mule.api.MuleMessage;
 import org.mule.api.MuleEvent;
-import org.mule.api.transport.OutputHandler;
+import org.mule.api.MuleMessage;
 import org.mule.api.transformer.TransformerException;
+import org.mule.api.transport.OutputHandler;
 import org.mule.transformer.AbstractMessageAwareTransformer;
-
 import org.mule.transport.cics.esbInterface.Operation;
+import org.mule.transport.cics.i18n.CicsMessages;
 import org.mule.transport.cics.util.Constants;
 
 /** 
@@ -42,7 +43,7 @@ public class CopyBookToXml extends AbstractMessageAwareTransformer {
 	  try {
 		  " ".getBytes(encoding);
 	  } catch(UnsupportedEncodingException e) {
-		  throw new RuntimeException("Error in Mule config file. Invalid value for encoding of transformer 'CopyBookToXml'. The encoding '"+ encoding+"' is not supported.");		
+		  throw new RuntimeException(CicsMessages.invalidEncodingForTransformer(getClass().getName(),encoding).toString());		
 	  }
 	  this.encoding = encoding;
     }

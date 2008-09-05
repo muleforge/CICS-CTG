@@ -1,13 +1,13 @@
 package org.mule.transport.cics.esbInterface;
 
-import java.util.Map;
-import java.util.HashMap;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
+import org.mule.transport.cics.i18n.CicsMessages;
 import org.mule.util.IOUtils;
 
 /**
@@ -42,7 +42,7 @@ public class EsbInterfaceDigester {
           logger.info("Parsing interfaceFile: " + filename);
           InputStream is = IOUtils.getResourceAsStream(filename, this.getClass());
           if (is == null)
-              throw new IOException("Error loading interface file : '" + filename + "'");
+              throw new IOException(CicsMessages.errorLoadingInterfaceFile(filename).toString());
         
           esbInterface = validate(is);
           logger.info("Successfully parsed interfaceFile: " + filename);
@@ -74,14 +74,13 @@ public class EsbInterfaceDigester {
             if (opArray[i].getFault() != null) {
                 esbOperation.setFaultXsd(opArray[i].getFault().getXsd());
             }
-            
             if (opArray[i].getProperty() != null) {
                 Property property = new Property();
                 property.setApplProgramName(opArray[i].getProperty().getApplProgramName());
                 property.setTransactionID(opArray[i].getProperty().getTransactionID());
                 esbOperation.setProperty(property);
             }else{
-            	throw new RuntimeException("Error while parsing interface file: Expecting 'property' tag in 'operation' tag for operation name '"+opArray[i].getName()+"'");
+            	throw new RuntimeException(CicsMessages.errorParsingInterfaceFile(esbOperation.getName()).toString());
             }
 
             esbInterface.addOperation(esbOperation);

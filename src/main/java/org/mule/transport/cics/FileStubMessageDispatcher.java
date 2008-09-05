@@ -2,13 +2,19 @@ package org.mule.transport.cics;
 
 import java.io.InputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.mule.transport.AbstractMessageDispatcher;
 import org.mule.api.MuleMessage;
 import org.mule.api.MuleEvent;
 import org.mule.message.DefaultExceptionPayload;
+import org.mule.api.endpoint.ImmutableEndpoint;
 import org.mule.api.endpoint.OutboundEndpoint;
 import org.mule.util.IOUtils;
 
+import org.mule.transport.cics.i18n.CicsMessages;
+import org.mule.transport.cics.transformers.LoggingTransformer;
 import org.mule.transport.cics.util.Constants;
 
 /**
@@ -59,15 +65,16 @@ public class FileStubMessageDispatcher extends AbstractMessageDispatcher {
             try {
                 InputStream is = IOUtils.getResourceAsStream(filename, this.getClass());
                 if (is == null) {
-                	throw new IOException("Error opening the file '" + filename + "'");
+                	throw new IOException(CicsMessages.errorOpeningFile(filename).toString());
                 }
                 response = IOUtils.toByteArray(is);
             } catch (Exception e) {
-                throw new Exception("Error reading '" + filename + "'", e);
+                throw new Exception(CicsMessages.errorReadingFile(filename).toString(), e);
             }
 
             message.setPayload(response);
-            message.applyTransformers(this.endpoint.getResponseTransformers());
+            List transformers = getTransformerList(this.endpoint);
+            message.applyTransformers(transformers);
 
 		} catch (Throwable e) {
             e.printStackTrace();
@@ -78,6 +85,17 @@ public class FileStubMessageDispatcher extends AbstractMessageDispatcher {
         }
 
         return message;
+	}
+	
+	private List getTransformerList(ImmutableEndpoint endpoint){
+		List transformers = new ArrayList();
+		for(int i=0;i<this.endpoint.getResponseTransformers().size();i++){
+			Object transformer = this.endpoint.getResponseTransformers().get(i);
+			if (!(transformer instanceof LoggingTransformer)) {
+				transformers.add(transformer);
+			}
+		}
+		return transformers;
 	}
 
     private String[] getParametersInFilename(String filename) {

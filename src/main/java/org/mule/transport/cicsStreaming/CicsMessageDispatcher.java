@@ -5,10 +5,7 @@ import java.io.InputStream;
 import java.io.IOException;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Iterator;
 import javax.resource.cci.Connection;
-
-import org.mule.DefaultMuleMessage;
 import org.mule.message.DefaultExceptionPayload;
 import org.mule.transport.AbstractMessageDispatcher;
 import org.mule.api.transport.OutputHandler;
@@ -18,6 +15,7 @@ import org.mule.api.endpoint.OutboundEndpoint;
 
 import org.mule.transport.cics.esbInterface.Operation;
 import org.mule.transport.cics.esbInterface.Property;
+import org.mule.transport.cics.i18n.CicsMessages;
 
 /**
  * <code>CicsMessageDispatcher</code> dispatches Mule events to mainframe
@@ -126,7 +124,7 @@ public class CicsMessageDispatcher extends AbstractMessageDispatcher {
 
         Operation operation = (Operation) message.getProperty("operation", null);
         if (operation == null) {
-            throw new Exception("CicsMessageDispatcher - NULL_OPERATION");
+            throw new Exception(CicsMessages.nullOperation().toString());
         }
 
         String operationName = operation.getName();

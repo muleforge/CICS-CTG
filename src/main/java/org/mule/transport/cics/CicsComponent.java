@@ -11,15 +11,9 @@ import org.mule.api.MuleMessage;
 import org.mule.message.DefaultExceptionPayload;
 import org.mule.transport.cics.util.Constants;
 import org.mule.transport.cics.esbInterface.Operation;
+import org.mule.transport.cics.i18n.CicsMessages;
 
 /** This component receives XML messages sent to mule-cics.
- * 
- * During initialization, this component parses the interface file configured
- * in mule-config.xml.
- * 
- * For each incoming message, this method detects the operation name, sets the
- * operation as message property and forwards for further processing as per the
- * configuration in mule-config.xml.
  */
 public class CicsComponent implements Callable, ServiceAware {
 
@@ -29,17 +23,11 @@ public class CicsComponent implements Callable, ServiceAware {
   private CicsService cicsService;
 
   public void setService(Service service) throws ConfigurationException {
-
       try { 
           this.cicsService = (CicsService) service;
       } catch (ClassCastException e) {          
-          String errMsg = "Error in Mule configuration file." +
-              " The <component> class CicsComponent" + 
-              " can only be used inside <mule-cics:service>."; 
-          throw new ConfigurationException(new Exception(errMsg, e));
+          throw new ConfigurationException(new Exception(CicsMessages.errorInConfigurationFile().toString(), e));
       }
-
-
   }
   
   public Service getService() {
@@ -57,6 +45,11 @@ public class CicsComponent implements Callable, ServiceAware {
      message.setStringProperty("interfaceFile", interfaceFile);
      context.transformMessage();
 
+     // Check if an error occured during inbound transformation.
+     if (message.getExceptionPayload() != null) {
+         return message;
+     }
+
      boolean skipProcessing
          = message.getBooleanProperty(Constants.SKIP_FURTHER_PROCESSING, false);     
      if (skipProcessing) {
@@ -68,8 +61,7 @@ public class CicsComponent implements Callable, ServiceAware {
      Operation operation = cicsService.getEsbInterface().getOperation(operationName);
  
      if (operation == null) {
-        String errMsg = "Operation Not Supported. The operation '" + operationName + 
-                        "' is not declared in the file '" + interfaceFile + "'";
+        String errMsg = CicsMessages.operationNotSupported(operationName, interfaceFile).toString();
         Exception e = new Exception(errMsg);
         message.setExceptionPayload(new DefaultExceptionPayload(e));
         return message;

@@ -2,11 +2,10 @@ package org.mule.transport.cicsStreaming.transformers;
 
 import java.io.ByteArrayOutputStream;
 
-import org.mule.transformer.AbstractMessageAwareTransformer;
-import org.mule.api.transport.OutputHandler;
-import org.mule.api.transformer.TransformerException;
 import org.mule.api.MuleMessage;
-
+import org.mule.api.transformer.TransformerException;
+import org.mule.api.transport.OutputHandler;
+import org.mule.transformer.AbstractMessageAwareTransformer;
 import org.mule.transport.cics.util.Constants;
 
 /*

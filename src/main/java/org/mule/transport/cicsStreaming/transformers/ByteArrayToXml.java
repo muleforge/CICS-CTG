@@ -1,9 +1,7 @@
 package org.mule.transport.cicsStreaming.transformers;
 
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.io.StringWriter;
-import org.w3c.dom.Document;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
@@ -11,11 +9,11 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import org.mule.transformer.AbstractMessageAwareTransformer;
-import org.mule.api.transformer.TransformerException;
 import org.mule.api.MuleMessage;
-import org.mule.message.DefaultExceptionPayload;
+import org.mule.api.transformer.TransformerException;
+import org.mule.transformer.AbstractMessageAwareTransformer;
 import org.mule.transport.cics.util.Constants;
+import org.w3c.dom.Document;
 
 /*
  * Used to convert a byte array to XML with UTF-8 encoding.

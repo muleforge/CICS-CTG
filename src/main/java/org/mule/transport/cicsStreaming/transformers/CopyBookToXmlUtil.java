@@ -2,12 +2,9 @@ package org.mule.transport.cicsStreaming.transformers;
 
 import java.io.InputStream;
 import java.util.Iterator;
-import java.io.UnsupportedEncodingException;
 import javax.xml.stream.XMLStreamWriter;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
+import org.mule.transport.cics.i18n.CicsMessages;
 import org.mule.transport.cics.util.XsdElement;
 import org.mule.transport.cics.util.XsdReader;
 import org.mule.transport.cics.util.XsdReaderFactory;
@@ -19,8 +16,6 @@ import org.mule.transport.cics.util.XsdReaderFactory;
  * the XML element's value from the mainframe bytes.
  */
 class CopyBookToXmlUtil {
-
-    private static Log logger = LogFactory.getLog(CopyBookToXmlUtil.class);
 
     /** mainframe binary data */
     private InputStream copybookStream;
@@ -109,10 +104,7 @@ class CopyBookToXmlUtil {
         while (i < length) {
           int c = copybookStream.read();
           if (c == -1) {
-            throw new Exception("COPYBOOK_TO_XML_ERR: " +
-                      "Error converting mainframe response to XML, " +
-                      "due to insufficient length of response message" + 
-                      " Could not read " + xsdElement.getName());
+            throw new Exception(CicsMessages.copyBookToXmlError(xsdElement.getName()).toString());
           }
 
           bytes[i++] = (byte) c;
@@ -121,8 +113,7 @@ class CopyBookToXmlUtil {
         try {
             writer.writeCharacters(new String(bytes, copybookEncoding));
         } catch (Exception e) {
-            throw new Exception("Error reading " + xsdElement.getName() +
-                                " from mainframe response", e);
+            throw new Exception(CicsMessages.errorReadingXsdEleFromResponse(xsdElement.getName()).toString(), e);
         }
     }
 }

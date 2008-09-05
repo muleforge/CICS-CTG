@@ -1,17 +1,16 @@
 package org.mule.transport.cicsStreaming.transformers;
 
-import java.io.InputStream;
 import java.io.FilterInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.mule.api.MuleMessage;
-import org.mule.transformer.AbstractMessageAwareTransformer;
 import org.mule.api.transformer.TransformerException;
-
+import org.mule.transformer.AbstractMessageAwareTransformer;
+import org.mule.transport.cics.i18n.CicsMessages;
 import org.mule.transport.cics.util.Constants;
 
 /**
@@ -39,7 +38,7 @@ public class OGISCopyBookIncomingHandler extends AbstractMessageAwareTransformer
     try {
         " ".getBytes(encoding);
     } catch(UnsupportedEncodingException e) {
-        throw new RuntimeException("Error in Mule config file. Invalid value for encoding of transformer 'OGISCopyBookIncomingHandler'. The encoding '"+ encoding+"' is not supported.");		
+        throw new RuntimeException(CicsMessages.invalidEncodingForTransformer(getClass().getName(),encoding).toString());		
     }
     this.encoding = encoding;
   }
@@ -88,8 +87,7 @@ public class OGISCopyBookIncomingHandler extends AbstractMessageAwareTransformer
     } else {
         // Return fault code in error message.
         String faultCode = header.getLzaplhdrRtncd();
-        String errMsg = "Error code LZAPLHDR-RTNCD='" + faultCode + "' in CICS Response.";
-        throw new IOException(errMsg);
+        throw new IOException(CicsMessages.errorInResposnse(faultCode).toString());
     }
   }
 
@@ -140,9 +138,7 @@ public class OGISCopyBookIncomingHandler extends AbstractMessageAwareTransformer
     while (i < length) {
         int c = is.read();
         if (c == -1) {
-            throw new IOException("COPYBOOK_TO_XML_ERR: " +
-                      "Error reading header of mainframe response, " +
-                      "due to insufficient length of response message"); 
+            throw new IOException(CicsMessages.insufficientResponseLength().toString()); 
         }
 
         bytes[i++] = (byte) c;

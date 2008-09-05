@@ -1,7 +1,6 @@
 package org.mule.transport.cics.transformers;
 
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.io.StringWriter;
 import org.w3c.dom.Document;
 
@@ -14,7 +13,6 @@ import javax.xml.transform.stream.StreamResult;
 import org.mule.transformer.AbstractMessageAwareTransformer;
 import org.mule.api.transformer.TransformerException;
 import org.mule.api.MuleMessage;
-import org.mule.message.DefaultExceptionPayload;
 import org.mule.transport.cics.util.Constants;
 
 /*

@@ -17,7 +17,6 @@ import javax.xml.stream.events.EndElement;
 
 import org.mule.transformer.AbstractMessageAwareTransformer;
 import org.mule.api.MuleMessage;
-import org.mule.api.ExceptionPayload;
 import org.mule.api.transformer.TransformerException;
 
 import org.mule.transport.cics.util.Constants;

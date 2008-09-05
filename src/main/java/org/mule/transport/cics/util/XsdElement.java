@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.mule.transport.cics.i18n.CicsMessages;
+
 /**
  * This class contains the information for an element in an Xsd file.<BR>
  */
@@ -39,7 +41,7 @@ public class XsdElement {
 			try {
 				this.length = Integer.parseInt(len);
 			} catch (NumberFormatException e) {
-				throw new NumberFormatException("Invalid value '" + len + "' in length attribute for XSD element '" + name + "'");
+				throw new NumberFormatException(CicsMessages.invalidLengthOfXsdElement(len,name).toString());
 			}
 		}
 		this.occurs = 1;

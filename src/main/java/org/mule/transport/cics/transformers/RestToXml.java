@@ -70,8 +70,7 @@ public class RestToXml extends AbstractMessageAwareTransformer {
             String interfaceFile = message.getStringProperty("interfaceFile", "");
 
             // Decode the URL as the WADL client sends encoded URL
-            URLDecoder urlDecoder = new URLDecoder();
-            url = urlDecoder.decode(url, encoding);
+            url = URLDecoder.decode(url, encoding);
 
             // When the HTTP URI contains the string "?wadl", return WADL file.
             if (url.endsWith("?WADL") ||

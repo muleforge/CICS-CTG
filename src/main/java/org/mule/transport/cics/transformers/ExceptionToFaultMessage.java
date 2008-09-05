@@ -4,7 +4,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import javax.xml.stream.XMLOutputFactory;
-import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 import org.mule.transport.cics.util.Constants;
 import org.mule.transformer.AbstractMessageAwareTransformer;

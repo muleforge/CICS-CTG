@@ -27,7 +27,6 @@ public class CicsService extends SedaService {
 	protected synchronized void doInitialise() throws InitialisationException {
 		super.doInitialise();
 		try {
-			logger.info("In doInitialise of CicsService");
 			if (this.esbInterface == null) {
 				this.esbInterface 
 				= EsbInterfaceDigester.getInstance().parse(interfaceFile);
@@ -35,34 +34,6 @@ public class CicsService extends SedaService {
 		} catch (Exception e) {          			
 			throw new InitialisationException(e, this);
 		}
-		// Verify the interface file. 
-		// The operation name in the interface file should be same as the root
-		// element of the inbound XSD for that operation.
-		/*
-	      try {
-	          XsdReaderFactory xsdFactory = XsdReaderFactory.getInstance();
-	          List operations = esbInterface.getOperations();
-	          for (int i = 0; i < operations.size(); i++) {
-	              Operation operation = (Operation) operations.get(i);
-	              String inboundXsd = operation.getInboundXsd();
-	              if (inboundXsd != null && !inboundXsd.equals("")) {
-	                  XsdReader xsdReader = xsdFactory.getXsdReader(inboundXsd);
-	                  String rootElementName = xsdReader.getRootXsdElement().getName();
-	                  if (!rootElementName.equals(operation.getName())) {
-	                    String msg = "ERROR: Operation name in interface file is " +
-	                           "not same as root element in inbound XSD.\n" +
-	                           "interfaceFile={" + interfaceFile + "}, " +
-	                           "operationName={" + operation.getName() + "}, " +
-	                           "inboundXsd={" + inboundXsd + "}, " +
-	                           "rootElementName={" + rootElementName + "}";
-	                    throw new Exception(msg);
-	                  }
-	              }
-	          }
-	      } catch (Exception e) {          
-	          throw new ConfigurationException(e);
-	      }*/
-		logger.info("doInitialise of CicsService returned successfully.");
 	}
 
 }

@@ -1,18 +1,21 @@
 package org.mule.transport.cics;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Iterator;
 import javax.resource.cci.Connection;
-
 import org.mule.message.DefaultExceptionPayload;
 import org.mule.transport.AbstractMessageDispatcher;
 import org.mule.transport.cics.esbInterface.Operation;
 import org.mule.transport.cics.esbInterface.Property;
+import org.mule.transport.cics.i18n.CicsMessages;
 import org.mule.api.MuleEvent;
 import org.mule.api.MuleMessage;
+import org.mule.api.endpoint.ImmutableEndpoint;
 import org.mule.api.endpoint.OutboundEndpoint;
 
+import org.mule.transport.cics.transformers.LoggingTransformer;
 import org.mule.transport.cics.util.Constants;
 
 /**
@@ -74,8 +77,8 @@ public class CicsMessageDispatcher extends AbstractMessageDispatcher {
             byte[] reply = ctgAdapter.invoke(connection, request);
 
             message.setPayload(reply);
-            message.applyTransformers(this.endpoint.getResponseTransformers());
-
+            List transformers = getTransformerList(endpoint);
+            message.applyTransformers(transformers);
             ctgAdapter.commit(connection);
 
         } catch (Throwable e) {
@@ -97,6 +100,17 @@ public class CicsMessageDispatcher extends AbstractMessageDispatcher {
 
         return message;
     }
+    
+    private List getTransformerList(ImmutableEndpoint endpoint){
+		List transformers = new ArrayList();
+		for(int i=0;i<this.endpoint.getResponseTransformers().size();i++){
+			Object transformer = this.endpoint.getResponseTransformers().get(i);
+			if (!(transformer instanceof LoggingTransformer)) {
+				transformers.add(transformer);
+			}
+		}
+		return transformers;
+	}
 
     /**
      * This method gets the instance of CtgAdapter for this message
@@ -106,7 +120,7 @@ public class CicsMessageDispatcher extends AbstractMessageDispatcher {
 
         Operation operation = (Operation) message.getProperty("operation", null);
         if (operation == null) {
-            throw new Exception("CicsMessageDispatcher - NULL_OPERATION");
+            throw new Exception(CicsMessages.nullOperation().toString());
         }
 
         String operationName = operation.getName();

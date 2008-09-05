@@ -1,23 +1,20 @@
 package org.mule.transport.cicsStreaming.transformers;
 
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamWriter;
 
-import org.mule.transformer.AbstractMessageAwareTransformer;
 import org.mule.api.MuleEvent;
 import org.mule.api.MuleMessage;
-import org.mule.api.ExceptionPayload;
-import org.mule.api.transport.OutputHandler;
 import org.mule.api.transformer.TransformerException;
-
+import org.mule.api.transport.OutputHandler;
+import org.mule.transformer.AbstractMessageAwareTransformer;
 import org.mule.transport.cics.util.Constants;
 
 /**

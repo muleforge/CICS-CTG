@@ -2,17 +2,18 @@ package org.mule.transport.cicsStreaming.transformers;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLEventWriter;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.events.XMLEvent;
+
+import org.mule.api.ExceptionPayload;
+import org.mule.api.MuleMessage;
+import org.mule.api.transformer.TransformerException;
 import org.mule.message.DefaultExceptionPayload;
 import org.mule.transformer.AbstractMessageAwareTransformer;
-import org.mule.api.MuleMessage;
-import org.mule.api.ExceptionPayload;
-import org.mule.api.transformer.TransformerException;
-
 import org.mule.transport.cics.util.Constants;
 
 /**

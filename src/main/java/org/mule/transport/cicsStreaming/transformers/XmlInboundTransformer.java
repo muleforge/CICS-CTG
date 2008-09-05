@@ -1,17 +1,16 @@
 package org.mule.transport.cicsStreaming.transformers;
 
 import java.io.ByteArrayInputStream;
+
 import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.util.StreamReaderDelegate;
 
-import org.mule.transformer.AbstractMessageAwareTransformer;
-import org.mule.api.transformer.TransformerException;
 import org.mule.api.MuleMessage;
+import org.mule.api.transformer.TransformerException;
 import org.mule.message.DefaultExceptionPayload;
-
-import org.mule.transport.cics.util.XmlUtils;
+import org.mule.transformer.AbstractMessageAwareTransformer;
 
 /**
  * This class implements the inbound transformers for messages received by  

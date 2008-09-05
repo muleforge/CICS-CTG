@@ -32,10 +32,9 @@ public class XmlUtilsTest extends TestCase {
      * Rigourous Test :-)
      */
 	public void testGetRootElementName() throws Exception {
-		XmlUtils handler = new XmlUtils();
 		String xml = "<?xml version='1.0' ?><test></test>";
        
-		String operationName = handler.getRootElementName(xml.getBytes());
+		String operationName = XmlUtils.getRootElementName(xml.getBytes());
 
 		assertEquals("test", operationName);
 	}

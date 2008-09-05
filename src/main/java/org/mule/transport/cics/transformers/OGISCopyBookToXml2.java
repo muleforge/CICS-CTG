@@ -16,6 +16,7 @@ import org.mule.api.transformer.TransformerException;
 
 import org.mule.transport.cics.util.Constants;
 import org.mule.transport.cics.esbInterface.Operation;
+import org.mule.transport.cics.i18n.CicsMessages;
 
 /**
  * Transformer to convert mainframe response to XML.
@@ -33,6 +34,7 @@ public class OGISCopyBookToXml2 extends AbstractMessageAwareTransformer {
 
 	/** StAX Factory for creating XML events used to write XML */
 	private static XMLEventFactory eventFactory;
+	
     static {
         outputFactory = XMLOutputFactory.newInstance();
         outputFactory.setProperty("javax.xml.stream.isRepairingNamespaces", Boolean.TRUE);
@@ -49,7 +51,7 @@ public class OGISCopyBookToXml2 extends AbstractMessageAwareTransformer {
       try {
           " ".getBytes(encoding);
       } catch(UnsupportedEncodingException e) {
-          throw new RuntimeException("Error in Mule config file. Invalid value for encoding of transformer 'OGISCopyBookToXml2'. The encoding '"+ encoding+"' is not supported.");		
+          throw new RuntimeException(CicsMessages.invalidEncodingForTransformer(getClass().getName(),encoding).toString());		
       }
       this.encoding = encoding;
     }
@@ -64,9 +66,7 @@ public class OGISCopyBookToXml2 extends AbstractMessageAwareTransformer {
         try {
             byte[] copyBookBytes = message.getPayloadAsBytes();
             if (copyBookBytes.length < HEADER_LENGTH) {
-              String errMsg = "Insufficient length of mainframe response. " +
-                   "Length = '" + copyBookBytes.length + "'. bytes";
-              throw new Exception(errMsg);
+              throw new Exception(CicsMessages.insufficientResponseLength().toString());
             }
 
             byte[] bytesHeader = new byte[HEADER_LENGTH - DCI_HEADER_LENGTH];

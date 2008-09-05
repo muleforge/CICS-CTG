@@ -5,13 +5,14 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamWriter;
 
-import org.mule.util.IOUtils;
 import org.mule.transport.cics.util.XsdElement;
 import org.mule.transport.cics.util.XsdReader;
 import org.mule.transport.cics.util.XsdReaderFactory;
+import org.mule.util.IOUtils;
 
 public class Interface2WADL {
 	

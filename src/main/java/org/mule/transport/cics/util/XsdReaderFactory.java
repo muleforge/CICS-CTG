@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.mule.transport.cics.i18n.CicsMessages;
 import org.mule.util.IOUtils;
 
 /**
@@ -39,7 +40,7 @@ public class XsdReaderFactory {
 			reader = new XsdReader();
 			InputStream is = IOUtils.getResourceAsStream(xsdFile, this.getClass());
             if (is == null)
-				throw new IOException("Error loading XSD file : '" + xsdFile + "'");
+				throw new IOException(CicsMessages.errorReadingXsdFile(xsdFile).toString());
 
 			reader.process(is);
 			this.xsdReaderMap.put(xsdFile, reader);
@@ -48,8 +49,7 @@ public class XsdReaderFactory {
 		return reader;
 
       } catch (Exception e) {
-		throw new IOException("Error loading XSD file : '" + xsdFile + "'. Cause: " + e.getMessage());
-
+    	  throw new IOException(CicsMessages.errorLoadingXsdFile(xsdFile, e.getMessage()).toString());
       }
 	}
 }

@@ -7,6 +7,7 @@ import org.apache.commons.logging.LogFactory;
 import org.mule.api.MuleMessage;
 import org.mule.transformer.AbstractMessageAwareTransformer;
 import org.mule.api.transformer.TransformerException;
+import org.mule.transport.cics.i18n.CicsMessages;
 import org.mule.transport.cics.util.Constants;
 
 /**
@@ -34,7 +35,7 @@ public class OGISCopyBookIncomingHandler extends AbstractMessageAwareTransformer
     try {
         " ".getBytes(encoding);
     } catch(UnsupportedEncodingException e) {
-        throw new RuntimeException("Error in Mule config file. Invalid value for encoding of transformer 'OGISCopyBookIncomingHandler'. The encoding '"+ encoding+"' is not supported.");		
+        throw new RuntimeException(CicsMessages.invalidEncodingForTransformer(getClass().getName(), encoding).toString());		
     }
     this.encoding = encoding;
   }
@@ -56,8 +57,7 @@ public class OGISCopyBookIncomingHandler extends AbstractMessageAwareTransformer
   protected Object transform(byte[] copyBookBytes, String encoding) throws Exception {
 
     if (copyBookBytes.length < HEADER_LENGTH) {
-        String errMsg = "The length of CICS Response is less than minimum required.";
-        throw new Exception(errMsg);
+        throw new Exception(CicsMessages.insufficientResponseLength().toString());
     }
 
     // Read the header from the mainframe response.
@@ -85,8 +85,7 @@ public class OGISCopyBookIncomingHandler extends AbstractMessageAwareTransformer
     } else {
         // Return fault code in error message.
         String faultCode = header.getLzaplhdrRtncd();
-        String errMsg = "Error code LZAPLHDR-RTNCD='" + faultCode + "' in CICS Response.";
-        throw new Exception(errMsg);
+        throw new Exception(CicsMessages.errorInResposnse(faultCode).toString());
     }
   }
 

@@ -3,8 +3,8 @@ package org.mule.transport.cics.transformers;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import org.mule.transport.cics.util.Constants;
 
+import org.mule.transport.cics.util.Constants;
 import org.mule.util.IOUtils;
 
 /**

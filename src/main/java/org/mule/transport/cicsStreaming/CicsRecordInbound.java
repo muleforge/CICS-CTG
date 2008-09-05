@@ -10,12 +10,8 @@ package org.mule.transport.cicsStreaming;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-
 import javax.resource.cci.Record;
 import javax.resource.cci.Streamable;
-
-import org.mule.transport.cics.util.Constants;
 import org.mule.api.transport.OutputHandler;
 
 /**

@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLOutputFactory;
@@ -13,9 +14,10 @@ import javax.xml.stream.XMLStreamWriter;
 import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
-import org.mule.util.IOUtils;
+
 import org.mule.transport.cics.util.XsdReader;
 import org.mule.transport.cics.util.XsdReaderFactory;
+import org.mule.util.IOUtils;
 
 public class Interface2WSDL {
 
@@ -27,12 +29,12 @@ public class Interface2WSDL {
 	/**
      * Entry point to execute from command-line console.
      *  
-     * Usage: java org.mule.transport.cics.Interface2DocumentLiteralWSDL <interfaceFile>
+     * Usage: java org.mule.transport.cics.Interface2WSDL <interfaceFile>
      */
 	public static void main(String[] args) throws Exception {
 
 		if (args.length < 2) {
-			System.out.println("Usage: java org.mule.transport.cics.Interface2DocumentLiteralWSDL <interfaceFile> <serviceLocation>");
+			System.out.println("Usage: java org.mule.transport.cics.Interface2WSDL <interfaceFile> <serviceLocation>");
 			System.out.println("<interfaceFile>   - path to the interface file");
 			System.out.println("<serviceLocation> - the location of the webservice e.g http://xyz.com/abc");
 			return;
@@ -415,7 +417,7 @@ public class Interface2WSDL {
 
 		// START - <wsdl:portType>
 		writer.writeStartElement("wsdl", "portType", WSDL_NS);
-		writer.writeAttribute("name", "SeriolaProxy");
+		writer.writeAttribute("name", "MuleCicsProxy");
 
 		for (int i=0; i<operations.size(); i++) {
 			Operation operation = (Operation) operations.get(i);
@@ -488,8 +490,8 @@ public class Interface2WSDL {
 	private void writeBindings(XMLStreamWriter writer, String targetNs, List operations) throws XMLStreamException {
 		// START - <wsdl:binding>
 		writer.writeStartElement("wsdl", "binding", WSDL_NS);
-		writer.writeAttribute("name", "SeriolaUMOSoapBinding");
-		writer.writeAttribute("type", "impl:SeriolaProxy");
+		writer.writeAttribute("name", "MuleCicsUMOSoapBinding");
+		writer.writeAttribute("type", "impl:MuleCicsProxy");
 
 		// START - <soap:binding>
 		writer.writeStartElement("soap", "binding", WSDLSOAP_NS);
@@ -592,12 +594,12 @@ public class Interface2WSDL {
 	private void writeService(XMLStreamWriter writer, String serviceLocation) throws XMLStreamException {
 		// START - <wsdl:service>
 		writer.writeStartElement("wsdl", "service", WSDL_NS);
-		writer.writeAttribute("name", "SeriolaUMO");
+		writer.writeAttribute("name", "MuleCicsUMO");
 
 		// START - <wsdl:port>
 		writer.writeStartElement("wsdl", "port", WSDL_NS);
-		writer.writeAttribute("binding", "impl:SeriolaUMOSoapBinding");
-		writer.writeAttribute("name", "SeriolaUMO");
+		writer.writeAttribute("binding", "impl:MuleCicsUMOSoapBinding");
+		writer.writeAttribute("name", "MuleCicsUMO");
 
 		// START - <soap:address>
 		writer.writeStartElement("soap", "address", WSDLSOAP_NS);

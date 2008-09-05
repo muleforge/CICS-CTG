@@ -20,7 +20,8 @@ import org.mule.transport.cics.util.Constants;
 /**
  * This class implements javax.resource.cci.Record and
  * javax.resoure.cci.Streamable. The class holds a inbound
- * and outbound message when the Mule accesses to CTG.
+ * and outbound message when the Mule accesses to
+ * CTG(IBM CICS Transaction gateway).
  */
 class CICSRecord implements java.io.Serializable, Record, Streamable {
 
@@ -28,7 +29,7 @@ class CICSRecord implements java.io.Serializable, Record, Streamable {
   private static final long serialVersionUID = 1L;
 
   /** This variable is a communication buffer for inbound and outbound. */
-  byte[] bytes = null;
+  private byte[] bytes = null;
 
   /** gets a record name */
   private String name = CICSRecord.class.getName();
@@ -52,7 +53,7 @@ class CICSRecord implements java.io.Serializable, Record, Streamable {
   }
 
   /**
-   * A constructor with a message size.
+   * A constructor with a mesage size.
    *
    * @param size
    */
@@ -61,7 +62,7 @@ class CICSRecord implements java.io.Serializable, Record, Streamable {
   }
 
   /**
-   * This method returns an byte array.
+   * This method returns an byte array of the message.
    *
    * @return byte[]
    */
@@ -70,7 +71,7 @@ class CICSRecord implements java.io.Serializable, Record, Streamable {
   }
 
   /**
-   * This method creates a clone object of this class.
+   * This method creates a clone object.
    *
    * @return returns a clone object.
    */

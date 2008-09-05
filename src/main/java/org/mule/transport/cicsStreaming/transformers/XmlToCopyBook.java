@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Stack;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamReader;
-
+import org.mule.transport.cics.i18n.CicsMessages;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -67,7 +67,7 @@ public class XmlToCopyBook extends AbstractMessageAwareTransformer {
         try {
             Operation operation = (Operation) message.getProperty("operation", null);
             if (operation == null) {
-                throw new Exception("Configuration problem. XmlToCopyBook transformer was unable to get the operation settings for the received message");
+                throw new Exception(CicsMessages.unableToGetMsgSettings().toString());
             }
             
             final String inboundXsd = operation.getInboundXsd();

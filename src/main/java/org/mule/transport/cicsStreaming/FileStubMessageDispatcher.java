@@ -9,8 +9,6 @@ import org.mule.message.DefaultExceptionPayload;
 import org.mule.api.endpoint.OutboundEndpoint;
 import org.mule.util.IOUtils;
 
-import org.mule.transport.cics.util.Constants;
-
 /**
  * <code>FileStubMessageDispatcher</code> dispatches Mule events for stub
  * testing.

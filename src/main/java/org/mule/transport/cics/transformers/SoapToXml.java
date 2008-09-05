@@ -44,9 +44,7 @@ public class SoapToXml extends AbstractMessageAwareTransformer {
         }
 
        String interfaceFile = message.getStringProperty("interfaceFile", "");
-       logger.info("In SoapToXml interfaceFile="+interfaceFile);
        String soapOutboundNamespace = EsbInterface.getNamespaceOfWsdl(interfaceFile);
-       logger.info("In SoapToXml soapOutboundNamespace="+soapOutboundNamespace);
        message.setStringProperty("OUTBOUND_NAMESPACE", soapOutboundNamespace);
        InputStream soapIs = (InputStream) message.getPayload(InputStream.class);
        byte[] bodyContents = XmlUtils.getInternalXML(soapIs, BODY_TAG, NAMESPACE);

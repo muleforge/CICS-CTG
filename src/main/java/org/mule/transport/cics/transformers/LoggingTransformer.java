@@ -1,16 +1,8 @@
 package org.mule.transport.cics.transformers;
 
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.File;
-
 import org.mule.transformer.AbstractMessageAwareTransformer;
-import org.mule.api.transformer.TransformerException;
 import org.mule.api.MuleMessage;
-import org.mule.DefaultMuleMessage;
-import org.mule.message.DefaultExceptionPayload;
-
-import org.mule.transport.cics.util.Constants;
 
 /**
  * Logs the message into a file.
@@ -33,12 +25,10 @@ public class LoggingTransformer extends AbstractMessageAwareTransformer {
   }
 
   public Object transform(MuleMessage message, String outputEncoding) {
+	FileOutputStream fos = null;
     try {
       if (message.getExceptionPayload() != null)
         return message;
-
-      boolean skipProcessing = message.getBooleanProperty(Constants.SKIP_RESPONSE_TRANSFORMER, false);
-      if (skipProcessing) return message;
 
       byte[] bytes = message.getPayloadAsBytes();
       String filename = this.file;
@@ -52,13 +42,18 @@ public class LoggingTransformer extends AbstractMessageAwareTransformer {
       synchronized(this) { id++; }
       filename = filename + "-" + id;
 
-      FileOutputStream fos = new FileOutputStream(filename);
+      fos = new FileOutputStream(filename);
       fos.write(bytes);
 
     } catch (Throwable e) {
       e.printStackTrace();
     } finally {
-      return message;
+    	if(fos != null ){
+    		try{
+    			fos.close();
+    		}catch (Exception e) {/*Do nothing*/}
+    	}
+        return message;
     }
   }
 

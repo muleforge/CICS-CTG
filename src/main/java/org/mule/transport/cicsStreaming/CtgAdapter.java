@@ -9,13 +9,12 @@ package org.mule.transport.cicsStreaming;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
+import org.mule.transport.cics.i18n.CicsMessages;
 import javax.resource.ResourceException;
 import javax.resource.cci.Connection;
 import javax.resource.cci.ConnectionFactory;
 import javax.resource.cci.LocalTransaction;
 import javax.resource.cci.Record;
-
 import com.ibm.connector2.cics.ECIInteractionSpec;
 import com.ibm.connector2.cics.ECIManagedConnectionFactory;
 import com.ibm.connector2.cics.ECIResourceAdapterRc;
@@ -98,7 +97,7 @@ public class CtgAdapter {
             con = this.connectionFactory.getConnection();
         } catch (ResourceException e) {
             logger.error(e);
-            throw new Exception("CICS_ERR: Error connecting to CICS", e);
+            throw new Exception(CicsMessages.cicsConnectionError().toString(), e);
         }
 
         logger.debug("###### connect(end) ######");
@@ -139,82 +138,80 @@ public class CtgAdapter {
 
         } catch (com.ibm.connector2.cics.CICSTxnAbendException re) {
 
-            String msg = "Error - CICS Abend: "; // CICS abend
+            String msg = null; // CICS abend
             String errorCode = re.getErrorCode();
             if (errorCode == null) {
-                msg += "Check CICS log.";
+                msg = "Check CICS log.";
             } else if ("AEIO".equals(errorCode)) {
-                msg += errorCode + " CICS Program not found.";
+                msg = errorCode + " CICS Program not found.";
             } else {
-                msg += errorCode + " Check CICS log.";
+                msg = errorCode + " Check CICS log.";
             }
-            throw new Exception("CICS_ABEND_ERR: " + msg, re);
+            throw new Exception(CicsMessages.cicsAbendError(msg).toString(), re);
 
         } catch (javax.resource.spi.SecurityException re) {
             // if a security violation occurs
-            String msg = "Error - Security: ";
+            String msg = null;
             String errorCode = re.getErrorCode();
             if (errorCode == null) {
-                msg += re.getMessage();
+                msg = re.getMessage();
             } else {
                 int errCode = parseInt(errorCode);
                 if (errCode == ECIResourceAdapterRc.ECI_ERR_SECURITY_ERROR) {
-                    msg += errorCode + " Check credentials for userid.";
+                    msg = errorCode + " Check credentials for userid.";
                 } else {
-                    msg += errorCode + " " + re.getMessage();
+                    msg = errorCode + " " + re.getMessage();
                 }
             }
-            throw new Exception("CICS_SECURITY_ERR:" + msg, re);
+            throw new Exception(CicsMessages.cicsSecurityError(msg).toString() , re);
 
         } catch (javax.resource.spi.CommException re) {
             // if a communication error occurs
-            String msg = "Error - CICS Communication: ";
+            String msg = null;
             String errorCode = re.getErrorCode();
             if (errorCode == null) {
-                msg += re.getMessage();
+                msg = re.getMessage();
             } else {
                 int errCode = parseInt(errorCode);
                 if (errCode == ECIResourceAdapterRc.ECI_ERR_NO_CICS) {
-                    msg += errorCode + " CICS server is stopped.";
+                    msg = errorCode + " CICS server is stopped.";
                 } else {
-                    msg += errorCode + " " + re.getMessage();
+                    msg = errorCode + " " + re.getMessage();
                 }
             }
 
             if (re.getCause() != null) {
                 if (re.getCause() instanceof java.io.IOException) {
-                    msg += " IO error: check gateway daemon.";
+                    msg = " IO error: check gateway daemon.";
                 } else {
-                    msg += " Linked exception: " + re.getCause();
+                    msg = " Linked exception: " + re.getCause();
                 }
             }
-            throw new Exception("CICS_COMMUNICATION_ERR:" + msg, re);
+            throw new Exception(CicsMessages.cicsCommunicationError(msg).toString(), re);
 
         } catch (javax.resource.spi.ResourceAllocationException re) {
             // A communication error occured between CTG and CICS.
             // If CICS on mainframe is not running, this error occurs.
-            String msg = "Error - Resource allocation: ";
+            String msg = null;
             String errorCode = re.getErrorCode();
             if (errorCode == null) {
-                msg += re.getMessage();
+                msg = re.getMessage();
             } else {
                 int errCode = parseInt(errorCode);
                 if (errCode == ECIResourceAdapterRc.ECI_ERR_RESOURCE_SHORTAGE) {
-                    msg += errorCode + " Check network from CTG to CICS";
+                    msg = errorCode + " Check network from CTG to CICS";
                 } else {
-                    msg += errorCode + " " + re.getMessage();
+                    msg = errorCode + " " + re.getMessage();
                 }
             }
-            throw new Exception("CICS_CTG_ERR:" + msg, re);
-
+            throw new Exception(CicsMessages.cicsCTGError(msg).toString(), re);
         } catch (javax.resource.spi.EISSystemException re) {
-
-            String msg = "Error - CICS System error: ";
+            String msg = null;
             String errorCode = re.getErrorCode();
             if (errorCode != null) 
-                msg += errorCode + ": ";
+                msg = errorCode + ": ";
             msg += re.getMessage();
-            throw new Exception("CICS_EIS_ERR", re);
+            throw new Exception(CicsMessages.cicsEISError(msg).toString(), re);
 
         } catch (Exception re) {
             // if other exception occurs

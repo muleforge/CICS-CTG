@@ -8,6 +8,7 @@ import org.mule.config.spring.parsers.specific.endpoint.TransportGlobalEndpointD
 import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 
 import org.mule.transport.cics.CicsService;
+import org.mule.transport.cics.transformers.LoggingTransformer;
 import org.mule.transport.cicsStreaming.transformers.*;
 
 public class CicsNamespaceHandler extends NamespaceHandlerSupport {

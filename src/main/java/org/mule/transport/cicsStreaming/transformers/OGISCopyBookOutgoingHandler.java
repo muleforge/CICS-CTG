@@ -1,21 +1,19 @@
 package org.mule.transport.cicsStreaming.transformers;
 
-import java.util.Map;
-import java.util.HashMap;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.io.OutputStream;
 import java.io.FilterOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.mule.api.MuleEvent;
 import org.mule.api.MuleMessage;
-import org.mule.api.endpoint.ImmutableEndpoint;
 import org.mule.api.transformer.TransformerException;
 import org.mule.api.transport.OutputHandler;
 import org.mule.transformer.AbstractMessageAwareTransformer;
-
 import org.mule.transport.cics.esbInterface.Operation;
-import org.mule.transport.cics.esbInterface.Property;
+import org.mule.transport.cics.i18n.CicsMessages;
 import org.mule.transport.cics.util.Constants;
 
 /**
@@ -39,7 +37,7 @@ public class OGISCopyBookOutgoingHandler extends AbstractMessageAwareTransformer
       try {
           " ".getBytes(encoding);
       } catch(UnsupportedEncodingException e) {
-          throw new RuntimeException("Error in Mule config file. Invalid value for encoding of transformer 'OGISCopyBookOutgoingHandler'. The encoding '"+ encoding+"' is not supported.");		
+          throw new RuntimeException(CicsMessages.invalidEncodingForTransformer(getClass().getName(),encoding).toString());		
       }
       this.encoding = encoding;
     }
