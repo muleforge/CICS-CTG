@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<esb-interface xmlns="http://www.mule.org/transport/cics/esbInterface">
+  <operation name="sample-command">
+    <inbound xsd="interface/sample_command.xsd" />
+    <outbound xsd="interface/sample_response.xsd" />
+    <fault xsd="interface/mule-cics-fault.xsd" />
+    <property transactionID="SAMPLE" applProgramName="SAMPLE"  />
+  </operation>
+
+</esb-interface>
+

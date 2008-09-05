@@ -1,0 +1,46 @@
+<mule xmlns="http://www.mulesource.org/schema/mule/core/2.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:jms="http://www.mulesource.org/schema/mule/jms/2.0"
+      xmlns:vm="http://www.mulesource.org/schema/mule/vm/2.0"
+      xsi:schemaLocation="http://www.mulesource.org/schema/mule/core/2.0 http://www.mulesource.org/schema/mule/core/2.0/mule.xsd
+      http://www.mulesource.org/schema/mule/jms/2.0 http://www.mulesource.org/schema/mule/jms/2.0/mule-jms.xsd
+      http://www.mulesource.org/schema/mule/vm/2.0 http://www.mulesource.org/schema/mule/vm/2.0/mule-vm.xsd">
+
+ <configuration defaultSynchronousEndpoints="true" defaultRemoteSync="true" />
+
+ <jms:activemq-connector name="ActiveMQConnector" brokerURL="tcp://localhost:61616" specification="1.1" />
+ <jms:object-to-jmsmessage-transformer name="ObjectToJMSMessage" /> 
+
+ <endpoint name="endpoint1" address="vm://endpoint1" />
+ <endpoint name="endpoint2" address="vm://endpoint2" />
+ <endpoint name="endpoint3" address="vm://endpoint3" />
+
+ <model name="mule-cics">
+     <service name="service1">
+         <inbound><inbound-endpoint ref="endpoint1" /></inbound>
+
+         <outbound><outbound-pass-through-router>
+             <outbound-endpoint transformer-refs="ObjectToJMSMessage" address="jms://TEST.FOO" />
+         </outbound-pass-through-router></outbound>
+     </service>
+
+     <service name="service2">
+         <inbound><inbound-endpoint ref="endpoint2" /></inbound>
+
+         <outbound><outbound-pass-through-router>
+             <outbound-endpoint address="tcp://localhost:7777" />
+         </outbound-pass-through-router></outbound>
+     </service>
+
+     <service name="service3">
+         <inbound><inbound-endpoint ref="endpoint3" /></inbound>
+
+         <outbound><outbound-pass-through-router>
+             <outbound-endpoint address="http://localhost:7778/seriola" />
+         </outbound-pass-through-router></outbound>
+     </service>
+
+   </model>
+
+
+</mule>

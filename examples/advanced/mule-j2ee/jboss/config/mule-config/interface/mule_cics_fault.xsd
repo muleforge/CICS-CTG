@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:ns0="xmlns" ns0:xsd="http://www.w3.org/2001/XMLSchema" 
+            targetNamespace="http://ogis-ri.co.jp/fault" 
+            elementFormDefault="qualified">
+<!--*     ?R?}???h?`??-->
+<xsd:element name="sample-command">
+<xsd:complexType>
+<xsd:sequence>
+<!--*       ??????R?[?h-->
+<!--*       ?????????-->
+<xsd:element name="customer-info">
+<xsd:complexType>
+<xsd:sequence>
+<!--*         ???q??????-->
+<xsd:element name="customer-no">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="10"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         ??q??-->
+<xsd:element name="customer-name">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="20"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         ??q?Z??-->
+<xsd:element name="customer-address">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="20"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         ?R???N????i????p?j-->
+<xsd:element name="search-date">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="8"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>

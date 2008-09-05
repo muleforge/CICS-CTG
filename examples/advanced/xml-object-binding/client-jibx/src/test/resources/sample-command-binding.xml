@@ -1,0 +1,12 @@
+<!-- binding forwards="false" value-style="attribute" -->
+<binding> 
+  <mapping name="sample-command" class="SampleCommand">
+  <namespace uri="http://ogis-ri.co.jp/SAMPLE-COMMAND" default="elements" />
+     <structure name="customer-info"     field="customer">
+          <value name="customer-no"      field="no" />
+          <value name="customer-name"    field="name" />
+          <value name="customer-address" field="address" />
+          <value name="search-date"      field="searchDate" />
+     </structure>
+  </mapping>
+</binding>

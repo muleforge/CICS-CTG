@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT dummyDataCondition (global?,entryDataSet)>
+
+
+<!ATTLIST dummyDataCondition xmlns CDATA #FIXED "jp.co.ogis_ri.component.dummyString">
+
+<!ATTLIST dummyDataCondition xmlns:xsi CDATA #FIXED "http://www.w3.org/2001/XMLSchema-instance">
+
+<!ELEMENT global (namespaceDataSet?)>
+<!ELEMENT namespaceDataSet (namespace*)>
+<!ATTLIST namespace prefix CDATA #REQUIRED>
+<!ATTLIST namespace namespaceURI CDATA #REQUIRED>
+
+<!ELEMENT entryDataSet (entry+)>
+<!ELEMENT entry (replyData+)>
+<!ATTLIST entry name CDATA #REQUIRED>
+
+<!ELEMENT replyData (conditionGroup)>
+<!ATTLIST replyData file CDATA #REQUIRED>
+
+<!ELEMENT conditionGroup (conditionGroup*,condition*,notOperator*)>
+<!ATTLIST conditionGroup operator (and|or) "and" >
+<!ELEMENT condition (offset,value)>
+<!ELEMENT offset (start-offset,end-offset)>
+<!ELEMENT value
+(booleanValue|intValue|floatValue|longValue|stringValue|doubleValue|dateTimeValue)>
+<!ELEMENT notOperator (conditionGroup,condition)>
+<!ELEMENT start-offset (#PCDATA)>
+<!ELEMENT end-offset (#PCDATA)>
+
+<!ATTLIST booleanValue operator (equal|notEqual) "equal" >
+<!ELEMENT booleanValue (#PCDATA)>
+
+
+<!ATTLIST intValue operator (equal|notEqual|lessThan|greaterThan|lessThanOrEqual|greaterThanOrEqual) "equal" >
+<!ELEMENT intValue (#PCDATA)>
+
+
+<!ATTLIST floatValue operator (equal|notEqual|lessThan|greaterThan|lessThanOrEqual|greaterThanOrEqual) "equal" >
+<!ELEMENT floatValue (#PCDATA)>
+
+
+<!ATTLIST doubleValue operator (equal|notEqual|lessThan|greaterThan|lessThanOrEqual|greaterThanOrEqual) "equal" >
+<!ELEMENT doubleValue (#PCDATA)>
+
+
+<!ATTLIST longValue operator (equal|notEqual|lessThan|greaterThan|lessThanOrEqual|greaterThanOrEqual) "equal" >
+<!ELEMENT longValue (#PCDATA)>
+
+
+<!ATTLIST stringValue operator (equal|notEqual|lessThan|greaterThan|lessThanOrEqual|greaterThanOrEqual) "equal" >
+<!ELEMENT stringValue (#PCDATA)>
+
+
+<!ATTLIST dateTimeValue operator (equal|notEqual|lessThan|greaterThan|lessThanOrEqual|greaterThanOrEqual) "equal" >
+<!ELEMENT dateTimeValue (#PCDATA)>

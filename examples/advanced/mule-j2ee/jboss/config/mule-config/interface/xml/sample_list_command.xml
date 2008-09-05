@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='Shift_JIS'?>
+<sample-command xmlns="http://ogis-ri.co.jp/SAMPLE-COMMAND">
+  <search-list-info>
+    <customer-name1 type='G' length ='20'>ああああああああああああああああああああ</customer-name1>
+    <customer-name2 type='G' length ='20'>ああああああああああああああああああああ</customer-name2>
+    <customer-name3 type='G' length ='20'>ああああああああああああああああああああ</customer-name3>
+    <customer-name4 type='G' length ='20'>ああああああああああああああああああああ</customer-name4>
+    <customer-name5 type='G' length ='20'>ああああああああああああああああああああ</customer-name5>
+  </search-list-info>
+  <search-list-info>
+    <customer-name1 type='G' length ='20'>ああああああああああああああああああああ</customer-name1>
+    <customer-name2 type='G' length ='20'>ああああああああああああああああああああ</customer-name2>
+    <customer-name3 type='G' length ='20'>ああああああああああああああああああああ</customer-name3>
+    <customer-name4 type='G' length ='20'>ああああああああああああああああああああ</customer-name4>
+    <customer-name5 type='G' length ='20'>ああああああああああああああああああああ</customer-name5>
+  </search-list-info>
+  <search-list-info>
+    <customer-name1 type='G' length ='20'>ああああああああああああああああああああ</customer-name1>
+    <customer-name2 type='G' length ='20'>ああああああああああああああああああああ</customer-name2>
+    <customer-name3 type='G' length ='20'>ああああああああああああああああああああ</customer-name3>
+    <customer-name4 type='G' length ='20'>ああああああああああああああああああああ</customer-name4>
+    <customer-name5 type='G' length ='20'>ああああああああああああああああああああ</customer-name5>
+  </search-list-info>
+  <search-list-info>
+    <customer-name1 type='G' length ='20'>ああああああああああああああああああああ</customer-name1>
+    <customer-name2 type='G' length ='20'>ああああああああああああああああああああ</customer-name2>
+    <customer-name3 type='G' length ='20'>ああああああああああああああああああああ</customer-name3>
+    <customer-name4 type='G' length ='20'>ああああああああああああああああああああ</customer-name4>
+    <customer-name5 type='G' length ='20'>ああああああああああああああああああああ</customer-name5>
+  </search-list-info>
+  <search-list-info>
+    <customer-name1 type='G' length ='20'>ああああああああああああああああああああ</customer-name1>
+    <customer-name2 type='G' length ='20'>ああああああああああああああああああああ</customer-name2>
+    <customer-name3 type='G' length ='20'>ああああああああああああああああああああ</customer-name3>
+    <customer-name4 type='G' length ='20'>ああああああああああああああああああああ</customer-name4>
+    <customer-name5 type='G' length ='20'>ああああああああああああああああああああ</customer-name5>
+  </search-list-info>
+</sample-command>

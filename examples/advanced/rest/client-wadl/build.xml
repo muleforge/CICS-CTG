@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="wadl2java-ogis" default="compile" basedir="."> 
+    <description>Builds stubs for accessing OGIS service.</description>
+    <taskdef name="wjc" 
+             classname="org.jvnet.ws.wadl2java.WJCTask">
+        <classpath>
+            <fileset dir="lib" includes="*.jar" />
+        </classpath>
+    </taskdef>
+
+    <path id="wadl.class.path">
+		<fileset dir="lib">
+				<include name="*.jar" /> 
+        </fileset>
+    </path>
+
+    <target name="compile">
+		<delete dir="gen-src" quiet="true" /> 
+		<delete dir="classes" quiet="true" /> 
+        <echo message="Compiling the WADL..." />
+        <mkdir dir="gen-src"/>
+        <wjc description="http://localhost:7777/seriola/CustomerInterface?wadl" 
+             package="com.ogis.wadl" 
+             target="gen-src">
+            <produces dir="gen-src" 
+                      includes="**/*.java" />
+        </wjc>
+        <mkdir dir="classes"/>
+		<javac debug="on" memoryMaximumSize="256m" memoryInitialSize="256m" fork="true" destdir="classes" srcdir="gen-src" target="1.5" >
+			  <classpath refid="wadl.class.path" /> 
+	   </javac>
+	   <javac debug="on" memoryMaximumSize="256m" memoryInitialSize="256m" fork="true" destdir="classes" srcdir="src" target="1.5" >
+			  <classpath refid="wadl.class.path" /> 
+	   </javac>
+    </target>
+
+	<target name="run" depends="compile">
+        <echo message="Running WADLClient..." />
+
+       <java classname="com.ogis.wadl.WADLClient">
+    	    <classpath>
+					<pathelement location="classes" />
+			    	<fileset dir="lib"><include name="*.jar"/></fileset>
+			 </classpath>
+       </java>
+    </target>
+
+</project>

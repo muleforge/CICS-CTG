@@ -1,0 +1,16 @@
+<binding>
+  <mapping name="sample-response" class="SampleResponse">
+  <namespace uri="http://ogis-ri.co.jp/SAMPLE-RESPONSE" default="elements" prefix="ns" />
+  <value name="no-of-records" field="numberOfRecords" />
+  <value name="search-date" field="searchDate" />
+  <collection field="customerList">
+     <structure name="customer-list" type="Customer">
+          <value name="customer-no"      field="no" />
+          <value name="customer-name"    field="name" />
+          <value name="customer-address" field="address" />
+          <value name="customer-amount"  field="amount" />
+          <value name="customer-charge"  field="charge" />
+     </structure>
+  </collection>
+  </mapping>
+</binding>

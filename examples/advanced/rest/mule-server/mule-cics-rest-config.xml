@@ -1,0 +1,75 @@
+<mule xmlns="http://www.mulesource.org/schema/mule/core/2.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:jms="http://www.mulesource.org/schema/mule/jms/2.0"
+      xmlns:http="http://www.mulesource.org/schema/mule/http/2.0"
+      xmlns:mule-cics="http://www.mulesource.org/schema/mule/mule-cics/2.0"
+      xsi:schemaLocation="http://www.mulesource.org/schema/mule/core/2.0 http://www.mulesource.org/schema/mule/core/2.0/mule.xsd
+        http://www.mulesource.org/schema/mule/jms/2.0 http://www.mulesource.org/schema/mule/jms/2.0/mule-jms.xsd
+        http://www.mulesource.org/schema/mule/http/2.0 http://www.mulesource.org/schema/mule/http/2.0/mule-http.xsd
+        http://www.mulesource.org/schema/mule/mule-cics/2.0 META-INF/mule-cics.xsd">
+
+   <configuration defaultSynchronousEndpoints="true" defaultRemoteSync="true" />
+
+   <model name="mule-cics">
+      <mule-cics:service name="CustomerService"
+          interfaceFile="interface/CustomerInterface.xml">
+
+         <inbound>
+           <!-- The REST inbound endpoint to mule-cics operations -->
+           <inbound-endpoint address="http://localhost:7777"
+              transformer-refs="RestToXml"
+              responseTransformer-refs="XmlToRest ExceptionToFaultMsg MessageToHttpResponse" />
+         </inbound>
+
+         <component class="org.mule.transport.cics.CicsComponent" />
+
+         <outbound><outbound-pass-through-router>
+             <!-- outbound-endpoint ref="CicsEndpoint" / -->
+             <!-- outbound-endpoint ref="DummyXmlResponseEndpoint" / -->
+             <outbound-endpoint ref="DummyStringResponseEndpoint" />
+         </outbound-pass-through-router></outbound>
+      </mule-cics:service>
+   </model>
+
+   <mule-cics:dummy-response-endpoint name="DummyXmlResponseEndpoint"
+        address="stubtest://dummy-xml-response"
+        file="config/debug/response/${operationName}-response.xml" 
+        responseTransformer-refs="ByteArrayToXml"
+        remoteSync="true" />
+
+   <mule-cics:dummy-response-endpoint name="DummyStringResponseEndpoint"
+        address="stubtest://dummy-string-response"
+        file="dummy-response/${operationName}-response.bytes" 
+        transformer-refs="XmlToCopyBook OGISCopyBookOutgoingHandler" 
+        responseTransformer-refs="OGISCopyBookIncomingHandler CopyBookToXml"
+        remoteSync="true" />
+
+   <mule-cics:cics-endpoint name="CicsEndpoint" 
+           address="cics://158.201.48.7:2006"
+           entry="CICSVLT" 
+           tpnName="XCO01" 
+           userName="ogis"
+           maxSize="32000" 
+           ipAddress="152.201.48.1" 
+           transformer-refs="XmlToCopyBook OGISCopyBookOutgoingHandler" 
+           responseTransformer-refs="OGISCopyBookIncomingHandler CopyBookToXml"
+           remoteSync="true" />
+
+   <jms:activemq-connector name="ActiveMQConnector" brokerURL="tcp://localhost:61616" specification="1.1" />
+
+   <mule-cics:xml-inbound-transformer name="XmlInboundTransformer" />
+   <mule-cics:rest-to-xml name="RestToXml" />
+   <mule-cics:xml-to-rest name="XmlToRest" />
+   <mule-cics:xml-to-soap name="XmlToSoap" />
+   <mule-cics:soap-to-xml name="SoapToXml" />
+   <mule-cics:xml-to-copybook name="XmlToCopyBook" />
+   <mule-cics:copybook-to-xml name="CopyBookToXml" encoding="CP943C"/>
+   <mule-cics:exception-to-fault-message name="ExceptionToFaultMsg" />
+   <mule-cics:bytearray-to-xml name="ByteArrayToXml" />
+   <mule-cics:ogis-copybook-outgoing-handler name="OGISCopyBookOutgoingHandler"  encoding="CP943C"/>
+   <mule-cics:ogis-copybook-incoming-handler name="OGISCopyBookIncomingHandler"  encoding="CP943C"/>
+   <mule-cics:ogis-copybook-to-xml name="OGISCopyBookToXml2" encoding="CP943C"/>
+   <http:message-to-http-response-transformer name="MessageToHttpResponse" />
+   <jms:jmsmessage-to-object-transformer name="JMSMessageToObject" /> 
+   <jms:object-to-jmsmessage-transformer name="ObjectToJMSMessage" /> 
+</mule>

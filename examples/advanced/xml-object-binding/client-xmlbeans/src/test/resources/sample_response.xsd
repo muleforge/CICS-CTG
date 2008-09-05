@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="xmlns" ns0:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="xmlns" ns1:dl="http://ogis-ri.co.jp/SAMPLE-RESPONSE" targetNamespace="http://ogis-ri.co.jp/SAMPLE-RESPONSE" elementFormDefault="qualified">
+<!--*     ???X?|???X?`??-->
+<xsd:element name="sample-response">
+<xsd:complexType>
+<xsd:sequence>
+<!--*       ?S???R?[?h????-->
+<xsd:element name="no-of-records">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:long">
+<xsd:attribute name="type" type="xsd:string" default="9"/>
+<xsd:attribute name="length" type="xsd:string" default="5"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         ???N????-->
+<xsd:element name="search-date">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="8"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*       ?????-->
+<xsd:element name="customer-list" minOccurs="5" maxOccurs="5">
+<xsd:complexType>
+<xsd:sequence>
+<!--*         ?_????-->
+<xsd:element name="customer-no">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="10"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         ??q??-->
+<xsd:element name="customer-name">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="20"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         ??q?Z??-->
+<xsd:element name="customer-address">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="20"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         ???g?p??-->
+<xsd:element name="customer-amount">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:long">
+<xsd:attribute name="type" type="xsd:string" default="9"/>
+<xsd:attribute name="length" type="xsd:string" default="10"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         ???g?p????-->
+<xsd:element name="customer-charge">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:long">
+<xsd:attribute name="type" type="xsd:string" default="9"/>
+<xsd:attribute name="length" type="xsd:string" default="10"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>

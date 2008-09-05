@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="xmlns" ns0:xsd="http://www.w3.org/2001/XMLSchema" ns0:dl="http://ogis-ri.co.jp/Q2O0EC" targetNamespace="http://ogis-ri.co.jp/Q2O0EC" elementFormDefault="qualified">
+  <!--******************************************************************-->
+  <!--*　システム名　　：エネルギー料金システム-->
+  <!--*　サブシステム名：試算-->
+  <!--*　コピー句名　　：Q2O0EC-->
+  <!--*　概要　　　　　：通し番号別試算結果新規保存内容-->
+  <!--******************************************************************-->
+  <!--*　設計書作成者　：森口　賢二-->
+  <!--*　設計書作成日　：2007/02/14-->
+  <!--*　設計書改訂者　：向井　順子-->
+  <!--*　設計書改訂日　：2007/03/05-->
+  <!--*　設計書更新日　：2007/03/05 11:12:43-->
+  <!--*　コード生成日　：2007/03/05 11:50:56-->
+  <!--******************************************************************-->
+  <!--*     コマンド伝文-->
+  <xsd:element name="q2o0ec">
+    <xsd:complexType>
+      <xsd:sequence>
+        <!--*       試算登録／番号-->
+        <xsd:element name="ss-sisanreg">
+          <xsd:complexType>
+            <xsd:simpleContent>
+              <xsd:extension base="xsd:string">
+                <xsd:attribute name="type" type="xsd:string" default="X"/>
+                <xsd:attribute name="length" type="xsd:string" default="14"/>
+              </xsd:extension>
+            </xsd:simpleContent>
+          </xsd:complexType>
+        </xsd:element>
+        <!--*       試算取引区分／コード-->
+        <xsd:element name="cc-torihikikbn">
+          <xsd:complexType>
+            <xsd:simpleContent>
+              <xsd:extension base="xsd:string">
+                <xsd:attribute name="type" type="xsd:string" default="X"/>
+                <xsd:attribute name="length" type="xsd:string" default="2"/>
+              </xsd:extension>
+            </xsd:simpleContent>
+          </xsd:complexType>
+        </xsd:element>
+        <!--*       試算登録通し／数-->
+        <xsd:element name="vv-sisanren">
+          <xsd:complexType>
+            <xsd:simpleContent>
+              <xsd:extension base="xsd:string">
+                <xsd:attribute name="type" type="xsd:string" default="X"/>
+                <xsd:attribute name="length" type="xsd:string" default="1"/>
+              </xsd:extension>
+            </xsd:simpleContent>
+          </xsd:complexType>
+        </xsd:element>
+        <!--*       ガス試算結果情報-->
+        <xsd:element name="q2675m-joho" minOccurs="7" maxOccurs="7">
+          <xsd:complexType>
+            <xsd:sequence>
+              <!--*         試算登録通し／番号-->
+              <xsd:element name="ss-sisanren">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="2"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         受付／受付登録／番号-->
+              <xsd:element name="ss-ukereg">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         エネ契約種別／コード-->
+              <xsd:element name="cc-enekeyakshubt">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="4"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         付帯契約種別／組合せ／番号-->
+              <xsd:element name="ss-hutaikeyakkmaw">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="3"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         付帯組合せ名称／漢字-->
+              <xsd:element name="nn-hutaikmawkj">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="G"/>
+                      <xsd:attribute name="length" type="xsd:string" default="20"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         定額基本料金合計／額-->
+              <xsd:element name="aa-teigakkhnrknttl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         流量基本料金合計／額-->
+              <xsd:element name="aa-ryuryokhnrknttl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         最大需要期基本料金合計／額-->
+              <xsd:element name="aa-maxjykkhnrknttl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         昼間基本料金合計／額-->
+              <xsd:element name="aa-hirukhnrknttl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         夜間基本料金合計／額-->
+              <xsd:element name="aa-yorukhnrknttl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         大口長期割引合計／額-->
+              <xsd:element name="aa-ogtiwaribikittl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="15"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         基本料金合計／額-->
+              <xsd:element name="aa-khnrknttl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         従量料金合計／額-->
+              <xsd:element name="aa-juryorknttl">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         年間合計金／額-->
+              <xsd:element name="aa-nentotal">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="11"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         平均単価／額-->
+              <xsd:element name="aa-heikintanka">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         負荷／率-->
+              <xsd:element name="rr-fuka">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="4"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         最大使用量倍／率-->
+              <xsd:element name="rr-maxryobai">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="6"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         契約年間使用／量-->
+              <xsd:element name="vv-nenkeyakryo">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="11"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         契約月平均使用／量-->
+              <xsd:element name="vv-heikinkeyakryo">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="10"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         契約最大需要期使用／量-->
+              <xsd:element name="vv-keyakmaxjykryo">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="11"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         ＣＧＳ年間使用比／率-->
+              <xsd:element name="rr-cgssiyohiritu">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="3"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         夏期ＨＥ割引／額-->
+              <xsd:element name="aa-kakihewaribik">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="9"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         冬期ＨＥ割引／額-->
+              <xsd:element name="aa-tokihewaribik">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="9"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         長期選択割引／額-->
+              <xsd:element name="aa-choswaribik">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="9"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         長期大口割引／率-->
+              <xsd:element name="rr-choowaribik">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="3"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         倍率割引／率-->
+              <xsd:element name="rr-baiwaribik">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="5"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         倍率割引／額-->
+              <xsd:element name="aa-baiwaribik">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="9"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         ＣＧＳ稼働率別割引／率-->
+              <xsd:element name="rr-cgskadoritwari">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="5"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         ＣＧＳ容量別割引／率-->
+              <xsd:element name="rr-cgsyoryowari">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="5"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         ＣＧＳ割引／額-->
+              <xsd:element name="aa-cgswaribik">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="9"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         定額基本料金１／額-->
+              <xsd:element name="aa-tgkkhnrkn1">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         適用単位料金１／額-->
+              <xsd:element name="aa-tkyuntrkn1">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         定額基本料金２／額-->
+              <xsd:element name="aa-tgkkhnrkn2">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         適用単位料金２／額-->
+              <xsd:element name="aa-tkyuntrkn2">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         定額基本料金３／額-->
+              <xsd:element name="aa-tgkkhnrkn3">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         適用単位料金３／額-->
+              <xsd:element name="aa-tkyuntrkn3">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         定額基本料金４／額-->
+              <xsd:element name="aa-tgkkhnrkn4">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         適用単位料金４／額-->
+              <xsd:element name="aa-tkyuntrkn4">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         定額基本料金５／額-->
+              <xsd:element name="aa-tgkkhnrkn5">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         適用単位料金５／額-->
+              <xsd:element name="aa-tkyuntrkn5">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         定額基本料金６／額-->
+              <xsd:element name="aa-tgkkhnrkn6">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         適用単位料金６／額-->
+              <xsd:element name="aa-tkyuntrkn6">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         夏期流量基本料金単価／額-->
+              <xsd:element name="aa-kakiryryorknunt">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         冬期流量基本料金単価／額-->
+              <xsd:element name="aa-tokiryryorknunt">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         通期流量基本料金単価／額-->
+              <xsd:element name="aa-tukiryryorknunt">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         最大需要期基本料金単価／額-->
+              <xsd:element name="aa-maxjykkhnrknunt">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         昼間基本料金単価／額-->
+              <xsd:element name="aa-hirukhnrknunt">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         夜間基本料金単価／額-->
+              <xsd:element name="aa-yorukhnrknunt">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <!--*       月別ガス試算結果-->
+        <xsd:element name="q2676m-joho" minOccurs="84" maxOccurs="84" >
+        <!-- xsd:element name="q2676m-joho" minOccurs="5" maxOccurs="5" -->
+          <xsd:complexType>
+            <xsd:sequence>
+              <!--*         試算実行／年月-->
+              <xsd:element name="dd-sisancym">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="6"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         定額基本料金／額-->
+              <xsd:element name="aa-teigakukhnrkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         流量基本料金／額-->
+              <xsd:element name="aa-ryuryokhnrkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         最大需要期基本料金／額-->
+              <xsd:element name="aa-maxjykkhnrkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         昼間基本料金／額-->
+              <xsd:element name="aa-hirukhnrkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         夜間基本料金／額-->
+              <xsd:element name="aa-yorukhnrkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         長期大口割引／額-->
+              <xsd:element name="aa-ogtiwaribiki">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="15"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         基本料金／額-->
+              <xsd:element name="aa-khnrkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         単位料金／額-->
+              <xsd:element name="aa-tanirkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="9"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         従量料金／額-->
+              <xsd:element name="aa-juryorkn">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="14"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         合計金／額-->
+              <xsd:element name="aa-gokei">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="11"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <!--*         表示順序／番号-->
+              <xsd:element name="ss-hyojjunjo">
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:string">
+                      <xsd:attribute name="type" type="xsd:string" default="X"/>
+                      <xsd:attribute name="length" type="xsd:string" default="2"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

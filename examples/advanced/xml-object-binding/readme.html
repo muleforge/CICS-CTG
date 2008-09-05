@@ -1,0 +1,112 @@
+<html>
+  <head>
+    <title>XML object binding examples</title>
+	<!--  link rel="stylesheet" href="/trac/chrome/common/css/trac.css" type="text/css" />
+	<link rel="stylesheet" href="/trac/chrome/common/css/ticket.css" type="text/css" /-->
+    <style type="text/css" media="all">
+        pre{
+		 background: #f7f7f7;
+		 border: 1px solid #d7d7d7;
+		 margin: 1em 1.75em;
+		 overflow: auto;
+		 padding-left: 0px;
+        }
+        
+		h1 {
+			color: #000;
+			font-size: 16px;
+			font-weight: bold;
+			background-color: #dcdcdc;
+			padding-left: 10px;
+		}
+
+		h2 {
+			font-size: 15px;
+			padding-left: 10px;
+			border-bottom: 1px solid #a9a9a9;
+			border-left-color: black;
+		}
+
+		h3 {
+			font-size: 14px;
+			padding-left: 10px;
+			border-bottom: 1px solid #d3d3d3;
+		}
+
+		h4 {
+			font-size: 13px;
+		}
+
+		table {
+			font-size: 15px;
+			padding-left: 10px;
+			border-bottom: 1px solid #a9a9a9;
+			border-left-color: black;
+		}
+    </style>
+  </head>
+  <body>  
+  	   <h1>XML object binding examples</h1>
+   	   <h2>Overview</h2>
+
+The XML object binding examples demonstrate how to use open source
+libraries to achieve the following:
+<ol>
+    <li>Convert Java beans to XML.
+    <li>Send the XML to the Mule ESB.
+    <li>Receive XML resposne from the Mule ESB.
+    <li>Convert XML response to Java beans.
+</ol>
+<p/>
+These examples use a server with services that use the mule-cics transport. 
+The client sends XML to a mule-cics service and receives XML as response.
+The request and response XML have to conform to the schema, which
+are publicized in the WSDL or XSD file.
+
+   	   <h2>Running the examples</h2>
+<ol>
+    <li> Start the Mule server <BR/>
+       ${mule-cics}/examples/xml-object-binding/mule-server>run
+
+    <li> Run any of the clients<BR/>
+       ${mule-cics}/examples/xml-object-binding/client-castor>mvn test
+</ol>
+
+The client will convert Java bean to XML and send the XML to the Mule server.
+The server will send back a dummy XML response, and client will convert it to Java bean.
+
+<p><b>Note:</b> The examples require to use Maven (http://maven.apache.org)</p>
+
+<p/>
+
+<h2>Common Steps to develop the client</h2>
+
+The common development steps to be followed to develop a client using open-source
+libraries such as XMLBeeans, Castor, JIBX, JAXP are explained below:
+
+<ul>
+    <li>Place XSD files in the Maven project under src/test/resources.<br/>
+    <li>Add plugin in pom.xml to generate Java beans from XSD schema.<br/>
+    <li>Generate java beans from the XSDs using maven.<br/>
+    #mvn compile
+    <li> Write the code to :
+<ul>
+  <li> Create an instance of generated Java bean and copy data in it.
+  <li> Use the open source library API to convert Java bean to XML and send it to server.
+  <li> Use the open source library API to convert response XML back to request object.
+</ul>
+</ul>
+<p>
+
+Please see the following folders for the actual source code.
+<ul>
+    <li> examples/xml-object-binding/xmlbeans : Example using XMLBeans.
+	<li> examples/xml-object-binding/castor: Example using Castor 
+	<li> examples/xml-object-binding/jibx folder: Example using JIBX
+	<li> examples/xml-object-binding/jaxp folder: Example using JAXB
+</ul>
+
+Note: The Castor example is not working. (The Castor client is unable 
+to convert a XML value of type xsd:long)
+</body>
+</html>

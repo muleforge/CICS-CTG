@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://CustomerInterface/" xmlns:impl="http://CustomerInterface/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jms="http://schemas.xmlsoap.org/wsdl/jms/"><wsdl:types><xsd:schema elementFormDefault="qualified" targetNamespace="http://CustomerInterface/"><xsd:complexType name="sample-commandType">
+<xsd:sequence>
+
+
+<xsd:element name="customer-info">
+<xsd:complexType>
+<xsd:sequence>
+
+<xsd:element name="customer-no">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="10" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-name">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="20" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-address">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="20" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="search-date">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="8" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType><xsd:complexType name="sample-responseType">
+<xsd:sequence>
+
+<xsd:element name="no-of-records">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:long">
+<xsd:attribute name="type" type="xsd:string" default="9" />
+<xsd:attribute name="length" type="xsd:string" default="5" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="search-date">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="8" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-list" minOccurs="5" maxOccurs="5">
+<xsd:complexType>
+<xsd:sequence>
+
+<xsd:element name="customer-no">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="10" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-name">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="20" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-address">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="20" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-amount">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:long">
+<xsd:attribute name="type" type="xsd:string" default="9" />
+<xsd:attribute name="length" type="xsd:string" default="10" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-charge">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:long">
+<xsd:attribute name="type" type="xsd:string" default="9" />
+<xsd:attribute name="length" type="xsd:string" default="10" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType><xsd:complexType name="fault-dataType">
+      <xsd:sequence>
+	<xsd:element name="fault-class" type="xsd:string" />
+	<xsd:element name="fault-code" type="xsd:string" />
+	<xsd:element name="fault-message" type="xsd:string" />
+	<xsd:element name="fault-detail" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType><xsd:element name="sample-command" type="impl:sample-commandType" /><xsd:element name="sample-response" type="impl:sample-responseType" /><xsd:element name="fault-data" type="impl:fault-dataType" /><xsd:element name="sample-duplicate-command" type="impl:sample-commandType" /><xsd:element name="sample-list-command" type="impl:sample-commandType" /></xsd:schema></wsdl:types><wsdl:message name="sample-commandRequest"><wsdl:part name="sample-commandRequest" element="impl:sample-command" /></wsdl:message><wsdl:message name="sample-commandResponse"><wsdl:part name="sample-commandResponse" element="impl:sample-response" /></wsdl:message><wsdl:message name="sample-commandFault"><wsdl:part name="sample-commandFault" element="impl:fault-data" /></wsdl:message><wsdl:message name="sample-duplicate-commandRequest"><wsdl:part name="sample-duplicate-commandRequest" element="impl:sample-duplicate-command" /></wsdl:message><wsdl:message name="sample-duplicate-commandResponse"><wsdl:part name="sample-duplicate-commandResponse" element="impl:sample-response" /></wsdl:message><wsdl:message name="sample-duplicate-commandFault"><wsdl:part name="sample-duplicate-commandFault" element="impl:fault-data" /></wsdl:message><wsdl:message name="sample-list-commandRequest"><wsdl:part name="sample-list-commandRequest" element="impl:sample-list-command" /></wsdl:message><wsdl:message name="sample-list-commandResponse"><wsdl:part name="sample-list-commandResponse" element="impl:sample-response" /></wsdl:message><wsdl:portType name="MuleCicsProxy"><wsdl:operation name="sample-command" parameterOrder="in0"><wsdl:input message="impl:sample-commandRequest" name="sample-commandRequest" /><wsdl:output message="impl:sample-commandResponse" name="sample-commandResponse" /><wsdl:fault message="impl:sample-commandFault" name="sample-commandFault" /></wsdl:operation><wsdl:operation name="sample-duplicate-command" parameterOrder="in0"><wsdl:input message="impl:sample-duplicate-commandRequest" name="sample-duplicate-commandRequest" /><wsdl:output message="impl:sample-duplicate-commandResponse" name="sample-duplicate-commandResponse" /><wsdl:fault message="impl:sample-duplicate-commandFault" name="sample-duplicate-commandFault" /></wsdl:operation><wsdl:operation name="sample-list-command" parameterOrder="in0"><wsdl:input message="impl:sample-list-commandRequest" name="sample-list-commandRequest" /><wsdl:output message="impl:sample-list-commandResponse" name="sample-list-commandResponse" /></wsdl:operation></wsdl:portType><wsdl:binding name="MuleCicsUMOSoapBinding" type="impl:MuleCicsProxy"><soap:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" style="document" transport="http://schemas.xmlsoap.org/soap/http" /><wsdl:operation name="sample-command"><soap:operation xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="" /><wsdl:input name="sample-commandRequest"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:input><wsdl:output name="sample-commandResponse"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:output><wsdl:fault name="sample-commandFault"><soap:fault xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:fault></wsdl:operation><wsdl:operation name="sample-duplicate-command"><soap:operation xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="" /><wsdl:input name="sample-duplicate-commandRequest"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:input><wsdl:output name="sample-duplicate-commandResponse"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:output><wsdl:fault name="sample-duplicate-commandFault"><soap:fault xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:fault></wsdl:operation><wsdl:operation name="sample-list-command"><soap:operation xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="" /><wsdl:input name="sample-list-commandRequest"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:input><wsdl:output name="sample-list-commandResponse"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="MuleCicsUMO">
+<wsdl:port binding="impl:MuleCicsUMOSoapBinding" name="MuleCicsUMO">
+       <!--soap:address xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" location="http://localhost:8888/seriola/CustomerInterface" /-->
+       <jms:address destinationStyle="queue"
+                     messageType="text"
+                     jndiProviderURL="tcp://localhost:61616"
+                     initialContextFactory="org.apache.activemq.jndi.ActiveMQInitialContextFactory"
+                     jndiDestinationName="dynamicQueues/SOAP.JMS">
+                
+		  <jms:propertyValue name="userid" value="user"/>
+		  <jms:propertyValue name="password" value="password"/>
+         </jms:address>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

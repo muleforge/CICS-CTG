@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE esb-interface SYSTEM "string-condition.dtd">
+<dummyDataCondition xmlns="jp.co.ogis_ri.component.dummyString" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <entryDataSet>
+    <entry name="sample-command">
+      <replyData file="interface/bytes/sample_response_1.bytes">
+        <conditionGroup operator="and">
+          <condition>
+            <offset>
+              <start-offset>378</start-offset>
+              <end-offset>386</end-offset>
+            </offset>
+            <value>
+              <stringValue operator="equal">20060701</stringValue>
+            </value>
+          </condition>  
+        </conditionGroup>
+      </replyData>
+      <replyData file="interface/bytes/sample_response_8.bytes">
+        <conditionGroup operator="and">
+        </conditionGroup>
+      </replyData>
+    </entry>
+
+    <entry name="sample-null-command">
+      <replyData file="interface/bytes/sample_response_1.bytes">
+        <conditionGroup operator="and">
+          <condition>
+            <offset>
+              <start-offset>378</start-offset>
+              <end-offset>386</end-offset>
+            </offset>
+            <value>
+              <stringValue operator="equal">20060701</stringValue>
+            </value>
+          </condition>  
+        </conditionGroup>
+      </replyData>
+      <replyData file="interface/bytes/sample_response_10.bytes">
+        <conditionGroup operator="and">
+        </conditionGroup>
+      </replyData>
+    </entry>
+
+    <entry name="sample-request-only-command">
+      <replyData file="interface/bytes/sample_response_10.bytes">
+        <conditionGroup operator="and">
+          <condition>
+            <offset>
+              <start-offset>378</start-offset>
+              <end-offset>386</end-offset>
+            </offset>
+            <value>
+              <stringValue operator="equal">20060701</stringValue>
+            </value>
+          </condition>  
+        </conditionGroup>
+      </replyData>
+      <replyData file="interface/bytes/sample_response_10.bytes">
+        <conditionGroup operator="and">
+        </conditionGroup>
+      </replyData>
+    </entry>
+
+    <entry name="sample-reply-only-command">
+      <replyData file="interface/bytes/sample_response_10.bytes">
+        <conditionGroup operator="and">
+          <condition>
+            <offset>
+              <start-offset>378</start-offset>
+              <end-offset>386</end-offset>
+            </offset>
+            <value>
+              <stringValue operator="equal">20060701</stringValue>
+            </value>
+          </condition>  
+        </conditionGroup>
+      </replyData>
+      <replyData file="interface/bytes/sample_response_10.bytes">
+        <conditionGroup operator="and">
+        </conditionGroup>
+      </replyData>
+    </entry>
+    <entry name="q2o0e">
+      <replyData file="interface/bytes/sample_response_10.bytes">
+        <conditionGroup operator="and">
+          <condition>
+            <offset>
+              <start-offset>378</start-offset>
+              <end-offset>386</end-offset>
+            </offset>
+            <value>
+              <stringValue operator="equal">20060701</stringValue>
+            </value>
+          </condition>  
+        </conditionGroup>
+      </replyData>
+      <replyData file="interface/bytes/sample_response_10.bytes">
+        <conditionGroup operator="and">
+        </conditionGroup>
+      </replyData>
+    </entry>
+  </entryDataSet>
+</dummyDataCondition>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connection-factories>
+     <tx-connection-factory>
+          <jndi-name>mule/ConnectionFactory</jndi-name>
+          <rar-name>mule-ear-2.0.1.ear#mule-jca-jboss-2.0.1.rar</rar-name>
+          <connection-definition>org.mule.module.jca.MuleConnectionFactory</connection-definition>
+          <track-connection-by-tx/>
+     </tx-connection-factory>
+</connection-factories>
+

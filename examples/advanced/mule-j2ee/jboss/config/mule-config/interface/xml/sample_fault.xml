@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='Shift_JIS'?>
+  <fault-data>
+    <fault-class>
+      System Fault
+    </fault-class>
+    <fault-code>
+      100
+    </fault-code>
+    <fault-message>
+      Target exception error
+    </fault-message>
+    <fault-detail>
+      test
+    </fault-detail>
+  </fault-data>
+

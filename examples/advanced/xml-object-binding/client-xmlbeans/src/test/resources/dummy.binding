@@ -1,0 +1,5 @@
+<binding> 
+  <mapping name="sample-command" class="Dummy">
+     <value name="field1" field="field1" />
+  </mapping>
+</binding>

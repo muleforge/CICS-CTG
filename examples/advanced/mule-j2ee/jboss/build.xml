@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<project name="mule-jboss" default="help" basedir=".">
+
+  <property file="build.properties" />
+  <property name="ear.file" value="mule-ear-2.0.1.ear"/>
+  <property name="dir.mule.config" value="config/mule-config"/>
+  
+  <target name="clean">
+    <delete dir="build" quiet="true" />
+    <delete dir="dist" quiet="true" />
+  </target>
+  <target name="init" depends="clean">
+    <mkdir dir="build"/>
+    <mkdir dir="dist"/>
+  </target>
+  <target name="deploy" depends="init">
+    <copy file="lib/mule-jca-jboss-2.0.1.rar" todir="build" /> 
+    <jar destfile="build/mule-config.jar">
+       <fileset dir="${dir.mule.config}" includes="interface/*/*.*" />
+       <fileset dir="${dir.mule.config}" includes="interface/*.*" />
+       <fileset dir="${dir.mule.config}" includes="dummy-response/*/*.*" />
+       <fileset dir="${dir.mule.config}" includes="dummy-response/*.*" />
+       <fileset dir="${dir.mule.config}" includes="xsd/*.*" />
+       <fileset dir="${dir.mule.config}" includes="mule-config.xml" />
+    </jar>
+    <unzip src="lib/cci.jar" dest="build/ccitemp" />
+    <delete dir="build/ccitemp/javax/resource/spi"/>
+    <jar destfile="build/cci.jar">
+	<fileset dir="build/ccitemp" includes="**/*.*" />
+    </jar>
+    <jar update="true" destfile="build/mule-jca-jboss-2.0.1.rar">
+      <fileset dir="lib" includes="activemq-core-4.1.1.jar" /> 
+      <fileset dir="build" includes="mule-config.jar cci.jar" /> 
+      <fileset dir="lib" includes="mule-transport-cics-2.0.1.jar" />
+      <fileset dir="lib" includes="xbean.jar ccf2.jar cicseci.jar cicsframe.jar ctgclient.jar" />
+    </jar>
+    <jar destfile="dist/${ear.file}">
+      <fileset dir="config/ear_config" includes="**/*.*" />
+      <fileset dir="build" includes="mule-jca-jboss-2.0.1.rar" />
+    </jar>
+	    <copy todir="${jboss.home}/server/default/deploy" file="dist/${ear.file}" overwrite="true" /> 
+  </target>
+</project>
