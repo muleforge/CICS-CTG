@@ -56,7 +56,7 @@
     </snapshotRepository>
     <site>
       <id>muleforge.webdav.sites</id>
-      <url>dav:https://dav.muleforge.org/${artifactId}/maven</url>
+      <url>dav:https://dav.muleforge.org/${artifactId}/</url>
     </site>
   </distributionManagement>
 
@@ -295,18 +295,6 @@
       <groupId>com.ibm</groupId>
       <artifactId>ctgclient</artifactId>
       <version>1.3.0</version>
-    </dependency>
-
-    <dependency><!-- dummyClient.jar -->
-      <groupId>seriola</groupId>
-      <artifactId>dummyClient</artifactId>
-      <version>1.0</version>
-    </dependency>
-
-    <dependency><!-- dummyStringClient.jar -->
-      <groupId>seriola</groupId>
-      <artifactId>dummyStringClient</artifactId>
-      <version>1.0</version>
     </dependency>
 
     <dependency><!-- dummyClient.jar -->
