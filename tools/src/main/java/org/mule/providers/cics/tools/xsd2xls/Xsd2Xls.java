@@ -216,7 +216,7 @@ public class Xsd2Xls {
       } else if (type.equalsIgnoreCase("9")) {
         letter = '1';
       } else if (type.equalsIgnoreCase("G")) {
-        letter = 'Ç†';
+        letter = '„ÅÇ';
       }
   
       int len = Integer.parseInt(length);
