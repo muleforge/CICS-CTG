@@ -39,10 +39,10 @@
   </pluginRepositories>
 
   <properties>
-    <muleVersion>2.0.1</muleVersion>
+    <muleVersion>2.0.2</muleVersion>
     <activemq-version>4.1.1-incubator</activemq-version>
-    <muleHome>/usr/local/oss/mule-2.0.1</muleHome>  
-    <!-- muleHome>D:/tools/mule-2.0.1</muleHome -->  
+    <muleHome>/usr/local/oss/mule-2.0.2</muleHome>  
+    <!-- muleHome>D:/tools/mule-2.0.2</muleHome -->  
 
   </properties>
   <distributionManagement>
