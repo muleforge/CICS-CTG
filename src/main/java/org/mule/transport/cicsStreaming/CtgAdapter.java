@@ -97,7 +97,8 @@ public class CtgAdapter {
             con = this.connectionFactory.getConnection();
         } catch (ResourceException e) {
             logger.error(e);
-            throw new Exception(CicsMessages.cicsConnectionError().toString(), e);
+            CicsMessages messages = new CicsMessages();
+            throw new Exception(messages.cicsConnectionError().toString(), e);
         }
 
         logger.debug("###### connect(end) ######");
@@ -147,7 +148,8 @@ public class CtgAdapter {
             } else {
                 msg = errorCode + " Check CICS log.";
             }
-            throw new Exception(CicsMessages.cicsAbendError(msg).toString(), re);
+            CicsMessages messages = new CicsMessages();
+            throw new Exception(messages.cicsAbendError(msg).toString(), re);
 
         } catch (javax.resource.spi.SecurityException re) {
             // if a security violation occurs
@@ -163,7 +165,8 @@ public class CtgAdapter {
                     msg = errorCode + " " + re.getMessage();
                 }
             }
-            throw new Exception(CicsMessages.cicsSecurityError(msg).toString() , re);
+            CicsMessages messages = new CicsMessages();
+            throw new Exception(messages.cicsSecurityError(msg).toString() , re);
 
         } catch (javax.resource.spi.CommException re) {
             // if a communication error occurs
@@ -187,7 +190,8 @@ public class CtgAdapter {
                     msg = " Linked exception: " + re.getCause();
                 }
             }
-            throw new Exception(CicsMessages.cicsCommunicationError(msg).toString(), re);
+            CicsMessages messages = new CicsMessages();
+            throw new Exception(messages.cicsCommunicationError(msg).toString(), re);
 
         } catch (javax.resource.spi.ResourceAllocationException re) {
             // A communication error occured between CTG and CICS.
@@ -204,14 +208,16 @@ public class CtgAdapter {
                     msg = errorCode + " " + re.getMessage();
                 }
             }
-            throw new Exception(CicsMessages.cicsCTGError(msg).toString(), re);
+            CicsMessages messages = new CicsMessages();
+            throw new Exception(messages.cicsCTGError(msg).toString(), re);
         } catch (javax.resource.spi.EISSystemException re) {
             String msg = null;
             String errorCode = re.getErrorCode();
             if (errorCode != null) 
                 msg = errorCode + ": ";
             msg += re.getMessage();
-            throw new Exception(CicsMessages.cicsEISError(msg).toString(), re);
+            CicsMessages messages = new CicsMessages();
+            throw new Exception(messages.cicsEISError(msg).toString(), re);
 
         } catch (Exception re) {
             // if other exception occurs

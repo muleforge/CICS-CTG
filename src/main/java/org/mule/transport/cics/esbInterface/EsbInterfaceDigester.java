@@ -41,9 +41,10 @@ public class EsbInterfaceDigester {
         if (esbInterface == null) {
           logger.info("Parsing interfaceFile: " + filename);
           InputStream is = IOUtils.getResourceAsStream(filename, this.getClass());
-          if (is == null)
-              throw new IOException(CicsMessages.errorLoadingInterfaceFile(filename).toString());
-        
+          if (is == null) {
+              CicsMessages messages = new CicsMessages();
+              throw new IOException(messages.errorLoadingInterfaceFile(filename).toString());
+          }
           esbInterface = validate(is);
           logger.info("Successfully parsed interfaceFile: " + filename);
           this.esbInterfaceMap.put(filename, esbInterface);
@@ -80,7 +81,8 @@ public class EsbInterfaceDigester {
                 property.setTransactionID(opArray[i].getProperty().getTransactionID());
                 esbOperation.setProperty(property);
             }else{
-            	throw new RuntimeException(CicsMessages.errorParsingInterfaceFile(esbOperation.getName()).toString());
+                CicsMessages messages = new CicsMessages();
+            	throw new RuntimeException(messages.errorParsingInterfaceFile(esbOperation.getName()).toString());
             }
 
             esbInterface.addOperation(esbOperation);

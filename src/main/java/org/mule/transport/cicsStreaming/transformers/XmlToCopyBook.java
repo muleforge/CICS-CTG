@@ -67,7 +67,8 @@ public class XmlToCopyBook extends AbstractMessageAwareTransformer {
         try {
             Operation operation = (Operation) message.getProperty("operation", null);
             if (operation == null) {
-                throw new Exception(CicsMessages.unableToGetMsgSettings().toString());
+                CicsMessages messages = new CicsMessages();
+                throw new Exception(messages.unableToGetMsgSettings().toString());
             }
             
             final String inboundXsd = operation.getInboundXsd();

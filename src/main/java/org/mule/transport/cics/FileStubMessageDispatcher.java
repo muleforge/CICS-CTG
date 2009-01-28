@@ -65,11 +65,13 @@ public class FileStubMessageDispatcher extends AbstractMessageDispatcher {
             try {
                 InputStream is = IOUtils.getResourceAsStream(filename, this.getClass());
                 if (is == null) {
-                	throw new IOException(CicsMessages.errorOpeningFile(filename).toString());
+                    CicsMessages messages = new CicsMessages();
+                	throw new IOException(messages.errorOpeningFile(filename).toString());
                 }
                 response = IOUtils.toByteArray(is);
             } catch (Exception e) {
-                throw new Exception(CicsMessages.errorReadingFile(filename).toString(), e);
+                CicsMessages messages = new CicsMessages();
+                throw new Exception(messages.errorReadingFile(filename).toString(), e);
             }
 
             message.setPayload(response);

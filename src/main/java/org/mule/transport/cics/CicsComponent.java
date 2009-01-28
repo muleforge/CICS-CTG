@@ -25,8 +25,9 @@ public class CicsComponent implements Callable, ServiceAware {
   public void setService(Service service) throws ConfigurationException {
       try { 
           this.cicsService = (CicsService) service;
-      } catch (ClassCastException e) {          
-          throw new ConfigurationException(new Exception(CicsMessages.errorInConfigurationFile().toString(), e));
+      } catch (ClassCastException e) {
+          CicsMessages messages = new CicsMessages();
+          throw new ConfigurationException(new Exception(messages.errorInConfigurationFile().toString(), e));
       }
   }
   
@@ -61,10 +62,11 @@ public class CicsComponent implements Callable, ServiceAware {
      Operation operation = cicsService.getEsbInterface().getOperation(operationName);
  
      if (operation == null) {
-        String errMsg = CicsMessages.operationNotSupported(operationName, interfaceFile).toString();
-        Exception e = new Exception(errMsg);
-        message.setExceptionPayload(new DefaultExceptionPayload(e));
-        return message;
+         CicsMessages messages = new CicsMessages();
+         String errMsg = messages.operationNotSupported(operationName, interfaceFile).toString();
+         Exception e = new Exception(errMsg);
+         message.setExceptionPayload(new DefaultExceptionPayload(e));
+         return message;
      }
 
      message.setProperty("operation", operation);

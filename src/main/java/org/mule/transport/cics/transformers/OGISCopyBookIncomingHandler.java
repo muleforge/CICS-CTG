@@ -35,7 +35,8 @@ public class OGISCopyBookIncomingHandler extends AbstractMessageAwareTransformer
     try {
         " ".getBytes(encoding);
     } catch(UnsupportedEncodingException e) {
-        throw new RuntimeException(CicsMessages.invalidEncodingForTransformer(getClass().getName(), encoding).toString());		
+        CicsMessages messages = new CicsMessages();
+        throw new RuntimeException(messages.invalidEncodingForTransformer(getClass().getName(), encoding).toString());		
     }
     this.encoding = encoding;
   }
@@ -57,7 +58,8 @@ public class OGISCopyBookIncomingHandler extends AbstractMessageAwareTransformer
   protected Object transform(byte[] copyBookBytes, String encoding) throws Exception {
 
     if (copyBookBytes.length < HEADER_LENGTH) {
-        throw new Exception(CicsMessages.insufficientResponseLength().toString());
+        CicsMessages messages = new CicsMessages();
+        throw new Exception(messages.insufficientResponseLength().toString());
     }
 
     // Read the header from the mainframe response.
@@ -85,7 +87,8 @@ public class OGISCopyBookIncomingHandler extends AbstractMessageAwareTransformer
     } else {
         // Return fault code in error message.
         String faultCode = header.getLzaplhdrRtncd();
-        throw new Exception(CicsMessages.errorInResposnse(faultCode).toString());
+        CicsMessages messages = new CicsMessages();
+        throw new Exception(messages.errorInResposnse(faultCode).toString());
     }
   }
 

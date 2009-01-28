@@ -41,7 +41,8 @@ public class XsdElement {
 			try {
 				this.length = Integer.parseInt(len);
 			} catch (NumberFormatException e) {
-				throw new NumberFormatException(CicsMessages.invalidLengthOfXsdElement(len,name).toString());
+                CicsMessages messages = new CicsMessages();
+				throw new NumberFormatException(messages.invalidLengthOfXsdElement(len,name).toString());
 			}
 		}
 		this.occurs = 1;

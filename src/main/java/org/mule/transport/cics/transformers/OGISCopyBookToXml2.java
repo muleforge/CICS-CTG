@@ -51,7 +51,8 @@ public class OGISCopyBookToXml2 extends AbstractMessageAwareTransformer {
       try {
           " ".getBytes(encoding);
       } catch(UnsupportedEncodingException e) {
-          throw new RuntimeException(CicsMessages.invalidEncodingForTransformer(getClass().getName(),encoding).toString());		
+          CicsMessages messages = new CicsMessages();
+          throw new RuntimeException(messages.invalidEncodingForTransformer(getClass().getName(),encoding).toString());		
       }
       this.encoding = encoding;
     }
@@ -66,7 +67,8 @@ public class OGISCopyBookToXml2 extends AbstractMessageAwareTransformer {
         try {
             byte[] copyBookBytes = message.getPayloadAsBytes();
             if (copyBookBytes.length < HEADER_LENGTH) {
-              throw new Exception(CicsMessages.insufficientResponseLength().toString());
+                CicsMessages messages = new CicsMessages();
+                throw new Exception(messages.insufficientResponseLength().toString());
             }
 
             byte[] bytesHeader = new byte[HEADER_LENGTH - DCI_HEADER_LENGTH];

@@ -38,7 +38,8 @@ public class OGISCopyBookIncomingHandler extends AbstractMessageAwareTransformer
     try {
         " ".getBytes(encoding);
     } catch(UnsupportedEncodingException e) {
-        throw new RuntimeException(CicsMessages.invalidEncodingForTransformer(getClass().getName(),encoding).toString());		
+        CicsMessages messages = new CicsMessages();
+        throw new RuntimeException(messages.invalidEncodingForTransformer(getClass().getName(),encoding).toString());		
     }
     this.encoding = encoding;
   }
@@ -87,7 +88,8 @@ public class OGISCopyBookIncomingHandler extends AbstractMessageAwareTransformer
     } else {
         // Return fault code in error message.
         String faultCode = header.getLzaplhdrRtncd();
-        throw new IOException(CicsMessages.errorInResposnse(faultCode).toString());
+        CicsMessages messages = new CicsMessages();
+        throw new IOException(messages.errorInResposnse(faultCode).toString());
     }
   }
 
@@ -138,7 +140,8 @@ public class OGISCopyBookIncomingHandler extends AbstractMessageAwareTransformer
     while (i < length) {
         int c = is.read();
         if (c == -1) {
-            throw new IOException(CicsMessages.insufficientResponseLength().toString()); 
+            CicsMessages messages = new CicsMessages();
+            throw new IOException(messages.insufficientResponseLength().toString()); 
         }
 
         bytes[i++] = (byte) c;

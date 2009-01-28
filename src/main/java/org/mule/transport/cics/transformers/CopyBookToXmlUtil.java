@@ -124,7 +124,8 @@ class CopyBookToXmlUtil {
         while (i < length) {
           int c = copybookStream.read();
           if (c == -1) {
-            throw new Exception(CicsMessages.copyBookToXmlError(xsdElement.getName()).toString());
+              CicsMessages messages = new CicsMessages();
+              throw new Exception(messages.copyBookToXmlError(xsdElement.getName()).toString());
           }
           bytes[i++] = (byte) c;
         }

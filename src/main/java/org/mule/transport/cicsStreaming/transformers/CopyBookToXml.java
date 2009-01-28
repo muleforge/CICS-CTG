@@ -43,7 +43,8 @@ public class CopyBookToXml extends AbstractMessageAwareTransformer {
 	  try {
 		  " ".getBytes(encoding);
 	  } catch(UnsupportedEncodingException e) {
-		  throw new RuntimeException(CicsMessages.invalidEncodingForTransformer(getClass().getName(),encoding).toString());		
+          CicsMessages messages = new CicsMessages();
+		  throw new RuntimeException(messages.invalidEncodingForTransformer(getClass().getName(),encoding).toString());		
 	  }
 	  this.encoding = encoding;
     }

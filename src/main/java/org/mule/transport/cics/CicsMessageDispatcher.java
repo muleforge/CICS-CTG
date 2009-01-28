@@ -120,7 +120,8 @@ public class CicsMessageDispatcher extends AbstractMessageDispatcher {
 
         Operation operation = (Operation) message.getProperty("operation", null);
         if (operation == null) {
-            throw new Exception(CicsMessages.nullOperation().toString());
+              CicsMessages messages = new CicsMessages();
+              throw new Exception(messages.nullOperation().toString());
         }
 
         String operationName = operation.getName();

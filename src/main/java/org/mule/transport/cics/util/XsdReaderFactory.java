@@ -39,8 +39,10 @@ public class XsdReaderFactory {
 		if (reader == null) {
 			reader = new XsdReader();
 			InputStream is = IOUtils.getResourceAsStream(xsdFile, this.getClass());
-            if (is == null)
-				throw new IOException(CicsMessages.errorReadingXsdFile(xsdFile).toString());
+            if (is == null) {
+                CicsMessages messages = new CicsMessages();
+				throw new IOException(messages.errorReadingXsdFile(xsdFile).toString());
+            }
 
 			reader.process(is);
 			this.xsdReaderMap.put(xsdFile, reader);
@@ -49,7 +51,8 @@ public class XsdReaderFactory {
 		return reader;
 
       } catch (Exception e) {
-    	  throw new IOException(CicsMessages.errorLoadingXsdFile(xsdFile, e.getMessage()).toString());
+          CicsMessages messages = new CicsMessages();
+    	  throw new IOException(messages.errorLoadingXsdFile(xsdFile, e.getMessage()).toString());
       }
 	}
 }

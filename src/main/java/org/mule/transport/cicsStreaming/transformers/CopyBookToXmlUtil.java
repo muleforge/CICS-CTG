@@ -104,7 +104,8 @@ class CopyBookToXmlUtil {
         while (i < length) {
           int c = copybookStream.read();
           if (c == -1) {
-            throw new Exception(CicsMessages.copyBookToXmlError(xsdElement.getName()).toString());
+              CicsMessages messages = new CicsMessages();
+            throw new Exception(messages.copyBookToXmlError(xsdElement.getName()).toString());
           }
 
           bytes[i++] = (byte) c;
@@ -113,7 +114,8 @@ class CopyBookToXmlUtil {
         try {
             writer.writeCharacters(new String(bytes, copybookEncoding));
         } catch (Exception e) {
-            throw new Exception(CicsMessages.errorReadingXsdEleFromResponse(xsdElement.getName()).toString(), e);
+            CicsMessages messages = new CicsMessages();
+            throw new Exception(messages.errorReadingXsdEleFromResponse(xsdElement.getName()).toString(), e);
         }
     }
 }
