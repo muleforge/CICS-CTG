@@ -7,7 +7,7 @@
   <groupId>org.mule.providers</groupId>
   <artifactId>mule-transport-cics</artifactId>
   <packaging>jar</packaging>
-  <version>2.0.1</version>
+  <version>2.1.2</version>
   <name>Mule CICS Connector</name>
   <description>Mule CICS Connector</description>
 
@@ -41,7 +41,7 @@
   <properties>
     <muleVersion>2.1.2</muleVersion>
     <activemq-version>4.1.1-incubator</activemq-version>
-    <muleHome>/usr/local/oss/mule-2.0.2</muleHome>  
+    <muleHome>/usr/local/oss/mule-2.1.2</muleHome>  
     <!-- muleHome>D:/tools/mule-2.0.2</muleHome -->  
 
   </properties>

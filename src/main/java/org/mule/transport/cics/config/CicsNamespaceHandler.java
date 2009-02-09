@@ -1,20 +1,41 @@
-package org.mule.transport.cics;
+package org.mule.transport.cics.config;
+
+import org.mule.config.spring.handlers.AbstractMuleNamespaceHandler;
 
 import org.mule.config.spring.factories.OutboundEndpointFactoryBean;
 import org.mule.config.spring.parsers.specific.ServiceDefinitionParser;
 import org.mule.config.spring.parsers.specific.TransformerDefinitionParser;
 import org.mule.config.spring.parsers.specific.endpoint.TransportEndpointDefinitionParser;
 import org.mule.config.spring.parsers.specific.endpoint.TransportGlobalEndpointDefinitionParser;
+
+import org.mule.endpoint.URIBuilder;
+
 import org.mule.transport.cics.transformers.*;
+import org.mule.transport.cics.CicsService;
 import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 
-public class CicsNamespaceHandler extends NamespaceHandlerSupport {
-	public void init() {
+//public class CicsNamespaceHandler extends NamespaceHandlerSupport {
+/**
+ * Describe class <code>CicsNamespaceHandler</code> here.
+ *
+ * @author <a href="mailto:makoto@zebra"></a>
+ * @version 1.0
+ */
+public class CicsNamespaceHandler extends AbstractMuleNamespaceHandler {
+	/**
+     * Describe <code>init</code> method here.
+     *
+     */
+    public void init() {
+
+        String protocol = "cics";
+        registerStandardTransportEndpoints(protocol, new String[]{protocol}).addAlias(protocol, URIBuilder.PATH);
+
 
 		registerBeanDefinitionParser("service", new ServiceDefinitionParser(CicsService.class));
 
 		// register the parser for endpoints with cics protocol.
-		String protocol = "cics";
+
 		String[] requiredAttributes = {};
 		registerBeanDefinitionParser("cics-endpoint",new TransportGlobalEndpointDefinitionParser(protocol , requiredAttributes));
 		registerBeanDefinitionParser("cics-outbound-endpoint", new TransportEndpointDefinitionParser(protocol , OutboundEndpointFactoryBean.class , requiredAttributes));
