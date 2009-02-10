@@ -1,0 +1,246 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Quick Start Archetype
+[INFO]    task-segment: [test]
+[INFO] ------------------------------------------------------------------------
+[INFO] [cxf-codegen:wsdl2java {execution: generate-sources}]
+[INFO] [resources:resources]
+[INFO] Using default encoding to copy filtered resources.
+Downloading: http://people.apache.org/repo/m2-snapshot-repository//org/apache/ws/commons/axiom/axiom/1.2.5/axiom-1.2.5.pom
+Downloading: http://people.apache.org/repo/m2-incubating-repository//org/apache/ws/commons/axiom/axiom/1.2.5/axiom-1.2.5.pom
+Downloading: http://download.java.net/maven/1//org.apache.ws.commons.axiom/poms/axiom-1.2.5.pom
+Downloading: http://repo1.maven.org/maven2/org/apache/ws/commons/axiom/axiom/1.2.5/axiom-1.2.5.pom
+[INFO] [compiler:compile]
+[INFO] Nothing to compile - all classes are up to date
+[INFO] [resources:testResources]
+[INFO] Using default encoding to copy filtered resources.
+[INFO] [compiler:testCompile]
+[INFO] Nothing to compile - all classes are up to date
+[INFO] [surefire:test]
+[INFO] Surefire report directory: /home/makoto/java/mule-cics-2.0/trunk/examples/performance-test/soap/client-cxf/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running BenchTest
+NO_OF_THREADS : 5
+NO_OF_ITERATIONS : 10
+NO_OF_RECORDS : 10
+VERBOSE : false
+**************************************
+2008/06/17 11:29:44 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 540 milliseconds
+**************************************
+2008/06/17 11:29:47 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 26 milliseconds
+**************************************
+2008/06/17 11:29:47 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 37 milliseconds
+**************************************
+2008/06/17 11:29:47 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 48 milliseconds
+**************************************
+2008/06/17 11:29:47 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 30 milliseconds
+**************************************
+2008/06/17 11:29:47 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 21 milliseconds
+**************************************
+2008/06/17 11:29:47 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 23 milliseconds
+**************************************
+2008/06/17 11:29:47 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 21 milliseconds
+**************************************
+2008/06/17 11:29:47 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 30 milliseconds
+**************************************
+2008/06/17 11:29:47 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 20 milliseconds
+**************************************
+2008/06/17 11:29:47 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 30 milliseconds
+**************************************
+2008/06/17 11:29:47 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 20 milliseconds
+**************************************
+2008/06/17 11:29:47 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 26 milliseconds
+**************************************
+2008/06/17 11:29:47 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 25 milliseconds
+**************************************
+2008/06/17 11:29:47 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 49 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 30 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 26 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 20 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 28 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 78 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 23 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 30 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 24 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 32 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 18 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 26 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 17 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 21 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 35 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 39 milliseconds
+**************************************
+2008/06/17 11:29:48 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 42 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 18 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 18 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 24 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 18 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 30 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 26 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 43 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 46 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 15 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 16 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 59 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 16 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 18 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 45 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 15 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 14 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 26 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 23 milliseconds
+**************************************
+2008/06/17 11:29:49 org.apache.cxf.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+情報: Creating Service {http://CustomerInterface/}MuleCicsUMO from WSDL: file:wsdl/CustomerInterface.wsdl
+Total time taken for 10 records = 21 milliseconds
+-------------------------------------------------------------
+benchmark takes 7.166 seconds
+throughput 6.977393245883338
+-------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.223 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESSFUL
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 14 seconds
+[INFO] Finished at: Tue Jun 17 11:29:50 JST 2008
+[INFO] Final Memory: 13M/79M
+[INFO] ------------------------------------------------------------------------

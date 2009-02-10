@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="xmlns" ns0:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="xmlns" ns1:dl="http://ogis-ri.co.jp/PERF-TEST-RESPONSE500" targetNamespace="http://ogis-ri.co.jp/PERF-TEST-RESPONSE500" elementFormDefault="qualified">
+<!--*     レスポンス伝文-->
+<xsd:element name="perf-test-response500">
+<xsd:complexType>
+<xsd:sequence>
+<!--*       リスト情報(1レコード50バイト)-->
+<xsd:element name="customer-list-inf" minOccurs="500" maxOccurs="500">
+<xsd:complexType>
+<xsd:sequence>
+<!--*       第1項目-->
+<xsd:element name="first-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="2"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="first-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="4"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*       第2項目-->
+<xsd:element name="second-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="2"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="second-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="4"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*       第3項目-->
+<xsd:element name="third-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="2"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="third-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="4"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*       第4項目-->
+<xsd:element name="fourth-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="2"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="fourth-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="4"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*       第5項目-->
+<xsd:element name="fifth-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="2"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="fifth-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="4"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>

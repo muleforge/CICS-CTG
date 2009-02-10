@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='Shift_JIS'?>
+<sample-response xmlns="http://ogis-ri.co.jp/SAMPLE-RESPONSE">
+  <no-of-records type='9' length ='5'>00005</no-of-records>
+  <search-date type='X' length ='8'>AAAAAAAA</search-date>
+  <customer-list>
+    <customer-no type='X' length ='10'>AAAAAAAAAA</customer-no>
+    <customer-name type='G' length ='20'>ああああああああああああああああああああ</customer-name>
+    <customer-address type='G' length ='20'>ああああああああああああああああああああ</customer-address>
+    <customer-amount type='X' length ='10'>1111111111</customer-amount>
+    <customer-charge type='X' length ='10'>1111111111</customer-charge>
+  </customer-list>
+  <customer-list>
+    <customer-no type='X' length ='10'>AAAAAAAAAA</customer-no>
+    <customer-name type='G' length ='20'>ああああああああああああああああああああ</customer-name>
+    <customer-address type='G' length ='20'>ああああああああああああああああああああ</customer-address>
+    <customer-amount type='X' length ='10'>1111111111</customer-amount>
+    <customer-charge type='X' length ='10'>1111111111</customer-charge>
+  </customer-list>
+  <customer-list>
+    <customer-no type='X' length ='10'>AAAAAAAAAA</customer-no>
+    <customer-name type='G' length ='20'>ああああああああああああああああああああ</customer-name>
+    <customer-address type='G' length ='20'>ああああああああああああああああああああ</customer-address>
+    <customer-amount type='X' length ='10'>1111111111</customer-amount>
+    <customer-charge type='X' length ='10'>1111111111</customer-charge>
+  </customer-list>
+  <customer-list>
+    <customer-no type='X' length ='10'>AAAAAAAAAA</customer-no>
+    <customer-name type='G' length ='20'>ああああああああああああああああああああ</customer-name>
+    <customer-address type='G' length ='20'>ああああああああああああああああああああ</customer-address>
+    <customer-amount type='X' length ='10'>1111111111</customer-amount>
+    <customer-charge type='X' length ='10'>1111111111</customer-charge>
+  </customer-list>
+  <customer-list>
+    <customer-no type='X' length ='10'>AAAAAAAAAA</customer-no>
+    <customer-name type='G' length ='20'>ああああああああああああああああああああ</customer-name>
+    <customer-address type='G' length ='20'>ああああああああああああああああああああ</customer-address>
+    <customer-amount type='X' length ='10'>1111111111</customer-amount>
+    <customer-charge type='X' length ='10'>1111111111</customer-charge>
+  </customer-list>
+</sample-response>

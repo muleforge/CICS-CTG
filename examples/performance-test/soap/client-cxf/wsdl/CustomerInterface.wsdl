@@ -1,0 +1,515 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://CustomerInterface/" xmlns:impl="http://CustomerInterface/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><wsdl:types><xsd:schema elementFormDefault="qualified" targetNamespace="http://CustomerInterface/"><xsd:element name="perf-test-command10" type="impl:perf-test-commandType" /><xsd:element name="perf-test-response10" type="impl:perf-test-response10Type" /><xsd:element name="perf-test-command50" type="impl:perf-test-commandType" /><xsd:element name="perf-test-response50" type="impl:perf-test-response50Type" /><xsd:element name="perf-test-command100" type="impl:perf-test-commandType" /><xsd:element name="perf-test-response100" type="impl:perf-test-response100Type" /><xsd:element name="perf-test-command500" type="impl:perf-test-commandType" /><xsd:element name="perf-test-response500" type="impl:perf-test-response500Type" /><xsd:complexType name="perf-test-commandType">
+<xsd:sequence>
+
+<xsd:element name="customer-info">
+<xsd:complexType>
+<xsd:sequence>
+
+<xsd:element name="customer-no">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="10" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-name">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="20" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="customer-address">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="20" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="search-date">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="8" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType><xsd:complexType name="perf-test-response10Type">
+<xsd:sequence>
+
+<xsd:element name="customer-list-inf" minOccurs="10" maxOccurs="10">
+<xsd:complexType>
+<xsd:sequence>
+
+<xsd:element name="first-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="first-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="second-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="second-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="third-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="third-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="fourth-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="fourth-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="fifth-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="fifth-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType><xsd:complexType name="perf-test-response50Type">
+<xsd:sequence>
+
+<xsd:element name="customer-list-inf" minOccurs="50" maxOccurs="50">
+<xsd:complexType>
+<xsd:sequence>
+
+<xsd:element name="first-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="first-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="second-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="second-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="third-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="third-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="fourth-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="fourth-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="fifth-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="fifth-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType><xsd:complexType name="perf-test-response100Type">
+<xsd:sequence>
+
+<xsd:element name="customer-list-inf" minOccurs="100" maxOccurs="100">
+<xsd:complexType>
+<xsd:sequence>
+
+<xsd:element name="first-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="first-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="second-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="second-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="third-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="third-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="fourth-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="fourth-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="fifth-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="fifth-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType><xsd:complexType name="perf-test-response500Type">
+<xsd:sequence>
+
+<xsd:element name="customer-list-inf" minOccurs="500" maxOccurs="500">
+<xsd:complexType>
+<xsd:sequence>
+
+<xsd:element name="first-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="first-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="second-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="second-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="third-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="third-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="fourth-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="fourth-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+<xsd:element name="fifth-item-code">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X" />
+<xsd:attribute name="length" type="xsd:string" default="2" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="fifth-item-japan">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G" />
+<xsd:attribute name="length" type="xsd:string" default="4" />
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType></xsd:schema></wsdl:types><wsdl:message name="perf-test-command10Request"><wsdl:part name="perf-test-command10Request" element="impl:perf-test-command10" /></wsdl:message><wsdl:message name="perf-test-command10Response"><wsdl:part name="perf-test-command10Response" element="impl:perf-test-response10" /></wsdl:message><wsdl:message name="perf-test-command50Request"><wsdl:part name="perf-test-command50Request" element="impl:perf-test-command50" /></wsdl:message><wsdl:message name="perf-test-command50Response"><wsdl:part name="perf-test-command50Response" element="impl:perf-test-response50" /></wsdl:message><wsdl:message name="perf-test-command100Request"><wsdl:part name="perf-test-command100Request" element="impl:perf-test-command100" /></wsdl:message><wsdl:message name="perf-test-command100Response"><wsdl:part name="perf-test-command100Response" element="impl:perf-test-response100" /></wsdl:message><wsdl:message name="perf-test-command500Request"><wsdl:part name="perf-test-command500Request" element="impl:perf-test-command500" /></wsdl:message><wsdl:message name="perf-test-command500Response"><wsdl:part name="perf-test-command500Response" element="impl:perf-test-response500" /></wsdl:message><wsdl:portType name="MuleCicsProxy"><wsdl:operation name="perf-test-command10" parameterOrder="in0"><wsdl:input message="impl:perf-test-command10Request" name="perf-test-command10Request" /><wsdl:output message="impl:perf-test-command10Response" name="perf-test-command10Response" /></wsdl:operation><wsdl:operation name="perf-test-command50" parameterOrder="in0"><wsdl:input message="impl:perf-test-command50Request" name="perf-test-command50Request" /><wsdl:output message="impl:perf-test-command50Response" name="perf-test-command50Response" /></wsdl:operation><wsdl:operation name="perf-test-command100" parameterOrder="in0"><wsdl:input message="impl:perf-test-command100Request" name="perf-test-command100Request" /><wsdl:output message="impl:perf-test-command100Response" name="perf-test-command100Response" /></wsdl:operation><wsdl:operation name="perf-test-command500" parameterOrder="in0"><wsdl:input message="impl:perf-test-command500Request" name="perf-test-command500Request" /><wsdl:output message="impl:perf-test-command500Response" name="perf-test-command500Response" /></wsdl:operation></wsdl:portType><wsdl:binding name="MuleCicsUMOSoapBinding" type="impl:MuleCicsProxy"><soap:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" style="document" transport="http://schemas.xmlsoap.org/soap/http" /><wsdl:operation name="perf-test-command10"><soap:operation xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="" /><wsdl:input name="perf-test-command10Request"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:input><wsdl:output name="perf-test-command10Response"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="perf-test-command50"><soap:operation xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="" /><wsdl:input name="perf-test-command50Request"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:input><wsdl:output name="perf-test-command50Response"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="perf-test-command100"><soap:operation xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="" /><wsdl:input name="perf-test-command100Request"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:input><wsdl:output name="perf-test-command100Response"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:output></wsdl:operation><wsdl:operation name="perf-test-command500"><soap:operation xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="" /><wsdl:input name="perf-test-command500Request"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:input><wsdl:output name="perf-test-command500Response"><soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://CustomerInterface/" use="literal" /></wsdl:output></wsdl:operation></wsdl:binding><wsdl:service name="MuleCicsUMO"><wsdl:port binding="impl:MuleCicsUMOSoapBinding" name="MuleCicsUMO"><soap:address xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" location="http://localhost:8888/seriola/CustomerInterface" /></wsdl:port></wsdl:service></wsdl:definitions>

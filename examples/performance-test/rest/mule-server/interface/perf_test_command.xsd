@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="xmlns" ns0:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="xmlns" ns1:dl="http://ogis-ri.co.jp/PERF-TEST-COMMAND" targetNamespace="http://ogis-ri.co.jp/PERF-TEST-COMMAND" elementFormDefault="qualified">
+<!--*     コマンド伝文-->
+<xsd:element name="perf-test-command">
+<xsd:complexType>
+<xsd:sequence>
+<!--*       番号検索情報-->
+<xsd:element name="customer-info">
+<xsd:complexType>
+<xsd:sequence>
+<!--*         お客さま番号-->
+<xsd:element name="customer-no">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="10"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         顧客名-->
+<xsd:element name="customer-name">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="20"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         顧客住所-->
+<xsd:element name="customer-address">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="G"/>
+<xsd:attribute name="length" type="xsd:string" default="20"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+<!--*         特定対象年月日（検索用）-->
+<xsd:element name="search-date">
+<xsd:complexType>
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="type" type="xsd:string" default="X"/>
+<xsd:attribute name="length" type="xsd:string" default="8"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>

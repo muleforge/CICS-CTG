@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<!-- ローリングファイル用Appender -->
+	<appender name="STDOUT" class="org.apache.log4j.RollingFileAppender">
+        <param name="Append" value="true"/> 
+        <param name="MaxFileSize" value="5MB"/> 
+        <param name="MaxBackupIndex" value="10"/> 
+        <param name="File" value="/tmp/proto.log" /> 
+       <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="%d %-5p [%t] %c (%F:%L) - %m%n"/>
+       </layout>	    
+	</appender>
+
+	<!-- 標準出力用Appender -->
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+       <layout class="org.apache.log4j.PatternLayout">
+         <param name="ConversionPattern" value="%d %-5p [%t] %c (%F:%L) - %m%n"/>
+       </layout>	    
+	</appender>
+
+
+	<!-- Seriola 設定 -->
+    <category name="jp.co.ogis_ri.seriola">
+        <priority value="debug" />
+    </category>
+
+    <category name="jp.co.ogis_ri.app1">
+        <priority value="debug" />
+    </category>
+
+	<!-- Apache設定 -->
+    <category name="org.apache">
+        <priority value="warn" />
+    </category>
+    
+	<!-- ルート設定 -->
+	<root>
+	   <priority value ="warn" />
+   	   <appender-ref ref="STDOUT" />
+	</root>
+	
+</log4j:configuration>

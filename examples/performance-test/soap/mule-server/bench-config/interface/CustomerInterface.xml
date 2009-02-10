@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This xml definition is for a mainframe access test -->
+<esb-interface xmlns="http://www.mule.org/transport/cics/esbInterface">
+  <operation name="perf-test-command10">
+    <inbound xsd="interface/perf_test_command.xsd" />
+    <outbound xsd="interface/perf_test_response10.xsd" />
+    <property transactionID="TS04" applProgramName="TS040" />
+  </operation>
+
+  <operation name="perf-test-command50">
+    <inbound xsd="interface/perf_test_command.xsd" />
+    <outbound xsd="interface/perf_test_response50.xsd" />
+    <property transactionID="TS05" applProgramName="TS050" />
+  </operation>
+
+  <operation name="perf-test-command100">
+    <inbound xsd="interface/perf_test_command.xsd" />
+    <outbound xsd="interface/perf_test_response100.xsd" />
+    <property transactionID="TS06" applProgramName="TS060" />
+  </operation>
+
+  <operation name="perf-test-command500">
+    <inbound xsd="interface/perf_test_command.xsd" />
+    <outbound xsd="interface/perf_test_response500.xsd" />
+    <property transactionID="TS07" applProgramName="TS070" />
+  </operation>
+
+<!-- for a test of no request and no response  -->
+
+  <operation name="perf-test-null-command10">
+    <property transactionID="TS04" applProgramName="TS040" />
+  </operation>
+
+</esb-interface>
+

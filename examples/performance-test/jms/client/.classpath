@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/jrajput/.m2/repository/junit/junit/3.8.2/junit-3.8.2.jar"/>
+	<classpathentry kind="lib" path="/mule-async/client/lib/activemq-core-4.1.1.jar"/>
+	<classpathentry kind="lib" path="/mule-async/client/lib/backport-util-concurrent-2.1.jar"/>
+	<classpathentry kind="lib" path="/mule-async/client/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="/mule-async/client/lib/jbossall-client.jar"/>
+	<classpathentry kind="lib" path="/mule-async/client/lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
