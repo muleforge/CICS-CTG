@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-    <muleVersion>2.0.0</muleVersion>
+    <muleVersion>2.1.2</muleVersion>
   </properties>
 
   <distributionManagement>

@@ -1,2 +1,2 @@
-http\://www.mulesource.org/schema/mule/mule-cics/2.0=org.mule.transport.cics.CicsNamespaceHandler
-http\://www.mulesource.org/schema/mule/mule-cics-streaming/2.0=org.mule.transport.cicsStreaming.CicsNamespaceHandler
+http\://www.mulesource.org/schema/mule/mule-cics/2.1=org.mule.transport.cics.config.CicsNamespaceHandler
+http\://www.mulesource.org/schema/mule/mule-cics-streaming/2.1=org.mule.transport.cicsStreaming.CicsNamespaceHandler

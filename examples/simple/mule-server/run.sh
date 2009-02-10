@@ -21,5 +21,5 @@ echo $MULE_BASE
 MULE_LIB=./config
 export MULE_LIB
 
-exec "$MULE_BASE/bin/mule" -config mule-cics-config2.xml
+exec "$MULE_BASE/bin/mule" -config mule-cics-config.xml
 

@@ -1,3 +1,3 @@
-http\://www.mulesource.org/schema/mule/mule-cics/2.0/mule-cics.xsd=META-INF/mule-cics.xsd
-http\://www.mulesource.org/schema/mule/mule-cics-streaming/2.0/mule-cics-streaming.xsd=META-INF/mule-cics-streaming.xsd
-http\://www.mulesource.org/schema/mule/stubtest/2.0/mule-stubtest.xsd=META-INF/mule-stubtest.xsd
+http\://www.mulesource.org/schema/mule/mule-cics/2.1/mule-cics.xsd=META-INF/mule-cics.xsd
+http\://www.mulesource.org/schema/mule/mule-cics-streaming/2.1/mule-cics-streaming.xsd=META-INF/mule-cics-streaming.xsd
+http\://www.mulesource.org/schema/mule/stubtest/2.1/mule-stubtest.xsd=META-INF/mule-stubtest.xsd
