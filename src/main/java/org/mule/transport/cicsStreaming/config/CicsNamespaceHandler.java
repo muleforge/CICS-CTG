@@ -1,4 +1,4 @@
-package org.mule.transport.cicsStreaming;
+package org.mule.transport.config.cicsStreaming;
 
 import org.mule.config.spring.factories.OutboundEndpointFactoryBean;
 import org.mule.config.spring.parsers.specific.ServiceDefinitionParser;
