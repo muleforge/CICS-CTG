@@ -51,9 +51,9 @@
     </dependency>
 
     <dependency>
-	    <groupId>activemq</groupId>
+        <groupId>org.apache.activemq</groupId>
     	<artifactId>activemq-core</artifactId>
-	    <version>3.0</version>
+	    <version>5.2.0</version>
     </dependency>
 
     <dependency>

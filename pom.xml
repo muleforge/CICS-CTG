@@ -40,9 +40,7 @@
 
   <properties>
     <muleVersion>2.1.2</muleVersion>
-    <activemq-version>4.1.1-incubator</activemq-version>
     <muleHome>/usr/local/oss/mule-2.1.2</muleHome>  
-    <!-- muleHome>D:/tools/mule-2.0.2</muleHome -->  
 
   </properties>
   <distributionManagement>
@@ -235,7 +233,7 @@
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>activemq-core</artifactId>
-      <version>4.1.1</version>
+      <version>5.2.0</version>
       <scope>compile</scope>
     </dependency>
 
