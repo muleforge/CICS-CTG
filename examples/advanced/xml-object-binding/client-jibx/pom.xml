@@ -43,8 +43,7 @@
   </repositories>
 
   <properties>
-    <muleVersion>2.0.0</muleVersion>
-    <activemq-version>4.1.1-incubator</activemq-version>
+    <muleVersion>2.1.2</muleVersion>
   </properties>
 
   <distributionManagement>
@@ -84,11 +83,6 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-	<groupId>activemq</groupId>
-	<artifactId>activemq-core</artifactId>
-	<version>3.0</version>
-    </dependency>
-    <dependency>
       <groupId>org.mule</groupId>
       <artifactId>mule-core</artifactId>
       <version>${muleVersion}</version>
@@ -103,7 +97,7 @@
      <dependency>
         <groupId>org.apache.activemq</groupId>
         <artifactId>apache-activemq</artifactId>
-        <version>4.1.0-incubator</version>
+        <version>5.2.0</version>
         <!-- and probably some excludes... -->
       </dependency>
 
