@@ -24,9 +24,9 @@
      <component class="org.mule.transport.cics.CicsComponent" />
 
      <outbound><pass-through-router>
-       <!-- outbound-endpoint ref="CicsEndpoint" / -->
+       <outbound-endpoint ref="CicsEndpoint" />
        <!-- outbound-endpoint ref="DummyXmlResponseEndpoint" / -->
-       <outbound-endpoint ref="DummyStringResponseEndpoint" />
+       <!-- outbound-endpoint ref="DummyStringResponseEndpoint" / -->
      </pass-through-router></outbound>
    </mule-cics:service>
  </model>
@@ -45,7 +45,7 @@
       remoteSync="true" />
 
    <mule-cics:cics-endpoint name="CicsEndpoint" 
-      address="cics://158.201.48.7:2006"
+      address="cics://158.201.48.5:2006"
       entry="CICSVLT" 
       tpnName="XCO01" 
       userName="ogis"

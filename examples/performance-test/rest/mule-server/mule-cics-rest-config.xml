@@ -1,12 +1,12 @@
-<mule xmlns="http://www.mulesource.org/schema/mule/core/2.0"
+<mule xmlns="http://www.mulesource.org/schema/mule/core/2.1"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns:jms="http://www.mulesource.org/schema/mule/jms/2.0"
-      xmlns:http="http://www.mulesource.org/schema/mule/http/2.0"
-      xmlns:mule-cics="http://www.mulesource.org/schema/mule/mule-cics/2.0"
-      xsi:schemaLocation="http://www.mulesource.org/schema/mule/core/2.0 http://www.mulesource.org/schema/mule/core/2.0/mule.xsd
-        http://www.mulesource.org/schema/mule/jms/2.0 http://www.mulesource.org/schema/mule/jms/2.0/mule-jms.xsd
-        http://www.mulesource.org/schema/mule/http/2.0 http://www.mulesource.org/schema/mule/http/2.0/mule-http.xsd
-        http://www.mulesource.org/schema/mule/mule-cics/2.0 META-INF/mule-cics.xsd">
+      xmlns:jms="http://www.mulesource.org/schema/mule/jms/2.1"
+      xmlns:http="http://www.mulesource.org/schema/mule/http/2.1"
+      xmlns:mule-cics="http://www.mulesource.org/schema/mule/mule-cics/2.1"
+      xsi:schemaLocation="http://www.mulesource.org/schema/mule/core/2.1 http://www.mulesource.org/schema/mule/core/2.1/mule.xsd
+        http://www.mulesource.org/schema/mule/jms/2.1 http://www.mulesource.org/schema/mule/jms/2.1/mule-jms.xsd
+        http://www.mulesource.org/schema/mule/http/2.1 http://www.mulesource.org/schema/mule/http/2.1/mule-http.xsd
+        http://www.mulesource.org/schema/mule/mule-cics/2.1 META-INF/mule-cics.xsd">
 
    <configuration defaultSynchronousEndpoints="true" defaultRemoteSync="true" />
 
@@ -23,11 +23,11 @@
 
          <component class="org.mule.transport.cics.CicsComponent" />
 
-         <outbound><outbound-pass-through-router>
-             <!-- outbound-endpoint ref="CicsEndpoint" / -->
+         <outbound><pass-through-router>
+             <outbound-endpoint ref="CicsEndpoint" />
              <!-- outbound-endpoint ref="DummyXmlResponseEndpoint" / -->
-             <outbound-endpoint ref="DummyStringResponseEndpoint" />
-         </outbound-pass-through-router></outbound>
+             <!-- outbound-endpoint ref="DummyStringResponseEndpoint" / -->
+         </pass-through-router></outbound>
       </mule-cics:service>
    </model>
 
@@ -55,7 +55,7 @@
            responseTransformer-refs="OGISCopyBookIncomingHandler CopyBookToXml"
            remoteSync="true" />
 
-   <!--jms:activemq-connector name="ActiveMQConnector" brokerURL="tcp://localhost:61616" specification="1.1" /-->
+   <jms:activemq-connector name="ActiveMQConnector" brokerURL="tcp://localhost:61616" specification="1.1" />
 
    <mule-cics:xml-inbound-transformer name="XmlInboundTransformer" />
    <mule-cics:rest-to-xml name="RestToXml" />
