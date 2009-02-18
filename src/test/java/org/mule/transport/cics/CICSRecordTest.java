@@ -9,16 +9,16 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * Unit test for CICSRecord
+ * Unit test for CicsRecord
  */
-public class CICSRecordTest extends TestCase {
+public class CicsRecordTest extends TestCase {
 	/**
      * Create the test case
      * 
      * @param testName
      *            name of the test case
      */
-	public CICSRecordTest(String testName) {
+	public CicsRecordTest(String testName) {
 		super(testName);
 	}
 
@@ -26,14 +26,14 @@ public class CICSRecordTest extends TestCase {
      * @return the suite of tests being tested
      */
 	public static Test suite() {
-		return new TestSuite(CICSRecordTest.class);
+		return new TestSuite(CicsRecordTest.class);
 	}
 
 	/**
      * Rigourous Test :-)
      */
 	public void test1() throws Exception {
-		CICSRecord record = new CICSRecord();
+		CicsRecord record = new CicsRecord();
 		byte[] inBytes = new byte[10];
 
 		for (int i = 0; i < inBytes.length; i++) {
@@ -60,7 +60,7 @@ public class CICSRecordTest extends TestCase {
 			inBytes[i] = (byte) ' ';
 		}
 
-		CICSRecord record = new CICSRecord(inBytes);
+		CicsRecord record = new CicsRecord(inBytes);
 
 		byte[] outBytes = record.getBytes();
 		assertEquals(inBytes, outBytes);
