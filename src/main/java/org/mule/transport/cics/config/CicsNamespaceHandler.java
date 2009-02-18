@@ -17,9 +17,6 @@ import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 //public class CicsNamespaceHandler extends NamespaceHandlerSupport {
 /**
  * Describe class <code>CicsNamespaceHandler</code> here.
- *
- * @author <a href="mailto:makoto@zebra"></a>
- * @version 1.0
  */
 public class CicsNamespaceHandler extends AbstractMuleNamespaceHandler {
 	/**

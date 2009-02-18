@@ -60,7 +60,9 @@ public class CicsMessageDispatcher extends AbstractMessageDispatcher {
     protected MuleMessage doSend(MuleEvent event) throws Exception {
 
         MuleMessage message = event.getMessage();
-        if (message.getExceptionPayload() != null) return message;
+        if (message.getExceptionPayload() != null) {
+            return message;
+        }
 
         CtgAdapter ctgAdapter = null;
         Connection connection = null;

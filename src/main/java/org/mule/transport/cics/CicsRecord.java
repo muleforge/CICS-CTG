@@ -23,7 +23,7 @@ import org.mule.transport.cics.util.Constants;
  * and outbound message when the Mule accesses to
  * CTG(IBM CICS Transaction gateway).
  */
-class CICSRecord implements java.io.Serializable, Record, Streamable {
+class CicsRecord implements java.io.Serializable, Record, Streamable {
 
   /** Serial Version UID  */
   private static final long serialVersionUID = 1L;
@@ -32,7 +32,7 @@ class CICSRecord implements java.io.Serializable, Record, Streamable {
   private byte[] bytes = null;
 
   /** gets a record name */
-  private String name = CICSRecord.class.getName();
+  private String name = CicsRecord.class.getName();
 
   /** a record descriptor */
   private String description = "Framework record";
@@ -40,7 +40,7 @@ class CICSRecord implements java.io.Serializable, Record, Streamable {
   /**
    * A default constructor
    */
-  public CICSRecord() {
+  public CicsRecord() {
   }
 
   /**
@@ -48,7 +48,7 @@ class CICSRecord implements java.io.Serializable, Record, Streamable {
    *
    * @param byteArray
    */
-  public CICSRecord(final byte[] byteArray) {
+  public CicsRecord(final byte[] byteArray) {
     this.bytes = byteArray;
   }
 
@@ -57,7 +57,7 @@ class CICSRecord implements java.io.Serializable, Record, Streamable {
    *
    * @param size
    */
-  public CICSRecord(int size) {
+  public CicsRecord(int size) {
     this.bytes = new byte[size];
   }
 
@@ -78,7 +78,7 @@ class CICSRecord implements java.io.Serializable, Record, Streamable {
   public Object clone() {
     byte[] byteArray = new byte[this.bytes.length];
     System.arraycopy(this.bytes, 0, byteArray, 0, byteArray.length);
-    return new CICSRecord(byteArray);
+    return new CicsRecord(byteArray);
   }
 
   /**

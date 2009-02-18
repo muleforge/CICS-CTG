@@ -132,7 +132,8 @@ public class Interface2WSDL {
      *            list of operation beans (Each bean contains info in interface file)
      * @throws Exception
      */
-	private void writeTypes(XMLStreamWriter writer, String targetNs, List operations) throws Exception {
+	private void writeTypes(XMLStreamWriter writer, String targetNs, List operations)
+        throws Exception {
 		// START - <wsdl:types>
 		writer.writeStartElement("wsdl", "types", WSDL_NS);
 		
@@ -214,9 +215,6 @@ public class Interface2WSDL {
                }
             }
         }
-		
-
-
 		writer.writeEndElement();
 		// END - </wsdl:types>
 		writer.writeEndElement();
@@ -232,7 +230,8 @@ public class Interface2WSDL {
      *            the file containing XSD schema. 
      * @throws Exception
      */
-	private void writeSchema(XMLStreamWriter writer, String xsdFile) throws Exception {
+	private void writeSchema(XMLStreamWriter writer, String xsdFile)
+        throws Exception {
 		
 		XsdReader xsdReader = xsdFactory.getXsdReader(xsdFile);
 		String rootElementName = xsdReader.getRootXsdElement().getName();
@@ -310,8 +309,6 @@ public class Interface2WSDL {
 			// writer.writeComment(comment);
 			// }
 		}
-
-		
 	}
 
 	/**
@@ -327,7 +324,8 @@ public class Interface2WSDL {
      *            file)
      * @throws Exception
      */
-	private void writeMessages(XMLStreamWriter writer, String targetNs, List operations) throws Exception {
+	private void writeMessages(XMLStreamWriter writer, String targetNs, List operations)
+        throws Exception {
 		String wsdlPrefix = ""; //Prefix used for the targetNamespace of this WSDL
 		wsdlPrefix = writer.getNamespaceContext().getPrefix(targetNs);
         if( wsdlPrefix != null && wsdlPrefix.length() > 0 ){
@@ -413,7 +411,8 @@ public class Interface2WSDL {
      *            file)
      * @throws XMLStreamException
      */
-	private void writePortType(XMLStreamWriter writer, List operations) throws XMLStreamException {
+	private void writePortType(XMLStreamWriter writer, List operations)
+        throws XMLStreamException {
 
 		// START - <wsdl:portType>
 		writer.writeStartElement("wsdl", "portType", WSDL_NS);
@@ -487,7 +486,8 @@ public class Interface2WSDL {
      *            the target namespace of WSDL.
      * @throws XMLStreamException
      */
-	private void writeBindings(XMLStreamWriter writer, String targetNs, List operations) throws XMLStreamException {
+	private void writeBindings(XMLStreamWriter writer, String targetNs, List operations)
+        throws XMLStreamException {
 		// START - <wsdl:binding>
 		writer.writeStartElement("wsdl", "binding", WSDL_NS);
 		writer.writeAttribute("name", "MuleCicsUMOSoapBinding");
@@ -591,7 +591,8 @@ public class Interface2WSDL {
      *            StAX object to write XML.
      * @throws XMLStreamException
      */
-	private void writeService(XMLStreamWriter writer, String serviceLocation) throws XMLStreamException {
+	private void writeService(XMLStreamWriter writer, String serviceLocation)
+        throws XMLStreamException {
 		// START - <wsdl:service>
 		writer.writeStartElement("wsdl", "service", WSDL_NS);
 		writer.writeAttribute("name", "MuleCicsUMO");

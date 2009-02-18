@@ -118,10 +118,10 @@ public class CtgAdapter {
         con.getLocalTransaction().begin();
 
         // creates an outbound message.
-        CICSRecord inRec = new CICSRecord(requestBytes);
+        CicsRecord inRec = new CicsRecord(requestBytes);
 
         // invokes a transaction on mainframe and gets a reply message.
-        CICSRecord outRec = execute(con, inRec);
+        CicsRecord outRec = execute(con, inRec);
 
         // gets a result as a byte array.
         byte[] resultBytes = outRec.getBytes();
@@ -139,9 +139,9 @@ public class CtgAdapter {
      * @throws Exception
      *             if an error occured
      */
-    private CICSRecord execute(Connection con, CICSRecord inRec) throws Exception {
+    private CicsRecord execute(Connection con, CicsRecord inRec) throws Exception {
         try {
-            CICSRecord outRec = new CICSRecord(); // reply record
+            CicsRecord outRec = new CicsRecord(); // reply record
 
             // execute a mainframe transaction
             logger.debug("CICS-ACCESS start...inRec:[" + inRec + "]");
